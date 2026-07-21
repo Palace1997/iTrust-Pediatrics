@@ -186,8 +186,7 @@ a { color: var(--green-700); text-decoration: none; }
 /* "More" trigger — top-left, before the logo, on every screen size */
 .more-trigger { display: inline-flex; align-items: center; gap: .5rem; background: none; border: 0; cursor: pointer;
   padding: .5rem .75rem; border-radius: 999px; color: var(--green-700); font: 800 .92rem var(--sans);
-  transition: background .2s var(--ease), color .2s var(--ease); flex: none;
-  margin-left: -.4rem; margin-right: 2.25rem; }
+  transition: background .2s var(--ease), color .2s var(--ease); flex: none; }
 .more-trigger:hover { background: rgba(122,155,84,.16); color: var(--green-900); }
 .more-trigger-icon { display: flex; flex-direction: column; gap: 4px; }
 .more-trigger-icon i { display: block; width: 22px; height: 2.5px; background: currentColor; border-radius: 2px; transition: transform .3s var(--ease), opacity .3s var(--ease); }
@@ -1072,8 +1071,8 @@ body.more-open { overflow: hidden; }
 
   .main-nav { display: none; }
   .header-cta { display: none; }
-  /* on mobile, push the logo to the right so "More" sits alone at the far left */
-  .brand { margin-left: auto; }
+  /* logo sits at the far left; push "More" alone to the far right */
+  .more-trigger { margin-left: auto; }
 
   .concern-band { grid-template-columns: 1fr; gap: .9rem; }
   .concern-foot { flex-direction: column; align-items: flex-start; text-align: left; }
