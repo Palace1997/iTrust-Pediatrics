@@ -98,7 +98,7 @@
           "We never rush a session; every worry gets heard and answered.",
           "Parent coaching, so you know how to support, not pressure.",
           "Clear, practical plans and tools you can use at home.",
-          "Culturally aware and LGBTQIA+ affirming support.",
+          "Culturally aware, respectful support.",
         ],
       },
       change: {
@@ -125,7 +125,7 @@
         title: "Welcome everyone",
         intro: "Every child and every family belongs here, exactly as they are.",
         points: [
-          "Affirming, judgment-free care for all families, including LGBTQIA+ families.",
+          "Affirming, judgment-free care for all families.",
           "Culturally aware providers who respect your family's values and choices.",
           "Care that meets each child where they are, at their own pace.",
           "A warm, welcoming space where sessions feel safe, not scary.",
