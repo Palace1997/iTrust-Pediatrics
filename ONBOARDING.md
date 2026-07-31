@@ -6,7 +6,7 @@ A single source of truth for this project. Open this first on any new machine or
 
 ## 1. What this project is
 
-The **itrust Pediatrics** website plus its **brand guidelines** document. itrust Pediatrics is a **children's psychiatric practice** — psychiatric evaluation, diagnosis, and **medication management** for children and teens **ages 5 to 19**, and the families who love them.
+The **itrust Pediatrics** website plus its **brand guidelines** document. itrust Pediatrics is a **children's psychiatric practice** — psychiatric evaluation, diagnosis, and **medication management** for children and teens **ages 5 to 17**, and the families who love them.
 
 **Hard scope rule — psychiatric, NOT a therapy clinic.** Per CEO (Edd) direction on the 2026 relaunch, the practice provides **psychiatric care and medication management, not talk therapy, counseling, or play therapy** (we refer families out for those). Say "psychiatric care," "providers," "visits/appointments," "medication management"; strip any "therapy / therapist / counselor / holistic" language. Still no physical medicine, illnesses, vaccines, or well-child / sick-visit content.
 
@@ -135,7 +135,7 @@ python3 .claude/server.py    # port 4321, DIRECTORY = this folder
 - Fill real address, phone, hours, and the confirmed **accepted-insurance list** (insurer logos in `assets/insurers/` are placeholders); add real **self-pay** wording to the "How Payment Works" section.
 - Build a **patient portal** only if/when ready — currently omitted by design (no PHI-collecting form).
 
-**Done in the 2026-08-01 relaunch:** psychiatric repositioning + full therapy→psychiatric copy sweep; lean 5-page nav (More hidden on desktop); About restructured (who we are · mission · ages 5–19 · team approach · Wellness connection); services trimmed to 7 with the accordion order matching the CEO's list; insurance "in-network" auto-scroll ribbon + "How Payment Works" split section; FAQ reoriented to process / first-visit; Team = Psych-Today provider cards with a working focus filter; contact section titled "Contact Us"; brand-guidelines HTML + exported PDF updated to match.
+**Done in the 2026-08-01 relaunch:** psychiatric repositioning + full therapy→psychiatric copy sweep; lean 5-page nav (More hidden on desktop); About restructured (who we are · mission · ages 5–17 · team approach · Wellness connection); services trimmed to 7 with the accordion order matching the CEO's list; insurance "in-network" auto-scroll ribbon + "How Payment Works" split section; FAQ reoriented to process / first-visit; Team = Psych-Today provider cards with a working focus filter; contact section titled "Contact Us"; brand-guidelines HTML + exported PDF updated to match.
 
 ---
 
