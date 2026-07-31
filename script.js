@@ -85,7 +85,7 @@
         title: "Empower children",
         intro: "We treat kids as active partners in their own care, building confidence, coping skills, and self-understanding.",
         points: [
-          "Explain therapy in kid-friendly language, so it feels safe, never scary.",
+          "Explain psychiatric care in kid-friendly language, so it feels safe, never scary.",
           "Teach coping, calming, and emotional-awareness skills they keep for life.",
           "Help children name big feelings and build healthy habits of mind.",
           "Give tweens and teens private, judgment-free space to open up.",
@@ -126,7 +126,7 @@
         intro: "Every child and every family belongs here, exactly as they are.",
         points: [
           "Affirming, judgment-free care for all families, including LGBTQIA+ families.",
-          "Culturally aware therapists who respect your family's values and choices.",
+          "Culturally aware providers who respect your family's values and choices.",
           "Care that meets each child where they are, at their own pace.",
           "A warm, welcoming space where sessions feel safe, not scary.",
         ],
@@ -345,7 +345,7 @@
   const teamSection = document.getElementById("team");
   if (teamSection) {
     const track = teamSection.querySelector(".team-track");
-    const tiles = Array.prototype.slice.call(teamSection.querySelectorAll(".team-tile"));
+    const tiles = Array.prototype.slice.call(teamSection.querySelectorAll(".team-tile, .provider-card"));
     const chips = Array.prototype.slice.call(teamSection.querySelectorAll(".team-chip"));
     const empty = teamSection.querySelector(".team-empty");
     const prev = teamSection.querySelector(".team-arrow.prev");

@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pediatrics",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["/Users/eddmaar/Documents/Pediatrics web/.claude/server.py"],
+      "port": 4321,
+      "autoPort": true
+    }
+  ]
+}
