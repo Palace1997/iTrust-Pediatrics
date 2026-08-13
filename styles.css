@@ -1215,19 +1215,20 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .pay-note{text-align:center;color:var(--ink-soft);margin-top:26px}
 .pay-note a{color:#1f4d2e;font-weight:700;text-decoration:underline}
 @media (prefers-reduced-motion:reduce){.pay-track{animation:none;flex-wrap:wrap;justify-content:center;gap:30px}}
-/* Payment process — split layout */
+/* Payment & Billing — compact panel */
 .paywork{background:var(--cream-2)}
-.paywork-split{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:46px;align-items:center}
-.paywork-copy .eyebrow{display:block;color:var(--sage-500);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
-.paywork-copy h2{font-family:var(--serif);color:#1f4d2e;font-size:2rem;line-height:1.1;margin:0 0 10px}
-.paywork-copy p{color:var(--ink-soft);margin:0}
-.paywork-copy .btn{margin-top:18px}
-.paywork-item{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(31,77,46,.14)}
-.paywork-item:last-child{border-bottom:0}
-.paywork-num{width:40px;height:40px;border-radius:999px;background:var(--coral);color:#fff;font-weight:800;display:grid;place-items:center}
-.paywork-item h4{font-family:var(--serif);color:#1f4d2e;font-size:1.05rem;margin:0 0 3px}
-.paywork-item p{color:#5c6b5f;font-size:.92rem;line-height:1.5;margin:0}
-@media(max-width:760px){.paywork-split{grid-template-columns:1fr}.paywork-copy{text-align:center}}
+.paywork-panel{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e7e7df;border-radius:20px;overflow:hidden;box-shadow:0 16px 40px -28px rgba(31,77,46,.5);font-family:var(--sans)}
+.paywork-line{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;padding:18px 26px;border-top:1px solid #f0f0ea}
+.paywork-line:first-child{border-top:0}
+.paywork-line .k{font-weight:800;color:#1f4d2e;font-size:.86rem}
+.paywork-line .v{color:#5c6b5f;font-size:.86rem;line-height:1.5}
+.paywork-line .v a{color:#1f4d2e;font-weight:800;text-decoration:underline}
+.paywork-foot{background:#f4f2e8;padding:18px 26px;text-align:center}
+.pm-row{display:flex;flex-wrap:wrap;gap:8px}
+.pm{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e7e7df;border-radius:9px;padding:6px 11px;font-weight:800;font-size:.72rem;color:#3b463d}
+.pm .ic{width:24px;height:16px;border-radius:3px;display:grid;place-items:center;font-size:7.5px;color:#fff;font-weight:800}
+.pm.visa .ic{background:#1a1f71}.pm.mc .ic{background:#eb5b26}.pm.amex .ic{background:#1d75c9}.pm.hsa .ic{background:#3f7d52}
+@media(max-width:640px){.paywork-line{grid-template-columns:1fr;gap:6px}}
 
 /* ---- Provider directory cards (Our Team page) ---- */
 .provider-list{display:flex;flex-direction:column;gap:20px;max-width:900px;margin:0 auto}
