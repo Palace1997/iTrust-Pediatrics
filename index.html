@@ -641,26 +641,29 @@
   <!-- ============ VIDEO SPOTLIGHT ============ -->
   <section class="section" id="spotlight">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Voices that matter</span>
-        <h2>A Message On Children's Mental Health</h2>
-        <p class="section-sub">Hear from the people who care about your child's whole well-being, mind included.</p>
-      </div>
-
-      <figure class="video-frame reveal">
-        <div class="video-player" id="spotlightVideo" data-embed="">
-          <img class="video-poster" src="assets/spotlight-poster.jpg" alt="A provider offering caring, supportive guidance" loading="lazy" />
-          <span class="video-veil" aria-hidden="true"></span>
-          <button class="video-play" type="button" aria-label="Play the video message">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+      <div class="spotlight-split reveal">
+        <figure class="video-frame">
+          <div class="video-player" id="spotlightVideo" data-embed="">
+            <img class="video-poster" src="assets/spotlight-poster.jpg" alt="A provider offering caring, supportive guidance" loading="lazy" />
+            <span class="video-veil" aria-hidden="true"></span>
+            <button class="video-play" type="button" aria-label="Play the video message">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>
+            </button>
+            <span class="video-note" hidden>Video coming soon</span>
+          </div>
+        </figure>
+        <div class="spotlight-copy">
+          <span class="eyebrow">Voices that matter</span>
+          <h2>A message on children's mental health</h2>
+          <blockquote class="spotlight-quote">&ldquo;Mental health is health. Every child deserves care that takes their mind as seriously as their body &mdash; delivered with patience, expertise, and heart.&rdquo;</blockquote>
+          <p class="spotlight-attr"><strong>The itrust Pediatrics care team</strong><span>Child &amp; Adolescent Psychiatry</span></p>
+          <!-- TODO at launch: set data-embed on #spotlightVideo to the real video URL; optionally swap the attribution above for a specific provider's name and title. -->
+          <button class="spotlight-watch" type="button" aria-label="Play the video message">
+            <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
+            Watch the message
           </button>
-          <span class="video-note" hidden>Video coming soon</span>
-          <figcaption class="video-caption">
-            <strong>Dr. [Full Name]</strong>
-            <span>Child &amp; Adolescent Mental Health</span>
-          </figcaption>
         </div>
-      </figure>
+      </div>
     </div>
   </section>
 

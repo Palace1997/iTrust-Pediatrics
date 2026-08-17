@@ -749,6 +749,7 @@
       videoPlayer.appendChild(iframe);
     };
     if (playBtn) playBtn.addEventListener("click", play);
+    document.querySelectorAll(".spotlight-watch").forEach((b) => b.addEventListener("click", play));
   }
 
 })();
