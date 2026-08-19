@@ -989,5 +989,34 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- TEMP: homepage contact-gap slider (remove after locking) -->
+  <div id="gapSlider" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#fff;border:1px solid #e7e7df;border-radius:14px;box-shadow:0 12px 30px -12px rgba(0,0,0,.4);padding:12px 14px;font-family:var(--sans,sans-serif);width:260px">
+    <div style="font-size:12px;font-weight:700;color:#1f4d2e;margin-bottom:6px">Space: line &rarr; &ldquo;Contact Us&rdquo;</div>
+    <input id="gapRange" type="range" min="-20" max="160" value="90" step="2" style="width:100%">
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:#666;margin-top:5px">
+      <span>slider: <b id="gapVal">90</b></span>
+      <span>real gap: <b id="gapReal" style="color:#1f4d2e">?</b>px</span>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var sec=document.getElementById('contact');
+      if(!sec) return;
+      var h2=sec.querySelector('h2');
+      var r=document.getElementById('gapRange'), v=document.getElementById('gapVal'), gr=document.getElementById('gapReal');
+      h2.style.marginTop='0'; /* remove the heading's own top margin so the slider maps to the real gap */
+      r.value=Math.round(parseFloat(getComputedStyle(sec).paddingTop));
+      function apply(){
+        var val=parseInt(r.value,10);
+        sec.style.paddingTop=Math.max(0,val)+'px';
+        h2.style.marginTop=(val<0?val:0)+'px';
+        v.textContent=val;
+        gr.textContent=Math.round(h2.getBoundingClientRect().top - sec.getBoundingClientRect().top);
+      }
+      r.addEventListener('input',apply);
+      setTimeout(apply,60);
+    })();
+  </script>
 </body>
 </html>
