@@ -410,9 +410,6 @@ body.more-open { overflow: hidden; }
 
 /* ---------- Sections ---------- */
 .section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
-/* Contact page: tighten the gap above the "Contact Us" heading (scoped so the homepage #contact CTA is unaffected) */
-.contact-top { padding-top: 30px; }
-.contact-top .section-head h1 { margin-top: 0; }
 /* Homepage contact section: gap from the billing/contact background line down to "Contact Us" */
 .home-contact { padding-top: 70px; }
 .home-contact .section-head h2 { margin-top: 0; }
