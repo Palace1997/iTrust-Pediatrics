@@ -29,6 +29,8 @@
   --sage-500:  #7a9b54;   /* olive ring / leaves */
   --sage-300:  #b8cd96;
   --coral:     #ee6c4d;   /* coral heart */
+  --coral-ink: #b5431f;   /* darker coral for small text on light (WCAG AA) */
+  --sage-ink:  #4d6a2c;   /* darker sage for eyebrow labels on light (WCAG AA) */
   --teal:      #2a9d8f;   /* teal heart */
   --yellow:    #f4c430;   /* yellow heart */
   --cream:     #fbf7ee;   /* page canvas */
@@ -77,7 +79,7 @@ a { color: var(--green-700); text-decoration: none; }
   font-size: .78rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--sage-500);
+  color: var(--sage-ink);
   margin-bottom: .7rem;
 }
 .hl { color: var(--coral); position: relative; }
@@ -677,7 +679,7 @@ body.more-open { overflow: hidden; }
 .rc-body { flex: 1; min-width: 0; padding: 1.7rem 1.6rem; display: flex; flex-direction: column; }
 .rc-body h3 { margin: 0 0 .5rem; }
 .resource-card p { color: var(--ink-soft); flex: 1; margin: 0 0 1rem; }
-.link-arrow { font-weight: 800; color: var(--coral); display: inline-block; transition: transform .3s var(--ease); }
+.link-arrow { font-weight: 800; color: var(--coral-ink); display: inline-block; transition: transform .3s var(--ease); }
 .resource-card:hover .link-arrow { transform: translateX(5px); }
 
 /* ---------- Resources library ---------- */
@@ -929,7 +931,7 @@ body.more-open { overflow: hidden; }
 
 .tile-body { padding: 1.3rem 1.4rem 1.5rem; }
 .tile-body h3 { margin: 0; font-size: 1.25rem; color: var(--green-900); line-height: 1.15; }
-.tile-cred { display: block; font-size: .82rem; color: var(--coral); font-weight: 800; margin-top: .15rem; }
+.tile-cred { display: block; font-size: .82rem; color: var(--coral-ink); font-weight: 800; margin-top: .15rem; }
 .tile-summary { color: var(--ink-soft); font-size: .92rem; line-height: 1.58; margin: .8rem 0 1rem; }
 .tile-tags { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; padding: 0; }
 .tile-tags li { font-size: .72rem; font-weight: 800; color: var(--green-700); background: #eef3e3; padding: .28rem .6rem; border-radius: 999px; }
@@ -1262,7 +1264,7 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .provider-card .pt-photo{width:158px;height:190px;border-radius:14px;object-fit:cover;background:#eef1e8}
 .pt-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .pt-name{font-family:var(--serif);font-weight:700;color:#1f4d2e;font-size:23px;line-height:1.1;margin:0}
-.pt-cred{color:var(--coral);font-weight:800;font-size:12.5px;margin-top:3px;display:block}
+.pt-cred{color:var(--coral-ink);font-weight:800;font-size:12.5px;margin-top:3px;display:block}
 .pt-badge{font-size:11px;font-weight:800;color:#1f7a5f;background:#dff0e9;border-radius:999px;padding:6px 12px;white-space:nowrap;height:fit-content}
 .pt-statement{color:var(--ink);line-height:1.6;margin:12px 0 14px;font-size:14.5px}
 .pt-meta{display:flex;flex-direction:column;gap:9px;font-size:13px}
