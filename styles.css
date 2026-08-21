@@ -38,8 +38,6 @@
   --ink:       #243027;   /* body text */
   --ink-soft:  #5c6b5f;   /* muted text */
   --white:     #ffffff;
-  /* animated headline word gradient (2.0 feel) — warm/light hues so it stays legible on the dark hero photo */
-  --grad-word: linear-gradient(90deg, var(--coral), var(--yellow), var(--sage-300), var(--coral));
 
   --maxw: 1160px;
   --radius: 18px;
@@ -85,16 +83,6 @@ a { color: var(--green-700); text-decoration: none; }
   margin-bottom: .7rem;
 }
 .hl { color: var(--coral); position: relative; }
-/* color-cycling headline word (from the 2.0 site) */
-.hl-anim {
-  background: var(--grad-word); background-size: 300% 100%;
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-  /* strong dark halo keeps the light gradient legible over any part of the hero photo */
-  text-shadow: 0 1px 3px rgba(8,20,12,.95), 0 0 12px rgba(8,20,12,.6);
-  animation: wordcycle 8s linear infinite;
-}
-@keyframes wordcycle { to { background-position: 300% 0; } }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -1091,8 +1079,6 @@ body.more-open { overflow: hidden; }
   .hero-copy { max-width: none; margin-left: 0; }
   /* photo is now a band on top, so hero text sits on the cream bg: switch to dark, drop the photo shadow */
   .hero-copy h1 { color: var(--green-900); }
-  /* on the cream mobile layout, the light gradient would wash out — keep the word solid coral */
-  .hl-anim { -webkit-text-fill-color: var(--coral); color: var(--coral); background: none; animation: none; text-shadow: none; }
   .hero-copy .lead { color: var(--ink-soft); }
   .hero .eyebrow { color: var(--green-700); }
   .hero-reassure { color: var(--green-700); }
