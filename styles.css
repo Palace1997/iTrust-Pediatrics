@@ -38,6 +38,8 @@
   --ink:       #243027;   /* body text */
   --ink-soft:  #5c6b5f;   /* muted text */
   --white:     #ffffff;
+  /* animated headline word gradient (2.0 feel) — warm/light hues so it stays legible on the dark hero photo */
+  --grad-word: linear-gradient(90deg, var(--coral), var(--yellow), var(--sage-300), var(--coral));
 
   --maxw: 1160px;
   --radius: 18px;
@@ -83,6 +85,16 @@ a { color: var(--green-700); text-decoration: none; }
   margin-bottom: .7rem;
 }
 .hl { color: var(--coral); position: relative; }
+/* color-cycling headline word (from the 2.0 site) */
+.hl-anim {
+  background: var(--grad-word); background-size: 300% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  /* strong dark halo keeps the light gradient legible over any part of the hero photo */
+  text-shadow: 0 1px 3px rgba(8,20,12,.95), 0 0 12px rgba(8,20,12,.6);
+  animation: wordcycle 8s linear infinite;
+}
+@keyframes wordcycle { to { background-position: 300% 0; } }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -124,7 +136,7 @@ a { color: var(--green-700); text-decoration: none; }
 .main-nav { margin-left: auto; }
 .main-nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; }
 .main-nav a, .main-nav .nav-trigger {
-  display: flex; align-items: center; gap: .38rem;
+  display: flex; align-items: center; gap: .5rem;
   padding: .5rem .55rem;
   border-radius: 12px;
   font-weight: 700;
@@ -138,10 +150,10 @@ a { color: var(--green-700); text-decoration: none; }
 
 /* The icon hover animation the user asked for: subtle zoom + fade-in pop */
 .nav-icon {
-  display: inline-flex; width: 19px; height: 19px;
-  color: var(--sage-500);
-  opacity: .55;
-  transform: scale(.82);
+  display: inline-flex; width: 18px; height: 18px;
+  color: currentColor;
+  opacity: 1;
+  transform: scale(1);
   transition: transform .4s var(--ease), opacity .4s var(--ease), color .3s;
 }
 .nav-icon svg { width: 100%; height: 100%; }
@@ -287,8 +299,9 @@ body.more-open { overflow: hidden; }
 /* ---------- Hero ---------- */
 .hero { position: relative; overflow: hidden; padding: clamp(2.5rem, 6vw, 5rem) 0 3.5rem; }
 .hero-blob { position: absolute; border-radius: 50%; filter: blur(10px); opacity: .5; z-index: 0; }
-.hero-blob-1 { width: 420px; height: 420px; background: radial-gradient(circle, #d9e8c4, transparent 70%); top: -120px; right: -80px; }
-.hero-blob-2 { width: 360px; height: 360px; background: radial-gradient(circle, #fbe3cf, transparent 70%); bottom: -120px; left: -100px; }
+.hero-blob-1 { width: 420px; height: 420px; background: radial-gradient(circle, #d9e8c4, transparent 70%); top: -120px; right: -80px; animation: blob-float 7s var(--ease) infinite alternate; }
+.hero-blob-2 { width: 360px; height: 360px; background: radial-gradient(circle, #fbe3cf, transparent 70%); bottom: -120px; left: -100px; animation: blob-float 9s var(--ease) infinite alternate-reverse; }
+@keyframes blob-float { to { transform: translateY(-26px); } }
 .hero-inner { position: relative; z-index: 2; display: block; }
 .hero-copy { max-width: 33rem; margin-left: -7rem; }
 .hero-copy .lead { font-size: 1.25rem; color: rgba(255,252,246,.98); max-width: 34rem; }
@@ -1023,8 +1036,9 @@ body.more-open { overflow: hidden; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.16); font-size: .82rem; color: rgba(255,255,255,.6); }
 
 /* ---------- Reveal-on-scroll ---------- */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal { opacity: 0; transform: translateY(30px) scale(.98); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; } .reveal.d2 { transition-delay: .16s; } .reveal.d3 { transition-delay: .24s; }
 
 /* ---------- Video spotlight ---------- */
 .video-frame { max-width: 880px; margin: 0 auto; }
@@ -1077,6 +1091,8 @@ body.more-open { overflow: hidden; }
   .hero-copy { max-width: none; margin-left: 0; }
   /* photo is now a band on top, so hero text sits on the cream bg: switch to dark, drop the photo shadow */
   .hero-copy h1 { color: var(--green-900); }
+  /* on the cream mobile layout, the light gradient would wash out — keep the word solid coral */
+  .hl-anim { -webkit-text-fill-color: var(--coral); color: var(--coral); background: none; animation: none; text-shadow: none; }
   .hero-copy .lead { color: var(--ink-soft); }
   .hero .eyebrow { color: var(--green-700); }
   .hero-reassure { color: var(--green-700); }
