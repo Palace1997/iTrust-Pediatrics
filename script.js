@@ -769,11 +769,15 @@
   document.querySelectorAll(".contact-form").forEach((form) => {
     if (!form.getAttribute("action")) return; /* not wired — leave alone */
     const btn = form.querySelector('button[type="submit"]');
+    let sending = false;
     form.addEventListener("submit", (e) => {
       e.preventDefault();
+      if (sending) return; /* guard against double submit (rapid click / Enter) */
       if (!form.reportValidity()) return;
       const original = btn ? btn.textContent : "";
+      sending = true;
       if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      const fail = (msg) => { sending = false; showFormError(form, msg, btn, original); };
       fetch(form.action, {
         method: "POST",
         body: new FormData(form),
@@ -782,22 +786,24 @@
         .then((res) => {
           if (res.ok) {
             form.innerHTML =
-              '<div class="form-success" role="status"><strong>Thank you — your request is in.</strong>' +
+              '<div class="form-success" role="status" tabindex="-1"><strong>Thank you — your request is in.</strong>' +
               '<span>A real person from our team will get back to you, usually the same day.</span></div>';
+            const ok = form.querySelector(".form-success");
+            if (ok) ok.focus();
             return;
           }
           return res.json().then(
-            (data) => {
-              const msg = data && data.errors && data.errors.length
-                ? data.errors.map((x) => x.message).join(" ")
-                : "Something went wrong. Please try again, or call us at 864-520-2020.";
-              showFormError(form, msg, btn, original);
-            },
-            () => showFormError(form, "Something went wrong. Please try again, or call us at 864-520-2020.", btn, original)
+            (data) =>
+              fail(
+                data && data.errors && data.errors.length
+                  ? data.errors.map((x) => x.message).join(" ")
+                  : "Something went wrong. Please try again, or call us at 864-520-2020."
+              ),
+            () => fail("Something went wrong. Please try again, or call us at 864-520-2020.")
           );
         })
         .catch(() =>
-          showFormError(form, "We couldn't send that just now. Please check your connection, or call us at 864-520-2020.", btn, original)
+          fail("We couldn't send that just now. Please check your connection, or call us at 864-520-2020.")
         );
     });
   });
