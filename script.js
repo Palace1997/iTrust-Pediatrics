@@ -17,22 +17,62 @@
   onScroll();
 
   /* ---- 2. Reveal on scroll ---- */
-  const reveals = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
+  const reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  const reduceMotion =
+    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reveals.length && !reduceMotion && "IntersectionObserver" in window) {
+    const reveal = (el) => {
+      if (el.classList.contains("in")) return;
+      const delay = parseInt(el.dataset.delay, 10) || 0;
+      if (delay) setTimeout(() => el.classList.add("in"), delay);
+      else el.classList.add("in");
+    };
+    // threshold:0 = fire the moment any sliver enters; reliable on fast scroll
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, i) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // gentle stagger for siblings
-            const delay = entry.target.dataset.delay || (i % 3) * 90;
-            setTimeout(() => entry.target.classList.add("in"), delay);
+            reveal(entry.target);
             io.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" }
     );
     reveals.forEach((el) => io.observe(el));
+
+    /* Backstop: a fast scroll (wheel fling, scrollbar drag, Page Down) can make
+       IntersectionObserver skip an element's "entered" sample. On each scroll,
+       reveal anything already in view that the observer hasn't caught yet. */
+    let ticking = false;
+    const sweep = () => {
+      ticking = false;
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      let remaining = 0;
+      reveals.forEach((el) => {
+        if (el.classList.contains("in")) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.92 && r.bottom > 0) {
+          reveal(el);
+          io.unobserve(el);
+        } else {
+          remaining++;
+        }
+      });
+      if (!remaining) {
+        window.removeEventListener("scroll", onScrollSweep);
+        window.removeEventListener("resize", onScrollSweep);
+      }
+    };
+    const onScrollSweep = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(sweep);
+      }
+    };
+    window.addEventListener("scroll", onScrollSweep, { passive: true });
+    window.addEventListener("resize", onScrollSweep, { passive: true });
+    sweep(); // reveal anything already on screen at load
   } else {
     reveals.forEach((el) => el.classList.add("in"));
   }
