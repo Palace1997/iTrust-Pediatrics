@@ -752,4 +752,54 @@
     document.querySelectorAll(".spotlight-watch").forEach((b) => b.addEventListener("click", play));
   }
 
+  /* ---- 4. Contact form → Formspree (AJAX submit, graceful fallback) ---- */
+  const showFormError = (form, msg, btn, original) => {
+    let el = form.querySelector(".form-error");
+    if (!el) {
+      el = document.createElement("p");
+      el.className = "form-error";
+      el.setAttribute("role", "alert");
+      if (btn) form.insertBefore(el, btn);
+      else form.appendChild(el);
+    }
+    el.textContent = msg;
+    if (btn) { btn.disabled = false; btn.textContent = original; }
+  };
+
+  document.querySelectorAll(".contact-form").forEach((form) => {
+    if (!form.getAttribute("action")) return; /* not wired — leave alone */
+    const btn = form.querySelector('button[type="submit"]');
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      const original = btn ? btn.textContent : "";
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then((res) => {
+          if (res.ok) {
+            form.innerHTML =
+              '<div class="form-success" role="status"><strong>Thank you — your request is in.</strong>' +
+              '<span>A real person from our team will get back to you, usually the same day.</span></div>';
+            return;
+          }
+          return res.json().then(
+            (data) => {
+              const msg = data && data.errors && data.errors.length
+                ? data.errors.map((x) => x.message).join(" ")
+                : "Something went wrong. Please try again, or call us at 864-520-2020.";
+              showFormError(form, msg, btn, original);
+            },
+            () => showFormError(form, "Something went wrong. Please try again, or call us at 864-520-2020.", btn, original)
+          );
+        })
+        .catch(() =>
+          showFormError(form, "We couldn't send that just now. Please check your connection, or call us at 864-520-2020.", btn, original)
+        );
+    });
+  });
+
 })();

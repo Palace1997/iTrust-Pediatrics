@@ -159,34 +159,36 @@
         </ul>
       </div>
 
-      <form class="contact-form reveal" onsubmit="return false;">
+      <form class="contact-form reveal" action="https://formspree.io/f/mdenqepb" method="POST">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" />
+        <input type="hidden" name="_subject" value="New appointment request — itrust Pediatrics" />
         <div class="field">
           <label for="name">Parent / guardian name</label>
-          <input id="name" type="text" placeholder="Your name" required />
+          <input id="name" name="name" type="text" placeholder="Your name" required />
         </div>
         <div class="field-row">
           <div class="field">
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@email.com" required />
+            <input id="email" name="email" type="email" placeholder="you@email.com" required />
           </div>
           <div class="field">
             <label for="phone">Phone</label>
-            <input id="phone" type="tel" placeholder="(000) 000-0000" />
+            <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000" />
           </div>
         </div>
         <div class="field-row">
           <div class="field">
             <label for="childname">Child's first name</label>
-            <input id="childname" type="text" placeholder="Child's first name" />
+            <input id="childname" name="child_first_name" type="text" placeholder="Child's first name" />
           </div>
           <div class="field">
             <label for="childage">Child's age</label>
-            <input id="childage" type="text" placeholder="e.g. 11" />
+            <input id="childage" name="child_age" type="text" placeholder="e.g. 11" />
           </div>
         </div>
         <div class="field">
           <label for="status">Is your child a new or returning patient?</label>
-          <select id="status" required>
+          <select id="status" name="patient_status" required>
             <option value="" disabled selected>Select one</option>
             <option>New patient</option>
             <option>Returning patient</option>
@@ -194,10 +196,10 @@
         </div>
         <div class="field">
           <label for="msg">How can we help?</label>
-          <textarea id="msg" rows="4" placeholder="Tell us a little about your child and what you need…"></textarea>
+          <textarea id="msg" name="message" rows="4" placeholder="Tell us a little about your child and what you need…"></textarea>
         </div>
         <div class="field-consent">
-          <input type="checkbox" id="consent" />
+          <input type="checkbox" id="consent" name="emergency_acknowledged" value="yes" required />
           <label for="consent">I understand this form isn't for emergencies. In a crisis, I'll call or text 988, or call 911.</label>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Request an Appointment</button>
