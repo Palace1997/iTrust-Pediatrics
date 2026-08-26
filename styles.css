@@ -416,6 +416,9 @@ body.more-open { overflow: hidden; }
 .home-contact { padding-top: 70px; }
 .home-contact .section-head h2 { margin-top: 0; }
 .section-tint { background: var(--cream-2); }
+/* soft, edge-fading rule to separate two same-colored sections */
+.section-divider-wrap { width: 100%; padding: 0 1.5rem; box-sizing: border-box; }
+.section-divider { border: 0; height: 1px; margin: 0 auto; max-width: var(--maxw, 1160px); background: linear-gradient(90deg, transparent, rgba(122,155,84,.55), transparent); }
 .section-head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
 /* SEO: inner-page main heading promoted to <h1> - keep the section-heading size, not the hero size */
 .section-head h1 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); letter-spacing: 0; }
