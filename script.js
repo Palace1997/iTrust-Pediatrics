@@ -704,7 +704,7 @@
       if (!data) return;
       currentKey = key;
       eyebrowEl.textContent = "Blog · " + data.title;
-      titleEl.textContent = data.title + " — guides & articles";
+      titleEl.textContent = data.title + ": guides & articles";
       list.innerHTML = data.posts.map((p, i) =>
         '<article class="blog-item"><h4>' + p.t + '</h4><p>' + p.d +
         '</p><a class="blog-read" href="#" data-key="' + key + '" data-idx="' + i + '">Read article →</a></article>'
@@ -817,7 +817,7 @@
   };
 
   document.querySelectorAll(".contact-form").forEach((form) => {
-    if (!form.getAttribute("action")) return; /* not wired — leave alone */
+    if (!form.getAttribute("action")) return; /* not wired - leave alone */
     const btn = form.querySelector('button[type="submit"]');
     let sending = false;
     form.addEventListener("submit", (e) => {
@@ -837,7 +837,7 @@
           if (res.ok) {
             form.classList.add("is-sent");
             form.innerHTML =
-              '<div class="form-success" role="status" tabindex="-1"><strong>Thank you — your request is in.</strong>' +
+              '<div class="form-success" role="status" tabindex="-1"><strong>Thank you. Your request is in.</strong>' +
               '<span>A real person from our team will get back to you, usually the same day.</span></div>';
             const ok = form.querySelector(".form-success");
             if (ok) ok.focus();
