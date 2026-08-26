@@ -114,9 +114,7 @@ a { color: var(--green-700); text-decoration: none; }
 .site-header.scrolled { box-shadow: var(--shadow-sm); background: rgba(222, 208, 178, .97); }
 .header-inner { display: flex; align-items: center; gap: 1rem; height: 92px; max-width: 1340px; }
 .brand-logo {
-  height: 88px; width: auto; display: block;
-  /* blends the logo's white background into the cream header so no boxy edge shows */
-  mix-blend-mode: multiply;
+  height: 52px; width: auto; display: block;
   transition: transform .4s var(--ease);
 }
 .brand:hover .brand-logo { transform: scale(1.05); }
