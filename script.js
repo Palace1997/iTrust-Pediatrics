@@ -825,6 +825,7 @@
       })
         .then((res) => {
           if (res.ok) {
+            form.classList.add("is-sent");
             form.innerHTML =
               '<div class="form-success" role="status" tabindex="-1"><strong>Thank you — your request is in.</strong>' +
               '<span>A real person from our team will get back to you, usually the same day.</span></div>';

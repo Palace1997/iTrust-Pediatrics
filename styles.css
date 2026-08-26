@@ -973,6 +973,7 @@ body.more-open { overflow: hidden; }
 .field-consent input { width: 18px; height: 18px; margin-top: .15rem; flex: none; accent-color: var(--green-600); }
 .field-consent label { font-size: .85rem; color: var(--ink-soft); font-weight: 600; line-height: 1.4; margin: 0; }
 .form-error { margin: 0 0 .9rem; color: var(--coral-ink); font-weight: 700; font-size: .92rem; line-height: 1.4; }
+.contact-form.is-sent { display: flex; align-items: center; justify-content: center; }
 .form-success { display: flex; flex-direction: column; gap: .5rem; text-align: center; padding: 1.6rem 1rem; }
 .form-success:focus { outline: none; }
 .form-success strong { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; color: var(--green-900); }
