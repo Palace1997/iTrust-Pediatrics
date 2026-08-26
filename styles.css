@@ -974,6 +974,31 @@ body.more-open { overflow: hidden; }
 .field-consent label { font-size: .85rem; color: var(--ink-soft); font-weight: 600; line-height: 1.4; margin: 0; }
 .form-error { margin: 0 0 .9rem; color: var(--coral-ink); font-weight: 700; font-size: .92rem; line-height: 1.4; }
 .contact-form.is-sent { display: flex; align-items: center; justify-content: center; }
+
+/* ---- "Signs it may be time to reach out" accordion ---- */
+.signs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.4rem; align-items: start; max-width: 980px; margin: 0 auto; }
+.signs-item { background: var(--white); border: 1px solid rgba(122,155,84,.2); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow .3s, transform .3s var(--ease); }
+.signs-item:hover { box-shadow: var(--shadow-md); }
+.signs-q { width: 100%; box-sizing: border-box; display: flex; align-items: center; gap: .85rem; text-align: left; cursor: pointer; background: transparent; border: 0; font-family: var(--sans); font-weight: 700; font-size: 1rem; color: var(--green-900); padding: 1rem 1.15rem; }
+.signs-title { flex: 1; }
+.signs-ic { flex: none; width: 36px; height: 36px; border-radius: 50%; background: #eef3e2; color: var(--green-700); display: inline-flex; align-items: center; justify-content: center; }
+.signs-ic svg { width: 20px; height: 20px; }
+.signs-chev { flex: none; display: inline-flex; color: var(--green-600); transition: transform .35s var(--ease), color .25s; }
+.signs-chev svg { width: 20px; height: 20px; }
+.signs-item.open .signs-chev { transform: rotate(180deg); color: var(--coral); }
+.signs-q:focus-visible { outline: none; box-shadow: inset 0 0 0 2px rgba(42,157,143,.5); }
+.signs-a-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s var(--ease); }
+.signs-item.open .signs-a-wrap { grid-template-rows: 1fr; }
+.signs-a { overflow: hidden; min-height: 0; }
+.signs-a ul { margin: 0; padding: .1rem 1.15rem 1.2rem; list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+.signs-a li { position: relative; padding-left: 1.35rem; color: var(--ink-soft); font-size: .95rem; line-height: 1.5; }
+.signs-a li::before { content: ""; position: absolute; left: 0; top: .5em; width: 7px; height: 7px; border-radius: 50%; background: var(--sage-500); }
+.signs-note { margin: 0 1.15rem 1.2rem; padding: .85rem .95rem; background: #fdeee7; border-radius: 10px; font-size: .88rem; color: var(--ink); line-height: 1.5; }
+.signs-note a { color: var(--coral-ink); font-weight: 800; text-decoration: underline; }
+.signs-cta { max-width: 760px; margin: 2.4rem auto 0; text-align: center; }
+.signs-cta p { margin: 0 0 1.2rem; color: var(--ink); font-size: 1.05rem; line-height: 1.55; }
+.signs-cta strong { color: var(--green-900); }
+@media (max-width: 640px) { .signs-grid { grid-template-columns: 1fr; } }
 .form-success { display: flex; flex-direction: column; gap: .5rem; text-align: center; padding: 1.6rem 1rem; }
 .form-success:focus { outline: none; }
 .form-success strong { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; color: var(--green-900); }

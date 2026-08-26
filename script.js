@@ -363,6 +363,16 @@
     });
   });
 
+  /* ---- 2g3. "Signs it may be time to reach out" accordion ---- */
+  document.querySelectorAll("#signs .signs-item").forEach((item) => {
+    const q = item.querySelector(".signs-q");
+    if (!q) return;
+    q.addEventListener("click", () => {
+      const open = item.classList.toggle("open");
+      q.setAttribute("aria-expanded", String(open));
+    });
+  });
+
   /* ---- 2h. FAQ background, fixed photo + gentle cursor parallax ---- */
   const faqSection = document.getElementById("faq");
   const faqPhoto = document.getElementById("faq-rotator");
