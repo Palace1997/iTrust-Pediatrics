@@ -1021,17 +1021,20 @@ body.more-open { overflow: hidden; }
 @media (max-width: 640px) { .signs-grid { grid-template-columns: 1fr; } }
 
 /* Signs — snapshot layout (photo + stacked panels) */
-.signs-layout { display: grid; grid-template-columns: .84fr 1.16fr; gap: 2.8rem; max-width: 1060px; margin: 0 auto; align-items: center; }
-.signs-snap { margin: 0; background: #fff; padding: .7rem .7rem 2.3rem; border-radius: 7px; box-shadow: 0 20px 46px rgba(31,77,46,.20); transform: rotate(-3deg); }
+.signs-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(1.6rem, 3vw, 2.6rem); align-items: center; max-width: 1080px; margin: 0 auto; padding: clamp(1.5rem, 3vw, 2.6rem); background: var(--cream-2); border-radius: 26px; box-shadow: 0 16px 44px rgba(31,77,46,.08); }
+.signs-snap { margin: 0; background: #fff; padding: .7rem .7rem 2.3rem; border-radius: 7px; box-shadow: 0 20px 46px rgba(31,77,46,.18); transform: rotate(-3deg); }
 .signs-snap img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 60% 50%; border-radius: 3px; }
-.signs-snap figcaption { text-align: center; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.15rem; color: var(--ink-soft); margin-top: .95rem; }
+.signs-snap figcaption { text-align: center; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.12rem; color: var(--ink-soft); margin-top: .9rem; }
 .signs-main { min-width: 0; }
-.signs-head { text-align: left; max-width: none; margin: 0 0 1.5rem; }
+.signs-head { text-align: left; max-width: none; margin: 0 0 1.4rem; }
+.signs-head h2 { font-size: clamp(1.75rem, 2.7vw, 2.25rem); line-height: 1.12; margin: .4rem 0 0; }
+.signs-br { display: inline; }
 .signs-main .signs-grid { grid-template-columns: 1fr; gap: .8rem; max-width: none; margin: 0; }
 @media (max-width: 860px) {
-  .signs-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .signs-snap { max-width: 340px; margin: 0 auto; transform: rotate(-2deg); }
+  .signs-layout { grid-template-columns: 1fr; gap: 1.8rem; }
+  .signs-snap { max-width: 320px; margin: 0 auto; transform: rotate(-2deg); }
   .signs-head { text-align: center; }
+  .signs-br { display: none; }
 }
 .form-success { display: flex; flex-direction: column; gap: .5rem; text-align: center; padding: 1.6rem 1rem; }
 .form-success:focus { outline: none; }
