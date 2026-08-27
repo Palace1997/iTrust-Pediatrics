@@ -1021,8 +1021,9 @@ body.more-open { overflow: hidden; }
 @media (max-width: 640px) { .signs-grid { grid-template-columns: 1fr; } }
 
 /* Signs — snapshot layout (photo + stacked panels) */
-.signs-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(1.6rem, 3vw, 2.6rem); align-items: center; max-width: 1080px; margin: 0 auto; padding: clamp(1.5rem, 3vw, 2.6rem); background: var(--cream-2); border-radius: 26px; box-shadow: 0 16px 44px rgba(31,77,46,.08); }
-.signs-snap { margin: 0; background: #fff; padding: .7rem .7rem 2.3rem; border-radius: 7px; box-shadow: 0 20px 46px rgba(31,77,46,.18); transform: rotate(-3deg); }
+#signs { background: var(--cream-2); }
+.signs-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(1.6rem, 3vw, 2.6rem); align-items: center; max-width: 1080px; margin: 0 auto; padding: clamp(1.5rem, 3vw, 2.6rem); background: var(--cream); border: 1px solid rgba(31,77,46,.06); border-radius: 28px; box-shadow: 0 18px 46px rgba(31,77,46,.10); }
+.signs-snap { margin: 0; background: #fff; padding: .7rem .7rem 2.3rem; border-radius: 7px; box-shadow: 0 20px 46px rgba(31,77,46,.18); transform: rotate(-3.5deg); }
 .signs-snap img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 60% 50%; border-radius: 3px; }
 .signs-snap figcaption { text-align: center; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.12rem; color: var(--ink-soft); margin-top: .9rem; }
 .signs-main { min-width: 0; }
