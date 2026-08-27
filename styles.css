@@ -418,8 +418,8 @@ body.more-open { overflow: hidden; }
 /* soft photo backdrop behind the contact section (cream overlay keeps text/form readable) */
 #contact { background-image: linear-gradient(rgba(251,247,238,.5), rgba(251,247,238,.5)), url("assets/contact-bg.jpg?v=2"); background-size: 100% 100%, auto 135%; background-position: 50% 100%; background-repeat: no-repeat; }
 .section-tint { background: var(--cream-2); }
-/* Care Team steps down from the tinted Signs section with a soft blend */
-#team { background: linear-gradient(to bottom, var(--cream-2) 0, var(--cream) 120px); }
+/* Care Team: separator line + soft under-shadow, stepping to the lighter cream */
+#team { background: var(--cream); border-top: 1px solid rgba(31,77,46,.14); box-shadow: inset 0 18px 26px -20px rgba(31,77,46,.16); }
 .section-head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
 /* SEO: inner-page main heading promoted to <h1> - keep the section-heading size, not the hero size */
 .section-head h1 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); letter-spacing: 0; }
@@ -1368,4 +1368,3 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .main-nav ul{gap:30px}
 .header-cta{margin-left:calc(30px - 1rem)}
 
-/* rebuild 1787854281 */
