@@ -868,10 +868,6 @@
           </div>
         </figure>
         <!-- TODO at launch: set data-embed on #spotlightVideo to the real video URL; optionally swap the attribution above for a specific provider's name and title. -->
-        <button class="spotlight-watch" type="button" aria-label="Play the video message">
-          <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
-          Watch the message
-        </button>
       </div>
     </div>
   </section>
@@ -1198,6 +1194,30 @@
       <div class="blog-list" id="blogList"></div>
     </div>
   </div>
+
+  <!-- TEMP: spotlight top-gap tuner (remove after baking the value) -->
+  <div id="spotGapSlider" style="position:fixed;right:16px;bottom:16px;z-index:99999;background:#fff;border:1px solid #cbd3c2;border-radius:12px;padding:12px 14px;box-shadow:0 10px 30px rgba(31,77,46,.28);font-family:system-ui,sans-serif;font-size:13px;color:#243027;">
+    <label style="display:block;margin-bottom:7px;font-weight:700;">Gap above &ldquo;Voices that matter&rdquo;: <span id="spotGapVal">?</span>px</label>
+    <input type="range" id="spotGapRange" min="0" max="200" step="2" style="width:220px;vertical-align:middle;" />
+    <button id="spotGapJump" type="button" style="margin-left:8px;font-size:12px;cursor:pointer;">Jump to it</button>
+  </div>
+  <script>
+    (function () {
+      var sec = document.getElementById('spotlight');
+      var range = document.getElementById('spotGapRange');
+      var val = document.getElementById('spotGapVal');
+      if (!sec || !range) return;
+      var cur = Math.round(parseFloat(getComputedStyle(sec).paddingTop) || 0);
+      range.value = cur; val.textContent = cur;
+      range.addEventListener('input', function () {
+        sec.style.paddingTop = range.value + 'px';
+        val.textContent = range.value;
+      });
+      document.getElementById('spotGapJump').addEventListener('click', function () {
+        sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    })();
+  </script>
 
   <script src="script.js"></script>
 </body>
