@@ -298,6 +298,27 @@
     </div>
   </footer>
 
+  <!-- TEMP: contact background-position tuner (remove after baking) -->
+  <div id="cbgSlider" style="position:fixed;right:16px;bottom:16px;z-index:99999;background:#fff;border:1px solid #cbd3c2;border-radius:12px;padding:12px 14px;box-shadow:0 10px 30px rgba(31,77,46,.28);font-family:system-ui,sans-serif;font-size:13px;color:#243027;width:240px;">
+    <div style="font-weight:700;margin-bottom:8px;">Contact image position</div>
+    <label style="display:block;margin-bottom:4px;">Horizontal: <span id="cbgX">50</span>%</label>
+    <input type="range" id="cbgXr" min="0" max="100" value="50" style="width:100%;margin-bottom:8px;" />
+    <label style="display:block;margin-bottom:4px;">Vertical: <span id="cbgY">50</span>%</label>
+    <input type="range" id="cbgYr" min="0" max="100" value="50" style="width:100%;" />
+    <button id="cbgJump" type="button" style="margin-top:8px;font-size:12px;cursor:pointer;">Jump to it</button>
+  </div>
+  <script>
+    (function () {
+      var sec = document.getElementById('contact');
+      var xr = document.getElementById('cbgXr'), yr = document.getElementById('cbgYr');
+      var xv = document.getElementById('cbgX'), yv = document.getElementById('cbgY');
+      if (!sec) return;
+      function apply() { sec.style.backgroundPosition = xr.value + '% ' + yr.value + '%'; xv.textContent = xr.value; yv.textContent = yr.value; }
+      xr.addEventListener('input', apply); yr.addEventListener('input', apply);
+      document.getElementById('cbgJump').addEventListener('click', function () { sec.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    })();
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>

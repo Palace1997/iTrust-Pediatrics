@@ -1026,7 +1026,7 @@ body.more-open { overflow: hidden; }
 .form-note { font-size: .82rem; color: var(--ink-soft); text-align: center; margin: .9rem 0 0; }
 
 /* ---------- Footer ---------- */
-.site-footer { background: var(--green-900); color: rgba(255,255,255,.82); padding: 3.5rem 0 1.8rem; margin-top: 2rem; }
+.site-footer { background: var(--green-900); color: rgba(255,255,255,.82); padding: 3.5rem 0 1.8rem; margin-top: 0; }
 .footer-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
 .footer-logo { display: block; height: 56px; width: auto; margin-bottom: 1.1rem; }
 .footer-brand p { color: rgba(255,255,255,.72); max-width: 22rem; }
