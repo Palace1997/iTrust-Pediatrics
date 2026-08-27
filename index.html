@@ -1202,6 +1202,8 @@
     <input type="range" id="cbgXr" min="0" max="100" value="50" style="width:100%;margin-bottom:8px;" />
     <label style="display:block;margin-bottom:4px;">Vertical: <span id="cbgY">50</span>%</label>
     <input type="range" id="cbgYr" min="0" max="100" value="50" style="width:100%;" />
+    <label style="display:block;margin:8px 0 4px;">Overlay lightness: <span id="cbgO">84</span>%</label>
+    <input type="range" id="cbgOr" min="30" max="98" value="84" style="width:100%;" />
     <button id="cbgJump" type="button" style="margin-top:8px;font-size:12px;cursor:pointer;">Jump to it</button>
   </div>
   <script>
@@ -1212,6 +1214,9 @@
       if (!sec) return;
       function apply() { sec.style.backgroundPosition = xr.value + '% ' + yr.value + '%'; xv.textContent = xr.value; yv.textContent = yr.value; }
       xr.addEventListener('input', apply); yr.addEventListener('input', apply);
+      var or_ = document.getElementById('cbgOr'), ov = document.getElementById('cbgO');
+      function applyO() { var o = (or_.value/100).toFixed(2); sec.style.backgroundImage = 'linear-gradient(rgba(251,247,238,'+o+'), rgba(251,247,238,'+o+')), url("assets/contact-bg.jpg?v=2")'; ov.textContent = or_.value; }
+      or_.addEventListener('input', applyO);
       document.getElementById('cbgJump').addEventListener('click', function () { sec.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     })();
   </script>
