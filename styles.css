@@ -1019,6 +1019,20 @@ body.more-open { overflow: hidden; }
 .signs-cta p { margin: 0 0 1.2rem; color: var(--ink); font-size: 1.05rem; line-height: 1.55; }
 .signs-cta strong { color: var(--green-900); }
 @media (max-width: 640px) { .signs-grid { grid-template-columns: 1fr; } }
+
+/* Signs — snapshot layout (photo + stacked panels) */
+.signs-layout { display: grid; grid-template-columns: .84fr 1.16fr; gap: 2.8rem; max-width: 1060px; margin: 0 auto; align-items: center; }
+.signs-snap { margin: 0; background: #fff; padding: .7rem .7rem 2.3rem; border-radius: 7px; box-shadow: 0 20px 46px rgba(31,77,46,.20); transform: rotate(-3deg); }
+.signs-snap img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 60% 50%; border-radius: 3px; }
+.signs-snap figcaption { text-align: center; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.15rem; color: var(--ink-soft); margin-top: .95rem; }
+.signs-main { min-width: 0; }
+.signs-head { text-align: left; max-width: none; margin: 0 0 1.5rem; }
+.signs-main .signs-grid { grid-template-columns: 1fr; gap: .8rem; max-width: none; margin: 0; }
+@media (max-width: 860px) {
+  .signs-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .signs-snap { max-width: 340px; margin: 0 auto; transform: rotate(-2deg); }
+  .signs-head { text-align: center; }
+}
 .form-success { display: flex; flex-direction: column; gap: .5rem; text-align: center; padding: 1.6rem 1rem; }
 .form-success:focus { outline: none; }
 .form-success strong { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; color: var(--green-900); }
