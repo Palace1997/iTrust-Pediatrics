@@ -364,14 +364,49 @@
   });
 
   /* ---- 2g3. "Signs it may be time to reach out" accordion ---- */
-  document.querySelectorAll("#signs .signs-item").forEach((item) => {
-    const q = item.querySelector(".signs-q");
-    if (!q) return;
-    q.addEventListener("click", () => {
-      const open = item.classList.toggle("open");
-      q.setAttribute("aria-expanded", String(open));
+  const signsSection = document.getElementById("signs");
+  if (signsSection) {
+    const signsItems = Array.prototype.slice.call(signsSection.querySelectorAll(".signs-item"));
+    const closeAllSigns = () => {
+      signsItems.forEach((item) => {
+        if (item.classList.contains("open")) {
+          item.classList.remove("open");
+          const b = item.querySelector(".signs-q");
+          if (b) b.setAttribute("aria-expanded", "false");
+        }
+      });
+    };
+    signsItems.forEach((item) => {
+      const q = item.querySelector(".signs-q");
+      if (!q) return;
+      q.addEventListener("click", () => {
+        const open = item.classList.toggle("open");
+        q.setAttribute("aria-expanded", String(open));
+      });
     });
-  });
+    /* Auto-close any open panel once the section scrolls out of view.
+       IntersectionObserver is the primary path; a rAF-throttled scroll/resize
+       backstop covers fast scrolls and environments where IO lags. */
+    const maybeCloseSigns = () => {
+      const r = signsSection.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (r.bottom <= 0 || r.top >= vh) closeAllSigns();
+    };
+    if ("IntersectionObserver" in window) {
+      const signsIO = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (!e.isIntersecting) closeAllSigns(); });
+      }, { threshold: 0 });
+      signsIO.observe(signsSection);
+    }
+    let signsTick = false;
+    const onSignsScroll = () => {
+      if (signsTick) return;
+      signsTick = true;
+      requestAnimationFrame(() => { signsTick = false; maybeCloseSigns(); });
+    };
+    window.addEventListener("scroll", onSignsScroll, { passive: true });
+    window.addEventListener("resize", onSignsScroll, { passive: true });
+  }
 
   /* ---- 2h. FAQ background, fixed photo + gentle cursor parallax ---- */
   const faqSection = document.getElementById("faq");
