@@ -353,15 +353,48 @@
     });
   });
 
-  /* ---- 2g2. Common Concerns, click a condition to expand its detail ---- */
-  document.querySelectorAll("#concerns .concern").forEach((item) => {
-    const q = item.querySelector(".concern-q");
-    if (!q) return;
-    q.addEventListener("click", () => {
-      const open = item.classList.toggle("open");
-      q.setAttribute("aria-expanded", String(open));
+  /* ---- 2g2. Common Concerns / Clinical Services: click to expand, auto-close on scroll-away ---- */
+  const concernsSection = document.getElementById("concerns");
+  if (concernsSection) {
+    const concernItems = Array.prototype.slice.call(concernsSection.querySelectorAll(".concern"));
+    const closeAllConcerns = () => {
+      concernItems.forEach((item) => {
+        if (item.classList.contains("open")) {
+          item.classList.remove("open");
+          const b = item.querySelector(".concern-q");
+          if (b) b.setAttribute("aria-expanded", "false");
+        }
+      });
+    };
+    concernItems.forEach((item) => {
+      const q = item.querySelector(".concern-q");
+      if (!q) return;
+      q.addEventListener("click", () => {
+        const open = item.classList.toggle("open");
+        q.setAttribute("aria-expanded", String(open));
+      });
     });
-  });
+    /* Auto-close any open panel once the section scrolls out of view */
+    const maybeCloseConcerns = () => {
+      const r = concernsSection.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (r.bottom <= 0 || r.top >= vh) closeAllConcerns();
+    };
+    if ("IntersectionObserver" in window) {
+      const concernsIO = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (!e.isIntersecting) closeAllConcerns(); });
+      }, { threshold: 0 });
+      concernsIO.observe(concernsSection);
+    }
+    let concernsTick = false;
+    const onConcernsScroll = () => {
+      if (concernsTick) return;
+      concernsTick = true;
+      requestAnimationFrame(() => { concernsTick = false; maybeCloseConcerns(); });
+    };
+    window.addEventListener("scroll", onConcernsScroll, { passive: true });
+    window.addEventListener("resize", onConcernsScroll, { passive: true });
+  }
 
   /* ---- 2g3. "Signs it may be time to reach out" accordion ---- */
   const signsSection = document.getElementById("signs");
