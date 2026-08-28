@@ -343,15 +343,48 @@
     }
   }
 
-  /* ---- 2g. FAQ, click a question bar to reveal its answer (each independent) ---- */
-  document.querySelectorAll("#faq .faq-bar").forEach((bar) => {
-    const q = bar.querySelector(".faq-q");
-    if (!q) return;
-    q.addEventListener("click", () => {
-      const open = bar.classList.toggle("open");
-      q.setAttribute("aria-expanded", String(open));
+  /* ---- 2g. FAQ, click a question bar to reveal its answer (each independent), auto-close on scroll-away ---- */
+  const faqSectionEl = document.getElementById("faq");
+  if (faqSectionEl) {
+    const faqBars = Array.prototype.slice.call(faqSectionEl.querySelectorAll(".faq-bar"));
+    const closeAllFaq = () => {
+      faqBars.forEach((bar) => {
+        if (bar.classList.contains("open")) {
+          bar.classList.remove("open");
+          const b = bar.querySelector(".faq-q");
+          if (b) b.setAttribute("aria-expanded", "false");
+        }
+      });
+    };
+    faqBars.forEach((bar) => {
+      const q = bar.querySelector(".faq-q");
+      if (!q) return;
+      q.addEventListener("click", () => {
+        const open = bar.classList.toggle("open");
+        q.setAttribute("aria-expanded", String(open));
+      });
     });
-  });
+    /* Auto-close any open question once the section scrolls out of view */
+    const maybeCloseFaq = () => {
+      const r = faqSectionEl.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (r.bottom <= 0 || r.top >= vh) closeAllFaq();
+    };
+    if ("IntersectionObserver" in window) {
+      const faqIO = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (!e.isIntersecting) closeAllFaq(); });
+      }, { threshold: 0 });
+      faqIO.observe(faqSectionEl);
+    }
+    let faqTick = false;
+    const onFaqScroll = () => {
+      if (faqTick) return;
+      faqTick = true;
+      requestAnimationFrame(() => { faqTick = false; maybeCloseFaq(); });
+    };
+    window.addEventListener("scroll", onFaqScroll, { passive: true });
+    window.addEventListener("resize", onFaqScroll, { passive: true });
+  }
 
   /* ---- 2g2. Common Concerns / Clinical Services: click to expand, auto-close on scroll-away ---- */
   const concernsSection = document.getElementById("concerns");
