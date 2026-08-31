@@ -114,7 +114,7 @@
       (entries) => entries.forEach((e) => { if (e.isIntersecting) swap(); }),
       { threshold: 0.45 }
     );
-    rotObs.observe(rotator.closest(".about-photo"));
+    rotObs.observe(rotator.closest("figure") || rotator);
   }
 
   /* ---- 2c. Value-pill explainers (right-click to expound) ---- */
