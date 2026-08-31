@@ -494,11 +494,23 @@ a.fam-brand:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .about-head h2 { font-size: clamp(1.55rem, 2.6vw, 2.1rem); text-wrap: balance; }
 .about-banner { margin: 0 auto clamp(1.6rem,3vw,2.4rem); max-width: 1040px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); }
 .about-banner img { display: block; width: 100%; height: clamp(200px, 30vw, 330px); object-fit: cover; object-position: center 32%; }
-.about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 1040px; margin: 0 auto clamp(1.4rem,2.6vw,2rem); }
-.about-card { background: var(--white); border: 1px solid rgba(122,155,84,.2); border-radius: 16px; padding: 1.5rem 1.5rem 1.6rem; box-shadow: var(--shadow-sm); }
-.about-card h3 { margin: 0 0 .5rem; font-family: var(--serif); font-weight: 600; font-size: 1.2rem; color: var(--green-900); }
-.about-card p { margin: 0; color: var(--ink-soft); font-size: .97rem; line-height: 1.6; }
-.about-card a { color: var(--coral-ink); font-weight: 700; text-decoration: underline; }
+.about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 1040px; margin: 0 auto clamp(1.4rem,2.6vw,2rem); align-items: stretch; }
+.about-card { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 330px; background: var(--white); border: 1px solid rgba(122,155,84,.22); border-radius: 16px; padding: 1.7rem 1.5rem; box-shadow: var(--shadow-sm); cursor: default; outline: none; transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s; }
+.about-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--sage-500), var(--green-600)); transform: scaleX(0); transition: transform .35s var(--ease); }
+.about-card:hover, .about-card:focus-within { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: rgba(122,155,84,.5); }
+.about-card:hover::before, .about-card:focus-within::before { transform: scaleX(1); }
+.ac-icon { width: 52px; height: 52px; flex: none; border-radius: 50%; background: #eef3e2; color: var(--green-700); display: flex; align-items: center; justify-content: center; margin-bottom: .9rem; transition: transform .3s var(--ease), background .3s, color .3s; }
+.ac-icon svg { width: 26px; height: 26px; }
+.about-card:hover .ac-icon, .about-card:focus-within .ac-icon { transform: scale(1.08); background: var(--green-700); color: #fff; }
+.about-card h3 { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 1.3rem; color: var(--green-900); }
+.ac-body { margin: 0; max-height: 0; opacity: 0; overflow: hidden; color: var(--ink-soft); font-size: .97rem; line-height: 1.6; transition: max-height .5s var(--ease), opacity .4s ease, margin-top .4s var(--ease); }
+.about-card:hover .ac-body, .about-card:focus-within .ac-body { max-height: 280px; opacity: 1; margin-top: .85rem; }
+.ac-body a { color: var(--coral-ink); font-weight: 700; text-decoration: underline; }
+.ac-hint { display: inline-flex; align-items: center; gap: .35rem; margin-top: .75rem; font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sage-ink); max-height: 32px; opacity: .85; transition: opacity .3s ease, max-height .35s var(--ease), margin-top .35s; }
+.ac-hint svg { width: 14px; height: 14px; animation: ac-bob 1.8s ease-in-out infinite; }
+.about-card:hover .ac-hint, .about-card:focus-within .ac-hint { opacity: 0; max-height: 0; margin-top: 0; }
+@keyframes ac-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+@media (prefers-reduced-motion: reduce) { .ac-hint svg { animation: none; } }
 .about-care { max-width: 1040px; margin: 0 auto; background: var(--cream-2); border-radius: 18px; padding: clamp(1.5rem,3vw,2.2rem); }
 .about-care .mh-title { font-size: 1.4rem; }
 .about-care .mh-intro { margin-top: .5rem; }
@@ -509,6 +521,10 @@ a.fam-brand:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 @media (max-width: 820px) {
   .about-cards { grid-template-columns: 1fr; }
   .about-care .mh-points { grid-template-columns: 1fr; }
+  .about-card { min-height: 0; justify-content: flex-start; align-items: flex-start; text-align: left; }
+  .about-card .ac-body { max-height: none; opacity: 1; margin-top: .7rem; overflow: visible; }
+  .about-card .ac-hint { display: none; }
+  .about-card::before { transform: scaleX(1); }
 }
 
 /* "Why families trust us" panel */
