@@ -437,6 +437,26 @@ body.more-open { overflow: hidden; }
 .htk-cta { display: flex; flex-direction: column; align-items: center; gap: .75rem; text-align: center; }
 .htk-note { font-size: .9rem; color: var(--ink-soft); font-style: italic; }
 
+/* iTrust family band (mental health across the lifespan) */
+.itrust-family { background: var(--cream-2); border-top: 1px solid rgba(31,77,46,.08); padding: clamp(3rem,6vw,4.5rem) 0; text-align: center; }
+.fam-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--sage-ink); margin: 0 0 .7rem; }
+.fam-h { font-family: var(--serif); font-weight: 600; font-size: clamp(1.5rem,2.8vw,2.1rem); color: var(--green-900); margin: 0 0 .8rem; text-wrap: balance; }
+.fam-lead { max-width: 62ch; margin: 0 auto 2.2rem; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.6; }
+.fam-lead a { color: var(--coral-ink); font-weight: 600; text-decoration: underline; }
+.fam-road { display: flex; flex-wrap: wrap; align-items: stretch; justify-content: center; gap: .9rem; }
+.fam-brand { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .65rem; background: #fff; border: 1px solid rgba(31,77,46,.1); border-radius: 16px; padding: 1.3rem 1.6rem; min-width: 210px; text-decoration: none; box-shadow: var(--shadow-sm); transition: transform .25s var(--ease), box-shadow .25s; }
+a.fam-brand:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.fam-brand img { max-height: 40px; max-width: 160px; width: auto; height: auto; object-fit: contain; display: block; }
+.fam-brand.is-here { border-color: var(--sage-500); border-width: 2px; }
+.fam-age { font-size: .82rem; font-weight: 600; color: var(--green-700); }
+.fam-here { font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #fff; background: var(--sage-500); padding: 2px 9px; border-radius: 999px; }
+.fam-arrow { display: flex; align-items: center; color: var(--sage-500); font-size: 1.5rem; font-weight: 700; }
+@media (max-width: 680px) {
+  .fam-road { flex-direction: column; align-items: center; }
+  .fam-brand { width: 100%; max-width: 340px; }
+  .fam-arrow { transform: rotate(90deg); }
+}
+
 /* About */
 /* 2x2 grid: row 1 = photo / intro text, row 2 = value bars / highlights.
    Both groups share row 2, so their first items (top) and last items (bottom)
