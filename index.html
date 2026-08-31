@@ -1205,5 +1205,36 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- TEMP: About banner image tuner (remove after baking) -->
+  <div id="bannerTuner" style="position:fixed;bottom:16px;right:16px;z-index:99999;background:#fff;border:1px solid #cbb;border-radius:12px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.25);font:13px/1.4 -apple-system,system-ui,sans-serif;width:250px;color:#213a29">
+    <div style="font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center">About banner tuner <button id="tunerClose" style="border:0;background:#eee;border-radius:6px;cursor:pointer;font-size:14px;padding:2px 8px">&times;</button></div>
+    <label style="display:block;margin:8px 0 2px">Up / Down: <b id="vY">42</b>%</label>
+    <input type="range" id="sY" min="0" max="100" value="42" step="1" style="width:100%">
+    <label style="display:block;margin:8px 0 2px">Left / Right: <b id="vX">50</b>%</label>
+    <input type="range" id="sX" min="0" max="100" value="50" step="1" style="width:100%">
+    <label style="display:block;margin:8px 0 2px">Height: <b id="vH">330</b>px</label>
+    <input type="range" id="sH" min="180" max="560" value="330" step="2" style="width:100%">
+    <div id="tunerOut" style="margin-top:10px;padding:6px 8px;background:#f4efe4;border-radius:6px;font-family:ui-monospace,monospace;font-size:11px;word-break:break-all"></div>
+    <div style="margin-top:6px;font-size:11px;color:#777">Tell Claude these two values.</div>
+  </div>
+  <script>
+  (function(){
+    var img=document.querySelector('.about-banner img'); if(!img) return;
+    var sY=document.getElementById('sY'),sX=document.getElementById('sX'),sH=document.getElementById('sH');
+    function upd(){
+      var x=sX.value,y=sY.value,h=sH.value;
+      document.getElementById('vX').textContent=x;
+      document.getElementById('vY').textContent=y;
+      document.getElementById('vH').textContent=h;
+      img.style.objectPosition=x+'% '+y+'%';
+      img.style.height=h+'px';
+      document.getElementById('tunerOut').textContent='position '+x+'% '+y+'%  ·  height '+h+'px';
+    }
+    [sX,sY,sH].forEach(function(s){s.addEventListener('input',upd)});
+    document.getElementById('tunerClose').addEventListener('click',function(){document.getElementById('bannerTuner').style.display='none';});
+    upd();
+  })();
+  </script>
 </body>
 </html>
