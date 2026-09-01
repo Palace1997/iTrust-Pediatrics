@@ -443,6 +443,8 @@ a.fam-cube:hover { transform: translate(6px, 6px); box-shadow: 3px 3px 0 #173a22
 .fam-cube.fam-well .fam-cap { background: #3f7d4c; }
 .fam-cube.fam-cares .fam-cap { background: #7d8a4a; }
 .fam-cap img { max-height: 52px; max-width: 180px; width: auto; height: auto; object-fit: contain; filter: brightness(0) invert(1); display: block; }
+/* Pediatrics (this site) tile uses the full-color dark-bg logo, like the footer */
+.fam-cube.is-here .fam-cap img { filter: none; max-height: 56px; }
 .fam-here { position: absolute; top: 16px; right: 16px; font-size: .64rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: #fff; background: var(--coral); padding: 5px 11px; border-radius: 6px; }
 .fam-body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px; padding: 20px 22px; }
 .fam-stage { font-family: var(--serif); font-weight: 700; font-size: 1.4rem; color: var(--green-900); line-height: 1.05; }
