@@ -899,6 +899,46 @@ a.fam-cube:hover { transform: translate(6px, 6px); box-shadow: 3px 3px 0 #173a22
 .tag-mind { background: rgba(238,108,77,.13); color: #c0492c; }
 .tag-body { background: rgba(42,157,143,.14); color: #1f7e72; }
 .tag-both { background: rgba(63,125,82,.14); color: var(--green-700); }
+
+/* ===== Clinical Services: split explorer (balanced master-detail) ===== */
+.svc-explorer { display: grid; grid-template-columns: 330px 1fr; gap: 16px; align-items: stretch; margin-top: 1.5rem; }
+.svc-list { display: flex; flex-direction: column; gap: 10px; }
+.svc-item { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 13px 15px; cursor: pointer; font-family: var(--sans); box-shadow: var(--shadow-sm); transition: transform .2s var(--ease), box-shadow .2s, border-color .2s; }
+.svc-item:hover { transform: translateX(3px); box-shadow: var(--shadow-md); }
+.svc-item.is-active { border-color: var(--ac); box-shadow: 0 0 0 3px var(--soft), var(--shadow-md); }
+.svc-ic { width: 44px; height: 44px; flex: none; border-radius: 12px; display: grid; place-items: center; background: var(--soft); color: var(--ac); }
+.svc-ic svg { width: 23px; height: 23px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.svc-ic.lg { width: 52px; height: 52px; } .svc-ic.lg svg { width: 28px; height: 28px; }
+.svc-name { font-weight: 800; color: var(--green-900); font-size: .98rem; flex: 1; line-height: 1.2; }
+.svc-tag { margin-left: auto; font-weight: 800; font-size: .62rem; letter-spacing: .07em; text-transform: uppercase; padding: .28rem .55rem; border-radius: 999px; background: var(--soft); color: var(--ac); }
+.svc-detail { min-width: 0; }
+.svc-panel { display: none; flex-direction: column; height: 100%; background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow-md); padding: 26px 28px; }
+.svc-panel.is-active { display: flex; }
+.svc-phead { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.svc-phead h3 { font-family: var(--serif); font-weight: 600; color: var(--green-900); font-size: 1.6rem; margin: 0; }
+.svc-intro { color: var(--ink); line-height: 1.55; margin: 0 0 16px; max-width: 70ch; }
+.svc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.svc-col h4 { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; color: var(--green-700); margin: 0 0 8px; }
+.svc-col-treat h4 { color: var(--coral); }
+.svc-col ul { margin: 0; padding-left: 18px; color: var(--ink-soft); line-height: 1.5; font-size: .94rem; }
+.svc-col li { margin-bottom: 5px; }
+.svc-faq { margin-top: 18px; }
+.svc-faq > h4 { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; color: var(--green-700); margin: 0 0 8px; }
+.svc-faq .cfaq { margin: 0; }
+.svc-faq dt { font-weight: 800; color: var(--green-900); font-size: .92rem; margin-top: 10px; }
+.svc-faq dd { margin: 2px 0 0; color: var(--ink-soft); font-size: .9rem; line-height: 1.5; }
+.svc-foot { margin-top: auto; padding-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; border-top: 1px solid var(--line); }
+.svc-foot p { margin: 0; color: var(--ink-soft); font-size: .9rem; max-width: 42ch; }
+.svc-foot .btn { flex: none; }
+@media (max-width: 860px) {
+  .svc-explorer { grid-template-columns: 1fr; }
+  .svc-list { flex-direction: row; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x mandatory; }
+  .svc-item { flex: 0 0 auto; min-width: 210px; scroll-snap-align: start; }
+  .svc-item.is-active { transform: none; }
+  .svc-panel { height: auto; }
+  .svc-cols { grid-template-columns: 1fr; }
+  .svc-foot { flex-direction: column; align-items: flex-start; }
+}
 .concern-chev { flex: 0 0 auto; color: var(--sage-500); transition: transform .35s var(--ease), color .25s; }
 .concern-chev svg { width: 22px; height: 22px; display: block; }
 .concern.open .concern-chev { transform: rotate(180deg); color: var(--coral); }

@@ -961,3 +961,26 @@
   });
 
 })();
+
+
+/* ---- Clinical Services: split explorer (Design 5) tab switching ---- */
+(function(){
+  function wire(root){
+    var items = Array.prototype.slice.call(root.querySelectorAll('.svc-item'));
+    var panels = Array.prototype.slice.call(root.querySelectorAll('.svc-panel'));
+    if (!items.length) return;
+    function activate(i){
+      items.forEach(function(b,j){ b.classList.toggle('is-active', j===i); b.setAttribute('aria-selected', j===i ? 'true':'false'); });
+      panels.forEach(function(p,j){ var on = (j===i); p.classList.toggle('is-active', on); p.hidden = !on; });
+    }
+    items.forEach(function(b,i){
+      b.addEventListener('click', function(){ activate(i); });
+      b.addEventListener('keydown', function(e){
+        if (e.key==='ArrowDown' || e.key==='ArrowRight'){ e.preventDefault(); var n=items[(i+1)%items.length]; n.focus(); activate((i+1)%items.length); }
+        else if (e.key==='ArrowUp' || e.key==='ArrowLeft'){ e.preventDefault(); var p=(i-1+items.length)%items.length; items[p].focus(); activate(p); }
+      });
+    });
+  }
+  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', function(){ wire(document); });
+  else wire(document);
+})();
