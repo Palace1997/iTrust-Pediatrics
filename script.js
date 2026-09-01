@@ -962,26 +962,24 @@
 
 })();
 
-
-/* ---- Clinical Services: split explorer (Design 5) tab switching ---- */
+/* ---- Clinical Services: numbered tiles -> full-screen pop-up ---- */
 (function(){
-  function wire(root){
-    var items = Array.prototype.slice.call(root.querySelectorAll('.svc-item'));
-    var panels = Array.prototype.slice.call(root.querySelectorAll('.svc-panel'));
-    if (!items.length) return;
-    function activate(i){
-      items.forEach(function(b,j){ b.classList.toggle('is-active', j===i); b.setAttribute('aria-selected', j===i ? 'true':'false'); });
-      panels.forEach(function(p,j){ var on = (j===i); p.classList.toggle('is-active', on); p.hidden = !on; });
-    }
-    items.forEach(function(b,i){
-      b.addEventListener('click', function(){ activate(i); });
-      b.addEventListener('keydown', function(e){
-        if (e.key==='ArrowDown' || e.key==='ArrowRight'){ e.preventDefault(); var n=items[(i+1)%items.length]; n.focus(); activate((i+1)%items.length); }
-        else if (e.key==='ArrowUp' || e.key==='ArrowLeft'){ e.preventDefault(); var p=(i-1+items.length)%items.length; items[p].focus(); activate(p); }
-      });
-    });
+  var modal = document.getElementById('csModal');
+  if (!modal) return;
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.cs-tile'));
+  var panels = Array.prototype.slice.call(modal.querySelectorAll('.cs-panel'));
+  var lastFocus = null;
+  function openM(i){
+    lastFocus = document.activeElement;
+    panels.forEach(function(p,j){ var on = j===i; p.classList.toggle('is-active', on); p.hidden = !on; });
+    modal.classList.add('open'); document.body.style.overflow = 'hidden';
+    var x = panels[i] && panels[i].querySelector('.cs-x'); if (x) x.focus();
   }
-  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', function(){ wire(document); });
-  else wire(document);
+  function closeM(){
+    modal.classList.remove('open'); document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  tiles.forEach(function(t,i){ t.addEventListener('click', function(){ openM(i); }); });
+  modal.addEventListener('click', function(e){ if (e.target.closest('[data-close]')) closeM(); });
+  document.addEventListener('keydown', function(e){ if (e.key==='Escape' && modal.classList.contains('open')) closeM(); });
 })();
-
