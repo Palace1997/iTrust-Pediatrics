@@ -910,7 +910,7 @@ a.fam-cube:hover { transform: translate(6px, 6px); box-shadow: 3px 3px 0 #173a22
 .cs-ic.lg { width: 54px; height: 54px; } .cs-ic.lg svg { width: 28px; height: 28px; }
 .cs-name { display: block; margin-top: 12px; color: var(--green-900); font-weight: 800; font-size: 1.05rem; }
 .cs-tag { display: inline-block; margin-top: 7px; font-size: .62rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: var(--soft); color: var(--ac); }
-.cs-modal { position: fixed; inset: 0; z-index: 1000; display: none; }
+.cs-modal { position: fixed; inset: 0; z-index: 3000; display: none; }
 .cs-modal.open { display: block; }
 .cs-backdrop { position: absolute; inset: 0; background: rgba(20,40,26,.5); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); opacity: 0; transition: opacity .3s; }
 .cs-modal.open .cs-backdrop { opacity: 1; }
