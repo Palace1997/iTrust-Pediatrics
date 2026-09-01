@@ -1205,5 +1205,35 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- TEMP: section gap tuner (remove after baking) -->
+  <div id="gapTuner" style="position:fixed;bottom:16px;right:16px;z-index:99999;background:#fff;border:1px solid #cbb;border-radius:12px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.25);font:13px/1.4 -apple-system,system-ui,sans-serif;width:260px;color:#213a29">
+    <div style="font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center">Gap: tagline &rarr; Signs <button id="gapClose" style="border:0;background:#eee;border-radius:6px;cursor:pointer;font-size:14px;padding:2px 8px">&times;</button></div>
+    <label style="display:block;margin:8px 0 2px">Tagline bottom space: <b id="vB">0</b>px</label>
+    <input type="range" id="sB" min="0" max="140" value="0" step="1" style="width:100%">
+    <label style="display:block;margin:8px 0 2px">Signs top space: <b id="vT">0</b>px</label>
+    <input type="range" id="sT" min="0" max="220" value="0" step="1" style="width:100%">
+    <div id="gapOut" style="margin-top:10px;padding:6px 8px;background:#f4efe4;border-radius:6px;font-family:ui-monospace,monospace;font-size:11px;word-break:break-all"></div>
+    <div style="margin-top:6px;font-size:11px;color:#777">Tell Claude these two values.</div>
+  </div>
+  <script>
+  (function(){
+    var tb=document.querySelector('.tagline-band'), sg=document.getElementById('signs');
+    if(!tb||!sg) return;
+    var sB=document.getElementById('sB'), sT=document.getElementById('sT');
+    sB.value=Math.round(parseFloat(getComputedStyle(tb).paddingBottom))||0;
+    sT.value=Math.round(parseFloat(getComputedStyle(sg).paddingTop))||0;
+    function upd(){
+      tb.style.paddingBottom=sB.value+'px';
+      sg.style.paddingTop=sT.value+'px';
+      document.getElementById('vB').textContent=sB.value;
+      document.getElementById('vT').textContent=sT.value;
+      document.getElementById('gapOut').textContent='tagline-bottom '+sB.value+'px  ·  signs-top '+sT.value+'px';
+    }
+    sB.addEventListener('input',upd); sT.addEventListener('input',upd);
+    document.getElementById('gapClose').addEventListener('click',function(){document.getElementById('gapTuner').style.display='none';});
+    upd();
+  })();
+  </script>
 </body>
 </html>
