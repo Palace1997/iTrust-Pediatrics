@@ -407,21 +407,5 @@
   </footer>
 
   <script src="script.js"></script>
-
-  <!-- TEMP: team->family gap tuner (remove after baking) -->
-  <div id="gapTuner" style="position:fixed;bottom:18px;right:18px;z-index:99999;background:#12281a;color:#fff;font:13px/1.5 system-ui,sans-serif;padding:16px 18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35);width:240px">
-    <div style="font-weight:700;margin-bottom:8px">Gap: providers &rarr; family band</div>
-    <label style="display:block;margin-bottom:2px">Space below providers: <b id="gV">88</b>px</label>
-    <input id="gR" type="range" min="0" max="180" step="2" value="88" style="width:100%">
-    <div style="margin-top:6px;opacity:.75;font-size:11px">Tell me the value to bake.</div>
-  </div>
-  <script>
-    (function(){
-      var team=document.getElementById('team'), r=document.getElementById('gR'), v=document.getElementById('gV');
-      var init=Math.round(parseFloat(getComputedStyle(team).paddingBottom));
-      r.value=init; v.textContent=init;
-      r.addEventListener('input',function(){ team.style.paddingBottom=r.value+'px'; v.textContent=r.value; });
-    })();
-  </script>
 </body>
 </html>
