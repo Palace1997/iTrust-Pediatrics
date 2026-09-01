@@ -984,3 +984,30 @@
   if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', function(){ wire(document); });
   else wire(document);
 })();
+
+
+/* ---- Clinical Services: lock explorer height to tallest panel (balanced, no reflow on switch) ---- */
+(function(){
+  function balance(){
+    var detail = document.querySelector('.svc-detail');
+    if (!detail) return;
+    if (window.matchMedia('(max-width:860px)').matches){ detail.style.minHeight=''; return; }
+    detail.style.minHeight = '0px';
+    var panels = Array.prototype.slice.call(detail.querySelectorAll('.svc-panel'));
+    var active = detail.querySelector('.svc-panel.is-active');
+    var max = 0;
+    panels.forEach(function(p){
+      var hid = p.hidden, disp = p.style.display;
+      p.hidden = false; p.style.display = 'flex';
+      if (p.offsetHeight > max) max = p.offsetHeight;
+      if (p !== active){ p.hidden = hid; p.style.display = disp; }
+    });
+    if (max) detail.style.minHeight = max + 'px';
+  }
+  var t;
+  function schedule(){ clearTimeout(t); t = setTimeout(balance, 120); }
+  function init(){ balance(); setTimeout(balance, 400); window.addEventListener('resize', schedule);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(balance); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

@@ -902,7 +902,7 @@ a.fam-cube:hover { transform: translate(6px, 6px); box-shadow: 3px 3px 0 #173a22
 
 /* ===== Clinical Services: split explorer (balanced master-detail) ===== */
 .svc-explorer { display: grid; grid-template-columns: 330px 1fr; gap: 16px; align-items: stretch; margin-top: 1.5rem; }
-.svc-list { display: flex; flex-direction: column; gap: 10px; }
+.svc-list { display: flex; flex-direction: column; gap: 10px; justify-content: space-between; }
 .svc-item { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 13px 15px; cursor: pointer; font-family: var(--sans); box-shadow: var(--shadow-sm); transition: transform .2s var(--ease), box-shadow .2s, border-color .2s; }
 .svc-item:hover { transform: translateX(3px); box-shadow: var(--shadow-md); }
 .svc-item.is-active { border-color: var(--ac); box-shadow: 0 0 0 3px var(--soft), var(--shadow-md); }
@@ -932,7 +932,7 @@ a.fam-cube:hover { transform: translate(6px, 6px); box-shadow: 3px 3px 0 #173a22
 .svc-foot .btn { flex: none; }
 @media (max-width: 860px) {
   .svc-explorer { grid-template-columns: 1fr; }
-  .svc-list { flex-direction: row; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x mandatory; }
+  .svc-list { flex-direction: row; justify-content: flex-start; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x mandatory; }
   .svc-item { flex: 0 0 auto; min-width: 210px; scroll-snap-align: start; }
   .svc-item.is-active { transform: none; }
   .svc-panel { height: auto; }
