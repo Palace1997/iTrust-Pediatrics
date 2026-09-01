@@ -966,6 +966,8 @@
 (function(){
   var modal = document.getElementById('csModal');
   if (!modal) return;
+  // Move to <body> so it escapes any section stacking context and covers the header.
+  if (modal.parentNode !== document.body) document.body.appendChild(modal);
   var tiles = Array.prototype.slice.call(document.querySelectorAll('.cs-tile'));
   var panels = Array.prototype.slice.call(modal.querySelectorAll('.cs-panel'));
   var lastFocus = null;
