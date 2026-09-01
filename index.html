@@ -1220,43 +1220,5 @@
   </div>
 
   <script src="script.js"></script>
-
-  <!-- TEMP: family-tile tuner (remove after baking) -->
-  <div id="tileTuner" style="position:fixed;bottom:18px;right:18px;z-index:99999;background:#12281a;color:#fff;font:13px/1.5 system-ui,sans-serif;padding:16px 18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35);width:250px;max-height:92vh;overflow:auto">
-    <div style="font-weight:700;margin-bottom:10px">Family tiles</div>
-    <label style="display:block;margin-bottom:2px">Row width: <b id="twV">1000</b>px</label>
-    <input id="twR" type="range" min="640" max="1200" step="10" value="1000" style="width:100%">
-    <label style="display:block;margin:10px 0 2px">Gap: <b id="tgV">26</b>px</label>
-    <input id="tgR" type="range" min="8" max="56" step="2" value="26" style="width:100%">
-    <label style="display:block;margin:10px 0 2px">Tile height: <b id="thV">280</b>px</label>
-    <input id="thR" type="range" min="220" max="380" step="4" value="280" style="width:100%">
-    <div style="font-weight:700;margin:14px 0 8px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18)">Whole section</div>
-    <label style="display:block;margin:0 0 2px">Space above: <b id="stV">64</b>px</label>
-    <input id="stR" type="range" min="0" max="160" step="2" value="64" style="width:100%">
-    <label style="display:block;margin:10px 0 2px">Space below: <b id="sbV">64</b>px</label>
-    <input id="sbR" type="range" min="0" max="160" step="2" value="64" style="width:100%">
-    <label style="display:block;margin:10px 0 2px">Content width: <b id="scV">1120</b>px</label>
-    <input id="scR" type="range" min="800" max="1280" step="10" value="1120" style="width:100%">
-    <div style="margin-top:8px;opacity:.75;font-size:11px">Tell me the values to bake.</div>
-  </div>
-  <script>
-    (function(){
-      var sec=document.querySelector('.itrust-family');
-      var g=document.querySelector('.fam-grid'),cubes=document.querySelectorAll('.fam-cube');
-      var cont=sec.querySelector('.container');
-      function set(id,cb){var r=document.getElementById(id);r.addEventListener('input',function(){cb(r.value);document.getElementById(id.slice(0,2)+'V').textContent=r.value;});}
-      set('twR',function(v){g.style.maxWidth=v+'px';});
-      set('tgR',function(v){g.style.gap=v+'px';});
-      set('thR',function(v){cubes.forEach(function(c){c.style.minHeight=v+'px';});});
-      set('stR',function(v){sec.style.paddingTop=v+'px';});
-      set('sbR',function(v){sec.style.paddingBottom=v+'px';});
-      set('scR',function(v){cont.style.maxWidth=v+'px';});
-      // init section sliders from current computed values
-      var cs=getComputedStyle(sec);
-      var pt=Math.round(parseFloat(cs.paddingTop)),pb=Math.round(parseFloat(cs.paddingBottom));
-      document.getElementById('stR').value=pt;document.getElementById('stV').textContent=pt;
-      document.getElementById('sbR').value=pb;document.getElementById('sbV').textContent=pb;
-    })();
-  </script>
 </body>
 </html>
