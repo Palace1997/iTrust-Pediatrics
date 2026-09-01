@@ -840,7 +840,14 @@
           <p class="spotlight-attr"><strong>Owner and Founder</strong><span>iTrust Pediatrics</span></p>
         </div>
         <figure class="video-frame">
-          <img class="video-poster" src="assets/spotlight-poster.jpg" alt="A provider offering caring, supportive guidance to a family" loading="lazy" />
+          <div class="video-player" id="spotlightVideo" data-embed="">
+            <img class="video-poster" src="assets/spotlight-poster.jpg" alt="A provider offering caring, supportive guidance to a family" loading="lazy" />
+            <span class="video-veil" aria-hidden="true"></span>
+            <button class="video-play" type="button" aria-label="Play video message">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+            </button>
+            <p class="video-note" hidden>Video coming soon.</p>
+          </div>
         </figure>
         <!-- TODO at launch: set data-embed on #spotlightVideo to the real video URL; optionally swap the attribution above for a specific provider's name and title. -->
       </div>
