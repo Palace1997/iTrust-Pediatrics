@@ -923,8 +923,11 @@ a.fam-cube:hover { transform: translate(6px, 6px); box-shadow: 3px 3px 0 #173a22
 .cs-mtag { background: rgba(255,255,255,.25); color: #fff; font-size: .66rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; }
 .cs-x { border: 0; background: rgba(255,255,255,.2); color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; line-height: 1; flex: none; }
 .cs-x:hover { background: rgba(255,255,255,.32); }
-.cs-mbody { padding: 26px 30px; overflow: auto; flex: 1; }
-.cs-mbody .cs-intro { color: var(--ink); line-height: 1.6; margin: 0 0 22px; max-width: 80ch; font-size: 1.05rem; }
+.cs-mbody { flex: 1; display: grid; grid-template-columns: 1fr clamp(260px, 36%, 440px); overflow: hidden; }
+.cs-mcontent { overflow: auto; padding: 26px 30px; }
+.cs-mimg { position: relative; overflow: hidden; background: var(--soft); }
+.cs-mimg img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.cs-mbody .cs-intro { color: var(--ink); line-height: 1.6; margin: 0 0 22px; max-width: 70ch; font-size: 1.05rem; }
 .cs-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 940px; }
 .cs-col h4 { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; color: var(--green-700); margin: 0 0 10px; }
 .cs-col.cs-treat h4 { color: var(--coral); }
@@ -935,10 +938,15 @@ a.fam-cube:hover { transform: translate(6px, 6px); box-shadow: 3px 3px 0 #173a22
 .cs-faq dl { margin: 0; } .cs-faq dt { font-weight: 800; color: var(--green-900); margin-top: 12px; } .cs-faq dd { margin: 2px 0 0; color: var(--ink-soft); line-height: 1.55; }
 .cs-mfoot { padding: 16px 30px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
 .cs-mfoot p { margin: 0; color: var(--ink-soft); font-size: .9rem; max-width: 46ch; }
+@media (max-width: 820px) {
+  .cs-mbody { display: flex; flex-direction: column; overflow: auto; }
+  .cs-mimg { order: -1; height: 190px; flex: none; }
+  .cs-mcontent { overflow: visible; }
+}
 @media (max-width: 640px) {
   .cs-cols { grid-template-columns: 1fr; gap: 20px; }
   .cs-mhead h3 { font-size: 1.35rem; } .cs-mhead { padding: 20px 22px; }
-  .cs-mbody, .cs-mfoot { padding-left: 22px; padding-right: 22px; }
+  .cs-mcontent, .cs-mfoot { padding-left: 22px; padding-right: 22px; }
   .cs-mfoot { flex-direction: column; align-items: flex-start; }
 }
 .concern-chev { flex: 0 0 auto; color: var(--sage-500); transition: transform .35s var(--ease), color .25s; }
