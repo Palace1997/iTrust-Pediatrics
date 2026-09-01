@@ -982,6 +982,9 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
   tiles.forEach(function(t,i){ t.addEventListener('click', function(){ openM(i); }); });
+  // Warm the cache so each pop-up's image shows instantly.
+  var preload = function(){ panels.forEach(function(p){ var im = p.querySelector('.cs-mimg img'); if (im && im.getAttribute('src')) { var pre = new Image(); pre.src = im.getAttribute('src'); } }); };
+  if (window.requestIdleCallback) requestIdleCallback(preload); else setTimeout(preload, 1500);
   modal.addEventListener('click', function(e){ if (e.target.closest('[data-close]')) closeM(); });
   document.addEventListener('keydown', function(e){ if (e.key==='Escape' && modal.classList.contains('open')) closeM(); });
 })();
