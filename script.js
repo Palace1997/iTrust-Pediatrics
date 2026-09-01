@@ -997,9 +997,10 @@
     var active = detail.querySelector('.svc-panel.is-active');
     var max = 0;
     panels.forEach(function(p){
-      var hid = p.hidden, disp = p.style.display;
-      p.hidden = false; p.style.display = 'flex';
+      var hid = p.hidden, disp = p.style.display, h = p.style.height;
+      p.hidden = false; p.style.display = 'flex'; p.style.height = 'auto';
       if (p.offsetHeight > max) max = p.offsetHeight;
+      p.style.height = h;
       if (p !== active){ p.hidden = hid; p.style.display = disp; }
     });
     if (max) detail.style.minHeight = max + 'px';
