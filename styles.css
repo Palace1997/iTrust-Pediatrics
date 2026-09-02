@@ -438,12 +438,12 @@ body.more-open { overflow: hidden; }
 /* iTrust family band: framed stamps */
 .fam-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1030px; margin: 0 auto; }
 .fam-stamp { position: relative; border-radius: 18px; min-height: 440px; padding: 34px 24px; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 12px; text-decoration: none; box-shadow: 0 18px 40px -22px rgba(23,58,34,.5); transition: transform .3s var(--ease), box-shadow .3s; overflow: hidden; background: #1f4d2e; }
-.fam-stamp.fam-well { background: #3f7d4c; }
-.fam-stamp.fam-cares { background: #7d8a4a; }
+.fam-stamp.fam-well { background: #26582f; }
+.fam-stamp.fam-cares { background: #2f6338; }
 .fam-stamp::before { content: ""; position: absolute; inset: 13px; border: 2.5px solid rgba(255,255,255,.5); border-radius: 12px; pointer-events: none; transition: inset .3s; }
 a.fam-stamp:hover { transform: translateY(-6px); box-shadow: 0 34px 64px -26px rgba(23,58,34,.62); }
 a.fam-stamp:hover::before { inset: 9px; }
-.fam-logo { max-height: 56px; max-width: 180px; width: auto; height: auto; object-fit: contain; filter: brightness(0) invert(1); display: block; margin-bottom: 4px; }
+.fam-logo { max-height: 56px; max-width: 180px; width: auto; height: auto; object-fit: contain; display: block; margin-bottom: 4px; }
 .fam-here { position: absolute; top: 18px; right: 18px; font-size: .64rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: #fff; background: var(--coral); padding: 6px 13px; border-radius: 7px; }
 .fam-age { font-family: var(--serif); font-weight: 700; font-size: 2.6rem; line-height: 1; }
 .fam-stage { font-weight: 800; letter-spacing: .05em; text-transform: uppercase; font-size: .82rem; opacity: .92; }
