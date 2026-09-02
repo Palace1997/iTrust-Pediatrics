@@ -444,6 +444,7 @@ body.more-open { overflow: hidden; }
 a.fam-stamp:hover { transform: translateY(-6px); box-shadow: 0 34px 64px -26px rgba(23,58,34,.62); }
 a.fam-stamp:hover::before { inset: 9px; }
 .fam-logo { max-height: 56px; max-width: 180px; width: auto; height: auto; object-fit: contain; display: block; margin-bottom: 4px; }
+.fam-stamp.is-here .fam-logo { max-height: 84px; max-width: 230px; }
 .fam-here { position: absolute; top: 18px; right: 18px; font-size: .64rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: #fff; background: var(--coral); padding: 6px 13px; border-radius: 7px; }
 .fam-age { font-family: var(--serif); font-weight: 700; font-size: 2.6rem; line-height: 1; }
 .fam-stage { font-weight: 800; letter-spacing: .05em; text-transform: uppercase; font-size: .82rem; opacity: .92; }
