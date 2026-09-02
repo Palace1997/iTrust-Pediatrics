@@ -906,50 +906,5 @@
   </div>
 
   <script src="script.js"></script>
-
-  <!-- TEMP: family-band stamp tuner (remove after baking) -->
-  <div id="stampTuner" style="position:fixed;bottom:16px;right:16px;z-index:99999;background:#12281a;color:#fff;font:13px/1.5 system-ui,sans-serif;padding:15px 16px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.4);width:250px;max-height:92vh;overflow:auto">
-    <div style="font-weight:700;margin-bottom:8px">Family band tuner</div>
-    <div style="font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin:4px 0 4px">Block colors</div>
-    <label style="display:flex;align-items:center;gap:8px;margin-bottom:5px">Pediatrics <input id="cPeds" type="color" style="margin-left:auto"> <b id="cPedsV" style="font-size:11px"></b></label>
-    <label style="display:flex;align-items:center;gap:8px;margin-bottom:5px">Wellness <input id="cWell" type="color" style="margin-left:auto"> <b id="cWellV" style="font-size:11px"></b></label>
-    <label style="display:flex;align-items:center;gap:8px;margin-bottom:8px">Cares <input id="cCares" type="color" style="margin-left:auto"> <b id="cCaresV" style="font-size:11px"></b></label>
-    <div style="font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin:6px 0 4px;padding-top:8px;border-top:1px solid rgba(255,255,255,.18)">Size &amp; spacing</div>
-    <label style="display:block;margin-bottom:1px">Tile height: <b id="thV">440</b>px</label>
-    <input id="thR" type="range" min="300" max="560" step="4" value="440" style="width:100%">
-    <label style="display:block;margin:8px 0 1px">Gap: <b id="gpV">24</b>px</label>
-    <input id="gpR" type="range" min="10" max="48" step="2" value="24" style="width:100%">
-    <label style="display:block;margin:8px 0 1px">Row width: <b id="rwV">1030</b>px</label>
-    <input id="rwR" type="range" min="820" max="1200" step="10" value="1030" style="width:100%">
-    <label style="display:block;margin:8px 0 1px">Space above: <b id="saV">56</b>px</label>
-    <input id="saR" type="range" min="0" max="140" step="2" value="56" style="width:100%">
-    <label style="display:block;margin:8px 0 1px">Space below: <b id="sbV">72</b>px</label>
-    <input id="sbR" type="range" min="0" max="160" step="2" value="72" style="width:100%">
-    <div style="margin-top:8px;opacity:.75;font-size:11px">Tell me the values to bake.</div>
-  </div>
-  <script>
-    (function(){
-      function rgb2hex(c){var m=c.match(/\d+/g);if(!m)return '#000000';return '#'+m.slice(0,3).map(function(x){return ('0'+parseInt(x).toString(16)).slice(-2);}).join('');}
-      var peds=document.querySelector('.fam-stamp.is-here'),
-          well=document.querySelector('.fam-stamp.fam-well'),
-          cares=document.querySelector('.fam-stamp.fam-cares'),
-          grid=document.querySelector('.fam-grid'),
-          sec=document.querySelector('.itrust-family'),
-          stamps=document.querySelectorAll('.fam-stamp');
-      function initColor(id,el){var hex=rgb2hex(getComputedStyle(el).backgroundColor);var i=document.getElementById(id);i.value=hex;document.getElementById(id+'V').textContent=hex;
-        i.addEventListener('input',function(){el.style.background=i.value;document.getElementById(id+'V').textContent=i.value;});}
-      initColor('cPeds',peds);initColor('cWell',well);initColor('cCares',cares);
-      function slider(id,cb,unit){var r=document.getElementById(id.slice(0,2)+'R'),v=document.getElementById(id.slice(0,2)+'V');r.addEventListener('input',function(){cb(r.value);v.textContent=r.value;});}
-      slider('th',function(x){stamps.forEach(function(s){s.style.minHeight=x+'px';});});
-      slider('gp',function(x){grid.style.gap=x+'px';});
-      slider('rw',function(x){grid.style.maxWidth=x+'px';});
-      slider('sa',function(x){sec.style.paddingTop=x+'px';});
-      slider('sb',function(x){sec.style.paddingBottom=x+'px';});
-      var cs=getComputedStyle(sec);
-      var pt=Math.round(parseFloat(cs.paddingTop)),pb=Math.round(parseFloat(cs.paddingBottom));
-      document.getElementById('saR').value=pt;document.getElementById('saV').textContent=pt;
-      document.getElementById('sbR').value=pb;document.getElementById('sbV').textContent=pb;
-    })();
-  </script>
 </body>
 </html>
