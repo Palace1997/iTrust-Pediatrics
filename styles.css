@@ -500,7 +500,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 .about-head .eyebrow { display: block; }
 .about-head h2 { font-size: clamp(1.55rem, 2.6vw, 2.1rem); text-wrap: balance; }
 .about-banner { margin: 0 auto clamp(1.6rem,3vw,2.4rem); max-width: 1040px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); }
-.about-banner img { display: block; width: 100%; height: clamp(240px, 42vw, 450px); object-fit: cover; object-position: 53% 34%; }
+.about-banner img { display: block; width: 100%; height: clamp(260px, 44vw, 471px); object-fit: cover; object-position: 50% 61%; }
 .about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 1040px; margin: 0 auto clamp(1.4rem,2.6vw,2rem); align-items: stretch; }
 .about-card { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 330px; background: var(--white); border: 1px solid rgba(122,155,84,.22); border-radius: 16px; padding: 1.7rem 1.5rem; box-shadow: var(--shadow-sm); cursor: default; outline: none; transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s; }
 .about-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--sage-500), var(--green-600)); transform: scaleX(0); transition: transform .35s var(--ease); }
