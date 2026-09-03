@@ -1498,6 +1498,9 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .provider-card{display:grid;grid-template-columns:158px 1fr;gap:26px;background:#fff;border:1px solid #e7e7df;border-radius:18px;padding:22px 24px;box-shadow:0 12px 30px -20px rgba(31,77,46,.5)}
 .provider-card.hide{display:none}
 .provider-card .pt-photo{width:158px;height:190px;border-radius:14px;object-fit:cover;background:#eef1e8}
+.provider-card .pt-noimg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#eef3e2;border:1px dashed #b9cda0}
+.provider-card .pt-noimg .pt-initials{font-family:var(--serif);font-weight:700;font-size:2.6rem;line-height:1;color:#3f7d52}
+.provider-card .pt-noimg small{font-family:var(--sans);font-weight:800;font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:#7a8a6e}
 .pt-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .pt-name{font-family:var(--serif);font-weight:700;color:#1f4d2e;font-size:23px;line-height:1.1;margin:0}
 .pt-cred{color:var(--coral-ink);font-weight:800;font-size:12.5px;margin-top:3px;display:block}
