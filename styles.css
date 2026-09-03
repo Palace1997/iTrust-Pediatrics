@@ -514,7 +514,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 .about-card:hover .ac-body, .about-card:focus-within .ac-body { max-height: 280px; opacity: 1; margin-top: .85rem; }
 .ac-body a { color: var(--coral-ink); font-weight: 700; text-decoration: underline; }
 .ac-hint { display: inline-flex; align-items: center; gap: .35rem; margin-top: .75rem; font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sage-ink); max-height: 32px; opacity: .85; transition: opacity .45s ease, max-height .55s var(--ease), margin-top .55s; }
-.ac-hint svg { width: 14px; height: 14px; animation: ac-bob 1.8s ease-in-out infinite; }
+.ac-hint svg { width: 14px; height: 14px; }
 .about-card:hover .ac-hint, .about-card:focus-within .ac-hint { opacity: 0; max-height: 0; margin-top: 0; }
 @keyframes ac-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
 @media (prefers-reduced-motion: reduce) { .ac-hint svg { animation: none; } }
