@@ -912,9 +912,9 @@ a.fam-stamp:hover::before { inset: 9px; }
 .cs-meta { flex: 1; min-width: 0; }
 .cs-go { width: 22px; height: 22px; flex: none; color: var(--green-900); opacity: .38; }
 .cs-go svg { width: 100%; height: 100%; }
-.cs-ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--soft); color: var(--ac); }
-.cs-ic svg { width: 23px; height: 23px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.cs-ic.lg { width: 54px; height: 54px; } .cs-ic.lg svg { width: 28px; height: 28px; }
+.cs-ic { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--ac); color: #fff; }
+.cs-ic svg { width: 24px; height: 24px; }
+.cs-ic.lg { width: 58px; height: 58px; } .cs-ic.lg svg { width: 30px; height: 30px; }
 .cs-name { display: block; color: var(--green-900); font-weight: 800; font-size: 1.16rem; line-height: 1.15; }
 .cs-tag { display: block; margin-top: 4px; font-size: .64rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--ac); opacity: .9; }
 @media (max-width: 560px){
@@ -930,19 +930,19 @@ a.fam-stamp:hover::before { inset: 9px; }
 .cs-modal.open .cs-fs { transform: scale(1); opacity: 1; }
 .cs-panel { display: none; flex-direction: column; height: 100%; }
 .cs-panel.is-active { display: flex; }
-.cs-mhead { padding: 24px 30px; color: #fff; display: flex; align-items: center; gap: 16px; }
-.cs-mhead h3 { font-family: var(--serif); font-weight: 700; font-size: 1.7rem; margin: 0; flex: 1; }
-.cs-mtag { background: rgba(255,255,255,.25); color: #fff; font-size: .66rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; }
-.cs-x { border: 0; background: rgba(255,255,255,.2); color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; line-height: 1; flex: none; }
-.cs-x:hover { background: rgba(255,255,255,.32); }
+.cs-mhead { padding: 22px 26px; background: var(--soft); color: var(--green-900); display: flex; align-items: center; gap: 16px; }
+.cs-mhead h3 { font-family: var(--serif); font-weight: 700; font-size: 1.7rem; margin: 0; flex: 1; color: var(--green-900); }
+.cs-mtag { background: rgba(255,255,255,.7); color: var(--ac); font-size: .66rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; }
+.cs-x { border: 0; background: rgba(0,0,0,.06); color: var(--green-900); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; line-height: 1; flex: none; }
+.cs-x:hover { background: rgba(0,0,0,.12); }
 .cs-mbody { flex: 1; display: grid; grid-template-columns: 1fr clamp(260px, 36%, 440px); overflow: hidden; }
 .cs-mcontent { overflow: auto; padding: 26px 30px; }
 .cs-mimg { position: relative; overflow: hidden; background: var(--soft); }
 .cs-mimg img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 .cs-mbody .cs-intro { color: var(--ink); line-height: 1.6; margin: 0 0 22px; max-width: 70ch; font-size: 1.05rem; }
 .cs-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 940px; }
-.cs-col h4 { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; color: var(--green-700); margin: 0 0 10px; }
-.cs-col.cs-treat h4 { color: var(--coral); }
+.cs-col h4 { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; color: var(--ac); margin: 0 0 10px; }
+.cs-col.cs-treat h4 { color: var(--ac); }
 .cs-col ul { margin: 0; padding-left: 18px; color: var(--ink-soft); line-height: 1.55; font-size: .98rem; }
 .cs-col li { margin-bottom: 7px; }
 .cs-faq { margin-top: 26px; max-width: 940px; }
