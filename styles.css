@@ -928,14 +928,14 @@ a.fam-stamp:hover::before { inset: 9px; }
 .cs-modal.open .cs-backdrop { opacity: 1; }
 .cs-fs { position: absolute; inset: clamp(12px,3vw,40px); background: #fff; border-radius: 24px; box-shadow: 0 34px 80px -26px rgba(0,0,0,.5), 0 4px 16px rgba(0,0,0,.08), 0 0 0 1px rgba(23,58,34,.09); overflow: hidden; display: flex; flex-direction: column; transform: scale(.96); opacity: 0; transition: transform .3s, opacity .3s; }
 .cs-modal.open .cs-fs { transform: scale(1); opacity: 1; }
-.cs-panel { display: none; flex-direction: column; height: 100%; }
+.cs-panel { display: none; flex-direction: column; height: 100%; min-height: 0; }
 .cs-panel.is-active { display: flex; }
 .cs-mhead { padding: 22px 26px; background: var(--soft); color: var(--green-900); display: flex; align-items: center; gap: 16px; }
 .cs-mhead h3 { font-family: var(--serif); font-weight: 700; font-size: 1.7rem; margin: 0; flex: 1; color: var(--green-900); }
 .cs-mtag { background: rgba(255,255,255,.7); color: var(--ac); font-size: .66rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; }
 .cs-x { border: 0; background: rgba(0,0,0,.06); color: var(--green-900); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; line-height: 1; flex: none; }
 .cs-x:hover { background: rgba(0,0,0,.12); }
-.cs-mbody { flex: 1; display: grid; grid-template-columns: minmax(0,1fr) clamp(260px, 40%, 502px); overflow: hidden; }
+.cs-mbody { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0,1fr) clamp(260px, 40%, 502px); overflow: hidden; }
 .cs-mcontent { overflow: auto; padding: 26px 30px; scrollbar-width: thin; scrollbar-color: transparent transparent; }
 .cs-mcontent.is-scrolling { scrollbar-color: rgba(23,58,34,.28) transparent; }
 .cs-mcontent::-webkit-scrollbar { width: 8px; }
