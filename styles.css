@@ -519,7 +519,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 @keyframes ac-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
 @media (prefers-reduced-motion: reduce) { .ac-hint svg { animation: none; } }
 .about-care { max-width: 1040px; margin: 0 auto; background: var(--cream-2); border-radius: 18px; padding: clamp(1.5rem,3vw,2.2rem); }
-.about-care .mh-title { font-size: 1.4rem; }
+.about-care .mh-title { font-size: 1.4rem; text-align: center; }
 .about-care .mh-intro { margin-top: .5rem; }
 .about-care .mh-points { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem 1.6rem; margin-top: 1.1rem; }
 .value-pills.value-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; grid-template-columns: none; grid-auto-rows: auto; max-width: 1040px; margin: clamp(1.4rem,2.6vw,2rem) auto 0; }
