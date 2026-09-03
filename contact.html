@@ -126,6 +126,25 @@
         <p class="section-sub">We're here to help your family take the next step.</p>
       </div>
     </div>
+
+    <!-- TEMP CONTACT TOP TUNER -->
+    <style id="ctTunerStyle">#contact { padding-top: var(--ct-top) !important; }</style>
+    <div id="ctTuner" style="position:fixed;right:16px;bottom:16px;z-index:99999;background:#fff;border:1px solid #cfd6c9;border-radius:12px;padding:14px 16px;font:13px/1.4 sans-serif;box-shadow:0 12px 34px rgba(0,0,0,.22);width:250px">
+      <div style="font-weight:700;color:#1f4d2e;margin-bottom:8px">Contact top spacing</div>
+      <label style="display:block;margin:6px 0 2px">Space above: <b id="ct-v">0</b>px</label>
+      <input type="range" id="ct-s" min="0" max="200" value="0" style="width:100%">
+      <div style="margin-top:10px;padding:8px;background:#f4f0e4;border-radius:8px;font-family:monospace;font-size:12px" id="ct-out">top 0px</div>
+    </div>
+    <script>
+    (function(){
+      var sec=document.getElementById('contact'), s=document.getElementById('ct-s');
+      var cur=Math.round(parseFloat(getComputedStyle(sec).paddingTop))||0;
+      s.max=Math.max(200, cur+40); s.value=cur;
+      function upd(){ document.getElementById('ct-v').textContent=s.value; document.documentElement.style.setProperty('--ct-top', s.value+'px'); document.getElementById('ct-out').textContent='top '+s.value+'px'; }
+      s.addEventListener('input', upd); upd();
+    })();
+    </script>
+    <!-- /TEMP CONTACT TOP TUNER -->
     <div class="container">
       <div class="ref-intro reveal" id="referrals">
         <span class="eyebrow">Two ways to begin</span>
