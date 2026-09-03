@@ -356,6 +356,38 @@
     </div>
   </section>
 
+  <!-- TEMP CS IMAGE FOCUS TUNER -->
+  <div id="csFocus" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#fff;border:1px solid #cfd6c9;border-radius:12px;padding:14px 16px;font:13px/1.4 sans-serif;box-shadow:0 12px 34px rgba(0,0,0,.22);width:270px">
+    <div style="font-weight:700;color:#1f4d2e;margin-bottom:8px">Image focus tuner</div>
+    <select id="tf-sel" style="width:100%;margin-bottom:10px;padding:6px;border:1px solid #cfd6c9;border-radius:8px;font:13px sans-serif">
+      <option value="1">Anxiety</option>
+      <option value="3">Behavioral concerns</option>
+      <option value="5">Medication Management</option>
+    </select>
+    <label style="display:block;margin:6px 0 2px">Focus X: <b id="tf-vx">50</b>%</label>
+    <input type="range" id="tf-x" min="0" max="100" value="50" style="width:100%">
+    <label style="display:block;margin:6px 0 2px">Focus Y: <b id="tf-vy">50</b>%</label>
+    <input type="range" id="tf-y" min="0" max="100" value="50" style="width:100%">
+    <div style="margin-top:10px;padding:8px;background:#f4f0e4;border-radius:8px;font-family:monospace;font-size:11px" id="tf-out">anx 50/50 · beh 50/50 · med 50/50</div>
+  </div>
+  <script>
+  (function(){
+    var state={1:{x:50,y:50},3:{x:50,y:50},5:{x:50,y:50}};
+    var names={1:'anx',3:'beh',5:'med'};
+    var sel=document.getElementById('tf-sel'), sx=document.getElementById('tf-x'), sy=document.getElementById('tf-y');
+    function img(i){ return document.querySelector('.cs-panel[data-i="'+i+'"] .cs-mimg img'); }
+    function apply(i){ var im=img(i); if(im) im.style.objectPosition=state[i].x+'% '+state[i].y+'%'; }
+    function out(){ document.getElementById('tf-out').textContent='anx '+state[1].x+'/'+state[1].y+' · beh '+state[3].x+'/'+state[3].y+' · med '+state[5].x+'/'+state[5].y; }
+    function openPanel(i){ var t=document.querySelectorAll('.cs-tile')[i]; if(t) t.click(); }
+    function load(i){ sx.value=state[i].x; sy.value=state[i].y; document.getElementById('tf-vx').textContent=state[i].x; document.getElementById('tf-vy').textContent=state[i].y; }
+    sel.addEventListener('change', function(){ var i=+sel.value; openPanel(i); load(i); });
+    function onInput(){ var i=+sel.value; state[i].x=+sx.value; state[i].y=+sy.value; document.getElementById('tf-vx').textContent=sx.value; document.getElementById('tf-vy').textContent=sy.value; apply(i); out(); }
+    sx.addEventListener('input', onInput); sy.addEventListener('input', onInput);
+    openPanel(1); load(1); out();
+  })();
+  </script>
+  <!-- /TEMP CS IMAGE FOCUS TUNER -->
+
   <!-- ============ OUR APPROACH ============ -->
   <section class="section section-tint" id="approach">
     <div class="container">
