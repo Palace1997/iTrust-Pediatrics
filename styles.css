@@ -926,7 +926,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 .cs-modal.open { display: block; }
 .cs-backdrop { position: absolute; inset: 0; background: rgba(20,40,26,.5); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); opacity: 0; transition: opacity .3s; }
 .cs-modal.open .cs-backdrop { opacity: 1; }
-.cs-fs { position: absolute; inset: clamp(12px,3vw,40px); background: #fff; border-radius: 22px; box-shadow: var(--shadow-lg); overflow: hidden; display: flex; flex-direction: column; transform: scale(.96); opacity: 0; transition: transform .3s, opacity .3s; }
+.cs-fs { position: absolute; inset: clamp(12px,3vw,40px); background: #fff; border-radius: 24px; box-shadow: 0 34px 80px -26px rgba(0,0,0,.5), 0 4px 16px rgba(0,0,0,.08), 0 0 0 1px rgba(23,58,34,.09); overflow: hidden; display: flex; flex-direction: column; transform: scale(.96); opacity: 0; transition: transform .3s, opacity .3s; }
 .cs-modal.open .cs-fs { transform: scale(1); opacity: 1; }
 .cs-panel { display: none; flex-direction: column; height: 100%; }
 .cs-panel.is-active { display: flex; }
