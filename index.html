@@ -356,49 +356,6 @@
     </div>
   </section>
 
-  <!-- TEMP CS MODAL TUNER -->
-  <style id="csTunerStyle">
-    .cs-mbody { grid-template-columns: minmax(0,1fr) var(--tw-imgw, 440px) !important; }
-    .cs-mimg { padding: var(--tw-pad, 18px) !important; }
-    .cs-mimg img { object-position: center var(--tw-fy, 50%) !important; }
-    .cs-mfoot .btn-primary { transform: translate(var(--tw-ctax, 0px), var(--tw-ctay, 0px)) !important; }
-  </style>
-  <div id="csTuner" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#fff;border:1px solid #cfd6c9;border-radius:12px;padding:14px 16px;font:13px/1.4 sans-serif;box-shadow:0 12px 34px rgba(0,0,0,.22);width:262px">
-    <div style="font-weight:700;color:#1f4d2e;margin-bottom:6px">Pop-up tuner</div>
-    <button id="tw-open" style="width:100%;margin-bottom:9px;padding:7px;border:1px solid #1f4d2e;background:#eef3ea;color:#1f4d2e;border-radius:8px;font-weight:700;cursor:pointer">Open a service to preview</button>
-    <label style="display:block;margin:6px 0 2px">Image width: <b id="v-imgw">440</b>px</label>
-    <input type="range" id="s-imgw" min="280" max="640" value="440" style="width:100%">
-    <label style="display:block;margin:6px 0 2px">Image gap: <b id="v-pad">18</b>px</label>
-    <input type="range" id="s-pad" min="0" max="44" value="18" style="width:100%">
-    <label style="display:block;margin:6px 0 2px">Image focus Y: <b id="v-fy">50</b>%</label>
-    <input type="range" id="s-fy" min="0" max="100" value="50" style="width:100%">
-    <label style="display:block;margin:6px 0 2px">Button X: <b id="v-ctax">0</b>px</label>
-    <input type="range" id="s-ctax" min="-300" max="60" value="0" style="width:100%">
-    <label style="display:block;margin:6px 0 2px">Button Y: <b id="v-ctay">0</b>px</label>
-    <input type="range" id="s-ctay" min="-70" max="40" value="0" style="width:100%">
-    <div style="margin-top:9px;padding:8px;background:#f4f0e4;border-radius:8px;font-family:monospace;font-size:11.5px" id="tw-out">img 440 / gap 18 / fy 50 / cta 0,0</div>
-  </div>
-  <script>
-  (function(){
-    var root=document.documentElement;
-    var map={imgw:['px','--tw-imgw'],pad:['px','--tw-pad'],fy:['%','--tw-fy'],ctax:['px','--tw-ctax'],ctay:['px','--tw-ctay']};
-    function s(k){return document.getElementById('s-'+k).value;}
-    function upd(){
-      Object.keys(map).forEach(function(k){
-        var v=document.getElementById('s-'+k).value;
-        document.getElementById('v-'+k).textContent=v;
-        root.style.setProperty(map[k][1], v+map[k][0]);
-      });
-      document.getElementById('tw-out').textContent='img '+s('imgw')+' / gap '+s('pad')+' / fy '+s('fy')+' / cta '+s('ctax')+','+s('ctay');
-    }
-    Object.keys(map).forEach(function(k){ document.getElementById('s-'+k).addEventListener('input',upd); });
-    var ob=document.getElementById('tw-open');
-    if(ob) ob.addEventListener('click',function(){ var t=document.querySelector('.cs-tile'); if(t) t.click(); });
-    upd();
-  })();
-  </script>
-  <!-- /TEMP CS MODAL TUNER -->
-
   <!-- ============ OUR APPROACH ============ -->
   <section class="section section-tint" id="approach">
     <div class="container">
