@@ -1108,6 +1108,9 @@ a.fam-stamp:hover::before { inset: 9px; }
 .tile-photo::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,.28), transparent 55%); }
 .tile-avatar { width: var(--avatar-size, 168px); height: var(--avatar-size, 168px); border-radius: 50%; background-size: var(--photo-zoom, 110%); background-position: center var(--photo-y, 28%); background-repeat: no-repeat; background-color: rgba(255,255,255,.4); border: 5px solid rgba(255,255,255,.92); box-shadow: 0 12px 28px rgba(20,40,26,.22); position: relative; z-index: 2; transition: background-size .5s var(--ease); }
 .team-tile:hover .tile-avatar { background-size: calc(var(--photo-zoom, 110%) + 22%); }
+.tile-avatar.tile-noimg { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; background-color: #eef3e2; }
+.tile-avatar.tile-noimg .tile-initials { font-family: var(--serif); font-weight: 700; font-size: 2.7rem; line-height: 1; color: #3f7d52; }
+.tile-avatar.tile-noimg small { font-family: var(--sans); font-weight: 800; font-size: .5rem; letter-spacing: .08em; text-transform: uppercase; color: #7a8a6e; }
 .tile-years { position: absolute; top: 12px; left: 12px; z-index: 3; background: rgba(255,255,255,.92); color: var(--green-900); font-weight: 800; font-size: .72rem; letter-spacing: .02em; padding: .32rem .7rem; border-radius: 999px; box-shadow: 0 4px 12px rgba(20,40,26,.18); }
 
 .tile-body { padding: 1.3rem 1.4rem 1.5rem; }
