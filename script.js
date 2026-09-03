@@ -987,4 +987,13 @@
   if (window.requestIdleCallback) requestIdleCallback(preload); else setTimeout(preload, 1500);
   modal.addEventListener('click', function(e){ if (e.target.closest('[data-close]')) closeM(); });
   document.addEventListener('keydown', function(e){ if (e.key==='Escape' && modal.classList.contains('open')) closeM(); });
+  // Show the content scrollbar only while actively scrolling.
+  Array.prototype.forEach.call(modal.querySelectorAll('.cs-mcontent'), function(el){
+    var t;
+    el.addEventListener('scroll', function(){
+      el.classList.add('is-scrolling');
+      clearTimeout(t);
+      t = setTimeout(function(){ el.classList.remove('is-scrolling'); }, 650);
+    }, { passive: true });
+  });
 })();
