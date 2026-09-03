@@ -510,8 +510,10 @@ a.fam-stamp:hover::before { inset: 9px; }
 .ac-icon svg { width: 26px; height: 26px; }
 .about-card:hover .ac-icon, .about-card:focus-within .ac-icon { transform: scale(1.08); background: var(--green-700); color: #fff; }
 .about-card h3 { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 1.3rem; color: var(--green-900); }
-.ac-body { margin: 0; max-height: 0; opacity: 0; overflow: hidden; color: var(--ink-soft); font-size: .97rem; line-height: 1.6; transition: max-height .8s var(--ease), opacity .6s ease .12s, margin-top .6s var(--ease); }
-.about-card:hover .ac-body, .about-card:focus-within .ac-body { max-height: 280px; opacity: 1; margin-top: .85rem; }
+.ac-reveal { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .7s var(--ease); }
+.about-card:hover .ac-reveal, .about-card:focus-within .ac-reveal { grid-template-rows: 1fr; }
+.ac-body { margin: 0; min-height: 0; overflow: hidden; padding-top: .85rem; opacity: 0; color: var(--ink-soft); font-size: .97rem; line-height: 1.6; transition: opacity .55s ease .1s; }
+.about-card:hover .ac-body, .about-card:focus-within .ac-body { opacity: 1; }
 .ac-body a { color: var(--coral-ink); font-weight: 700; text-decoration: underline; }
 .ac-hint { display: inline-flex; align-items: center; gap: .35rem; margin-top: .75rem; font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sage-ink); max-height: 32px; opacity: .85; transition: opacity .45s ease, max-height .55s var(--ease), margin-top .55s; }
 .ac-hint svg { width: 14px; height: 14px; }
@@ -529,7 +531,8 @@ a.fam-stamp:hover::before { inset: 9px; }
   .about-cards { grid-template-columns: 1fr; }
   .about-care .mh-points { grid-template-columns: 1fr; }
   .about-card { min-height: 0; justify-content: flex-start; align-items: flex-start; text-align: left; }
-  .about-card .ac-body { max-height: none; opacity: 1; margin-top: .7rem; overflow: visible; }
+  .about-card .ac-reveal { grid-template-rows: 1fr; }
+  .about-card .ac-body { opacity: 1; padding-top: .7rem; overflow: visible; }
   .about-card .ac-hint { display: none; }
   .about-card::before { transform: scaleX(1); }
 }
