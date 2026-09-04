@@ -377,7 +377,7 @@ body.more-open { overflow: hidden; }
 .hero-reassure > span:not(.dot) { white-space: nowrap; }
 .hero-reassure .hr-sep { opacity: .55; }
 .hero-reassure .dot { flex: 0 0 auto; }
-.hero-reassure .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px rgba(42,157,143,.18); }
+.hero-reassure .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--teal); box-shadow: none; animation: none; }
 
 .hero-art { position: relative; display: flex; justify-content: center; }
 
