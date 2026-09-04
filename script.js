@@ -133,7 +133,7 @@
       },
       support: {
         title: "Support families",
-        intro: "Care wraps around the whole family, because supported parents raise thriving kids.",
+        intro: "We support the whole family, not just the child in the room, because parents are a big part of how kids get better.",
         points: [
           "We never rush a session; every worry gets heard and answered.",
           "Parent coaching, so you know how to support, not pressure.",
@@ -143,17 +143,17 @@
       },
       change: {
         title: "Change futures",
-        intro: "Early emotional support today shapes a healthier, steadier life for years to come.",
+        intro: "The earlier we help, the smaller the problem usually is, and the easier it is for your child to move past it.",
         points: [
           "Catching worries and low mood early, while they're easier to work through.",
-          "Coping and resilience skills that last a lifetime.",
+          "Coping skills your child can actually use when things get hard.",
           "Steady support through big transitions, school, family, and growing up.",
           "A care partnership that grows with your child through the teen years.",
         ],
       },
       protect: {
         title: "Protect well-being",
-        intro: "We help families protect what matters most, a child's emotional well-being.",
+        intro: "We help families catch problems early and protect a child's mental health before things get harder.",
         points: [
           "Spotting worries, low mood, or behavior changes early.",
           "A safe, steady place to process stress and hard times.",
