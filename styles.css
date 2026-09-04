@@ -1213,10 +1213,6 @@ a.fam-stamp:hover::before { inset: 9px; }
 .footer-wave { position: absolute; left: 0; bottom: 100%; width: 100%; height: 34px; display: block; pointer-events: none; line-height: 0; }
 .footer-wave svg { display: block; width: 100%; height: 100%; }
 .footer-wave path { fill: var(--green-900); }
-.footer-leaf { position: absolute; color: rgba(184,205,150,.13); pointer-events: none; z-index: 0; }
-.footer-leaf svg { display: block; width: 100%; height: auto; }
-.footer-leaf.a { top: 3rem; left: 45%; width: 66px; transform: rotate(-14deg); }
-.footer-leaf.b { bottom: 3.4rem; left: 31%; width: 48px; transform: rotate(26deg); }
 
 .footer-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
 .footer-logo { display: block; height: 56px; width: auto; margin-bottom: 1.1rem; }
