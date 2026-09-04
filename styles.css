@@ -1207,18 +1207,25 @@ a.fam-stamp:hover::before { inset: 9px; }
 .form-note { font-size: .82rem; color: var(--ink-soft); text-align: center; margin: .9rem 0 0; }
 
 /* ---------- Footer ---------- */
-.site-footer { background: var(--green-900); color: rgba(255,255,255,.82); padding: 3.5rem 0 1.8rem; margin-top: 0; }
-.footer-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
+.site-footer { background: var(--green-900); color: rgba(255,255,255,.82); padding: 0 0 1.8rem; margin-top: 0; }
+
+/* ---- Map banner hero with a floating "Visit us" card ---- */
+.footer-banner { position: relative; overflow: hidden; background: #e9ede2; }
+.footer-map { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.footer-banner-inner { position: relative; z-index: 1; min-height: 430px; display: flex; align-items: center; justify-content: flex-end; padding: 2.2rem 0; pointer-events: none; }
+
+.footer-foot { display: grid; grid-template-columns: 1.25fr 2fr; gap: 3rem; align-items: start; padding-top: 3rem; }
 .footer-logo { display: block; height: 56px; width: auto; margin-bottom: 1.1rem; }
-.footer-brand p { color: rgba(255,255,255,.72); max-width: 22rem; }
-.footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+.footer-brand p { color: rgba(255,255,255,.72); max-width: 24rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 2rem 3rem; margin: 0; }
+.footer-col { min-width: 118px; }
 .footer-col h4 { color: #fff; font-size: 1rem; margin: 0 0 .9rem; }
 .footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .55rem; }
 .footer-col a, .footer-col li { color: rgba(255,255,255,.78); transition: color .25s; }
 .footer-col a:hover { color: var(--coral); }
 
-/* ---- Contact-forward "Visit us" card ---- */
-.visit-card { background: var(--cream); border: 1px solid rgba(31,77,46,.12); border-radius: var(--radius-lg); padding: 1.4rem 1.4rem 1.5rem; box-shadow: 0 14px 40px rgba(31,77,46,.12); }
+/* ---- Floating "Visit us" card ---- */
+.visit-card { pointer-events: auto; width: 360px; max-width: 100%; background: var(--cream); border: 1px solid rgba(31,77,46,.12); border-radius: var(--radius-lg); padding: 1.4rem 1.4rem 1.5rem; box-shadow: 0 22px 50px rgba(20,40,25,.28); }
 .visit-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .visit-head h4 { color: var(--green-900); font: 600 1.3rem var(--serif); margin: 0; }
 .visit-status { display: inline-flex; align-items: center; gap: .4rem; font: 700 .76rem var(--sans); padding: .28rem .65rem; border-radius: 999px; white-space: nowrap; }
@@ -1226,24 +1233,20 @@ a.fam-stamp:hover::before { inset: 9px; }
 .visit-status.is-open { color: #1f7e72; background: rgba(42,157,143,.16); }
 .visit-status.is-closed { color: #c0492c; background: rgba(238,108,77,.16); }
 
-.visit-map { position: relative; display: block; height: 172px; border-radius: var(--radius); overflow: hidden; background: #e9ede2; border: 1px solid rgba(31,77,46,.15); margin-bottom: 1.1rem; }
-.visit-map-embed { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
-@keyframes pin-bob { 0%,100% { transform: translate(-50%,-64%); } 50% { transform: translate(-50%,-74%); } }
-.visit-map-cta { position: absolute; z-index: 2; bottom: .55rem; right: .55rem; display: inline-flex; align-items: center; gap: .35rem; text-decoration: none;
-  background: #fff; color: var(--green-900); font: 800 .78rem var(--sans); padding: .4rem .7rem; border-radius: 999px; box-shadow: var(--shadow-sm); }
-.visit-map-cta svg { width: 15px; height: 15px; }
-.visit-map:hover .visit-map-cta { background: var(--yellow); }
-
-.visit-details { list-style: none; margin: 0 0 1.2rem; padding: 0; display: grid; gap: .7rem; }
-.visit-details li { display: flex; align-items: flex-start; gap: .65rem; color: #44503a; font-size: .92rem; line-height: 1.45; }
-.visit-details svg { width: 19px; height: 19px; flex: none; margin-top: 1px; color: var(--green-600); }
+.visit-details { list-style: none; margin: 0 0 1.1rem; padding: 0; display: grid; gap: .6rem; }
+.visit-details li { display: flex; align-items: flex-start; gap: .65rem; color: #44503a; font-size: .92rem; line-height: 1.4; }
+.visit-details svg { width: 18px; height: 18px; flex: none; margin-top: 1px; color: var(--green-600); }
 .visit-details a { color: #44503a; transition: color .25s; }
 .visit-details a:hover { color: var(--coral); }
+
+.visit-cta { display: inline-flex; align-items: center; gap: .45rem; background: var(--coral); color: #fff; font: 800 .88rem var(--sans); padding: .68rem 1.2rem; border-radius: 999px; text-decoration: none; margin: 0 0 1.2rem; box-shadow: 0 10px 22px rgba(238,108,77,.32); transition: background .2s, transform .2s; }
+.visit-cta svg { width: 16px; height: 16px; }
+.visit-cta:hover { background: #e2593b; transform: translateY(-1px); }
 
 .visit-hours h5 { color: var(--green-900); font: 800 .78rem var(--sans); letter-spacing: .06em; text-transform: uppercase; margin: 0 0 .55rem; }
 .visit-hours table { width: 100%; border-collapse: collapse; }
 .visit-hours tr { border-top: 1px solid rgba(31,77,46,.12); }
-.visit-hours th, .visit-hours td { padding: .45rem 0; font: 600 .9rem var(--sans); }
+.visit-hours th, .visit-hours td { padding: .4rem 0; font: 600 .88rem var(--sans); }
 .visit-hours th { text-align: left; color: #6a7560; font-weight: 600; }
 .visit-hours td { text-align: right; color: #36412f; }
 .visit-hours tr.is-today th, .visit-hours tr.is-today td { color: #c0492c; font-weight: 800; }
@@ -1330,7 +1333,8 @@ a.fam-stamp:hover::before { inset: 9px; }
   .svc-head { text-align: center; }
   .path { row-gap: 2.4rem; }
   .path::before { display: none; }
-  .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-foot { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-banner-inner { justify-content: center; min-height: 360px; }
 
   .main-nav { display: none; }
   .header-cta { display: none; }
@@ -1342,7 +1346,9 @@ a.fam-stamp:hover::before { inset: 9px; }
 }
 @media (max-width: 560px) {
   .trust-bar { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
-  .cards-grid, .resource-grid, .quote-grid, .path, .lib-grid, .field-row, .footer-inner, .footer-links, .trust-points, .faq-grid { grid-template-columns: 1fr; }
+  .cards-grid, .resource-grid, .quote-grid, .path, .lib-grid, .field-row, .footer-foot, .trust-points, .faq-grid { grid-template-columns: 1fr; }
+  .visit-card { width: 100%; }
+  .footer-banner-inner { min-height: 340px; padding: 1.4rem 0; }
   .resource-card { flex-direction: column; }
   .rc-photo { width: 100%; min-height: 190px; }
 
