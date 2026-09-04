@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260905c" />
+  <link rel="stylesheet" href="styles.css?v=20260905d" />
   <link rel="icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="apple-touch-icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="canonical" href="https://palace1997.github.io/iTrust-Pediatrics/" />
@@ -422,27 +422,6 @@
         <button class="team-chip" data-filter="kids" aria-pressed="false">Young kids</button>
         <button class="team-chip" data-filter="family" aria-pressed="false">Family</button>
       </div>
-
-      <!-- TEMP RING TUNER -->
-      <div id="ringTuner" style="position:fixed;right:16px;bottom:16px;z-index:99999;background:#fff;border:1px solid #cfd6c9;border-radius:12px;padding:14px 16px;font:13px/1.4 sans-serif;box-shadow:0 12px 34px rgba(0,0,0,.22);width:250px">
-        <div style="font-weight:700;color:#1f4d2e;margin-bottom:8px">Provider ring tuner</div>
-        <label style="display:block;margin:6px 0 2px">Circle size: <b id="rv-size">176</b>px</label>
-        <input type="range" id="rs-size" min="130" max="240" value="176" style="width:100%">
-        <label style="display:block;margin:6px 0 2px">Ring thickness: <b id="rv-thick">3</b>px</label>
-        <input type="range" id="rs-thick" min="1" max="14" value="3" style="width:100%">
-        <div style="margin-top:10px;padding:8px;background:#f4f0e4;border-radius:8px;font-family:monospace;font-size:12px" id="rv-out">size 176 / thick 3</div>
-      </div>
-      <script>
-      (function(){
-        var s=document.getElementById('rs-size'), t=document.getElementById('rs-thick');
-        function upd(){ document.getElementById('rv-size').textContent=s.value; document.getElementById('rv-thick').textContent=t.value;
-          document.documentElement.style.setProperty('--ring-size', s.value+'px');
-          document.documentElement.style.setProperty('--ring-thick', t.value+'px');
-          document.getElementById('rv-out').textContent='size '+s.value+' / thick '+t.value; }
-        s.addEventListener('input',upd); t.addEventListener('input',upd); upd();
-      })();
-      </script>
-      <!-- /TEMP RING TUNER -->
 
       <!-- horizontal slider, swap each .tile-photo for <img src="..."> when real headshots are ready -->
       <div class="team-slider reveal">
