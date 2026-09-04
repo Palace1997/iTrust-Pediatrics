@@ -1097,7 +1097,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 
 /* horizontal slider of practitioner tiles */
 #team { --tile-w: 320px; --photo-zoom: 100%; --photo-y: 14%; }
-.team-slider { position: relative; max-width: calc(var(--tile-w, 320px) * 3 + 3rem); margin: 0 auto; }
+.team-slider { position: relative; left: 50%; transform: translateX(-50%); width: min(calc(var(--tile-w, 320px) * 4 + 4.5rem), calc(100vw - 2.5rem)); margin: 0 auto; }
 .team-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: .5rem 0 1.5rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; justify-content: safe flex-start; }
 .team-track::-webkit-scrollbar { display: none; }
 .team-tile { flex: 0 0 var(--tile-w, 320px); scroll-snap-align: start; background: color-mix(in srgb, var(--ring-color, #3f7d52) 10%, #fff); border-radius: 22px; padding: 30px 24px 26px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid rgba(122,155,84,.16); transition: box-shadow .35s var(--ease), transform .35s var(--ease); }
