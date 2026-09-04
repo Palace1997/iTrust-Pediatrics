@@ -1096,7 +1096,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 .team-chip:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(42,157,143,.35); }
 
 /* horizontal slider of practitioner tiles */
-#team { --tile-w: 320px; --photo-zoom: 125%; --photo-y: 18%; }
+#team { --tile-w: 320px; --photo-zoom: 100%; --photo-y: 14%; }
 .team-slider { position: relative; }
 .team-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: .5rem .25rem 1.5rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; justify-content: safe center; }
 .team-track::-webkit-scrollbar { display: none; }
@@ -1501,7 +1501,7 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .provider-card{display:grid;grid-template-columns:calc(var(--ring-size,240px) + 8px) 1fr;gap:26px;align-items:center;background:color-mix(in srgb, var(--g2,#2f9e8f) 8%, #fff);border:1px solid #e7e7df;border-radius:18px;padding:24px;box-shadow:0 12px 30px -20px rgba(31,77,46,.5)}
 .provider-card.hide{display:none}
 .provider-card .pt-ring{width:var(--ring-size,240px);height:var(--ring-size,240px);margin:auto;border-radius:50%;padding:var(--ring-thick,2px);background:conic-gradient(from 210deg,var(--g1,#5dcaa5),var(--g2,#2f9e8f),var(--green-700),var(--g1,#5dcaa5));display:grid;place-items:center}
-.provider-card .pt-photo{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 18%;border:3px solid #fff;background:#eef1e8}
+.provider-card .pt-photo{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 12%;border:3px solid #fff;background:#eef1e8}
 .provider-card .pt-noimg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#eef3e2;border:1px dashed #b9cda0}
 .provider-card .pt-noimg .pt-initials{font-family:var(--serif);font-weight:700;font-size:2.6rem;line-height:1;color:#3f7d52}
 .provider-card .pt-noimg small{font-family:var(--sans);font-weight:800;font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:#7a8a6e}
