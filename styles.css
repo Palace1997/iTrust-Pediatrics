@@ -177,6 +177,8 @@ a { color: var(--green-700); text-decoration: none; }
 
 /* footer social icons - light variant for the dark green footer */
 .footer-socials { display: flex; gap: .55rem; list-style: none; padding: 0; margin: 1.2rem 0 0; }
+/* Social profiles not live yet — hidden until real URLs exist (remove this rule to restore). */
+.footer-socials { display: none; }
 .footer-socials .social-btn { border-color: rgba(255,255,255,.28); color: #fff; }
 .footer-socials .social-btn:hover, .footer-socials .social-btn:focus-visible {
   color: #fff; border-color: var(--coral); background: var(--coral); transform: scale(1.15);

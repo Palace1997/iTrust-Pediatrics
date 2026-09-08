@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260905s" />
+  <link rel="stylesheet" href="styles.css?v=20260905t" />
   <link rel="icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="apple-touch-icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="canonical" href="https://palace1997.github.io/iTrust-Pediatrics/" />
@@ -410,22 +410,8 @@
         <p class="section-sub">Licensed psychiatric providers who specialize in children's and adolescents' mental health.</p>
       </div>
 
-      <div class="team-filters reveal" role="group" aria-label="Filter the care team by focus">
-        <button class="team-chip active" data-filter="all" aria-pressed="true">All</button>
-        <button class="team-chip" data-filter="anxiety" aria-pressed="false">Anxiety</button>
-        <button class="team-chip" data-filter="depression" aria-pressed="false">Depression</button>
-        <button class="team-chip" data-filter="adhd" aria-pressed="false">ADHD</button>
-        <button class="team-chip" data-filter="trauma" aria-pressed="false">Trauma</button>
-        <button class="team-chip" data-filter="teens" aria-pressed="false">Teens</button>
-        <button class="team-chip" data-filter="kids" aria-pressed="false">Young kids</button>
-        <button class="team-chip" data-filter="family" aria-pressed="false">Family</button>
-      </div>
-
       <!-- horizontal slider, swap each .tile-photo for <img src="..."> when real headshots are ready -->
       <div class="team-slider">
-        <button class="team-arrow prev" aria-label="Scroll to previous team members">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
 
         <div class="team-track" id="teamTrack">
 
@@ -441,97 +427,13 @@
             </div>
           </article>
 
-          <article class="team-tile" data-spec="anxiety teens depression">
-            <div class="tile-photo" style="--g1:#97c459;--g2:#639922">
-              <span class="tile-years">Ages 5&ndash;17</span>
-              <span class="tile-avatar" role="img" aria-label="Portrait of Dr. Maya" style="background-image:url('assets/team-maya.jpg')"></span>
-            </div>
-            <div class="tile-body">
-              <h3>Dr. Maya</h3>
-              <span class="tile-cred">Child &amp; Adolescent Psychiatrist, MD</span>
-              <p class="tile-summary">Psychiatric evaluation and medication management for anxious tweens and teens, including anxiety and OCD.</p>
-              <ul class="tile-tags"><li>Anxiety &amp; OCD</li><li>Teens</li><li>Medication mgmt</li></ul>
-            </div>
-          </article>
-
-          <article class="team-tile" data-spec="depression teens">
-            <div class="tile-photo" style="--g1:#5dcaa5;--g2:#1d9e75">
-              <span class="tile-years">Ages 12&ndash;17</span>
-              <span class="tile-avatar" role="img" aria-label="Portrait of Daniel" style="background-image:url('assets/team-daniel.jpg')"></span>
-            </div>
-            <div class="tile-body">
-              <h3>Daniel</h3>
-              <span class="tile-cred">Psychiatric Nurse Practitioner, PMHNP-BC</span>
-              <p class="tile-summary">A decade supporting teens with low or stuck mood, pairing careful psychiatric care with steady follow-up.</p>
-              <ul class="tile-tags"><li>Depression</li><li>Teens</li><li>Medication mgmt</li></ul>
-            </div>
-          </article>
-
-          <article class="team-tile" data-spec="family adhd kids">
-            <div class="tile-photo" style="--g1:#fac775;--g2:#ef9f27">
-              <span class="tile-years">Ages 5&ndash;17</span>
-              <span class="tile-avatar" role="img" aria-label="Portrait of Priya" style="background-image:url('assets/team-priya.jpg')"></span>
-            </div>
-            <div class="tile-body">
-              <h3>Priya</h3>
-              <span class="tile-cred">Child &amp; Adolescent Psychiatrist, MD</span>
-              <p class="tile-summary">Family-centered psychiatric care for ADHD and behavior, with hands-on guidance for parents along the way.</p>
-              <ul class="tile-tags"><li>ADHD</li><li>Family-centered</li><li>Behavior</li></ul>
-            </div>
-          </article>
-
-          <article class="team-tile" data-spec="trauma anxiety">
-            <div class="tile-photo" style="--g1:#f0997b;--g2:#d85a30">
-              <span class="tile-years">Ages 8&ndash;17</span>
-              <span class="tile-avatar" role="img" aria-label="Portrait of Marcus" style="background-image:url('assets/team-marcus.jpg')"></span>
-            </div>
-            <div class="tile-body">
-              <h3>Marcus</h3>
-              <span class="tile-cred">Psychiatric Nurse Practitioner, PMHNP-BC</span>
-              <p class="tile-summary">Trauma-informed psychiatric care, guiding children through loss, fear, and big changes at their own pace.</p>
-              <ul class="tile-tags"><li>Trauma</li><li>Anxiety</li><li>Mood</li></ul>
-            </div>
-          </article>
-
-          <article class="team-tile" data-spec="kids anxiety family">
-            <div class="tile-photo" style="--g1:#b8cd96;--g2:#7a9b54">
-              <span class="tile-years">Ages 5&ndash;12</span>
-              <span class="tile-avatar" role="img" aria-label="Portrait of Sofia" style="background-image:url('assets/team-sofia.jpg')"></span>
-            </div>
-            <div class="tile-body">
-              <h3>Sofia</h3>
-              <span class="tile-cred">Child Psychiatrist, MD</span>
-              <p class="tile-summary">Psychiatric care for younger children, with a gentle, patient approach for little ones and their families.</p>
-              <ul class="tile-tags"><li>Young kids</li><li>Behavior</li><li>ADHD</li></ul>
-            </div>
-          </article>
-
-          <article class="team-tile" data-spec="adhd teens kids">
-            <div class="tile-photo" style="--g1:#5dcaa5;--g2:#2a9d8f">
-              <span class="tile-years">Ages 5&ndash;17</span>
-              <span class="tile-avatar" role="img" aria-label="Portrait of Aisha" style="background-image:url('assets/team-aisha.jpg')"></span>
-            </div>
-            <div class="tile-body">
-              <h3>Aisha</h3>
-              <span class="tile-cred">Child &amp; Adolescent Psychiatrist, MD</span>
-              <p class="tile-summary">Leads our ADHD evaluations, helping families understand focus and build a plan that fits, with medication management when it helps.</p>
-              <ul class="tile-tags"><li>ADHD &amp; focus</li><li>Evaluations</li><li>Medication mgmt</li></ul>
-            </div>
-          </article>
-
         </div>
-
-        <button class="team-arrow next" aria-label="Scroll to more team members">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
       </div>
-
-      <p class="team-empty" hidden>No team members match that focus yet, try another filter.</p>
     </div>
   </section>
 
   <!-- ============ VIDEO SPOTLIGHT ============ -->
-  <section class="section" id="spotlight">
+  <section class="section" id="spotlight" style="display:none" aria-hidden="true">
     <div class="container">
       <div class="spotlight-a reveal">
         <div class="spotlight-copy spotlight-head">
