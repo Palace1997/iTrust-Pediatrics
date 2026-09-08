@@ -7,11 +7,19 @@
 (function () {
   "use strict";
 
-  /* ---- 1. Header shadow ---- */
+  /* ---- 1. Header shadow + hide on scroll-down / reveal on scroll-up ---- */
   const header = document.querySelector(".site-header");
+  let lastY = window.scrollY;
+  const HIDE_AFTER = 140; // keep header visible near the top of the page
   const onScroll = () => {
-    if (window.scrollY > 12) header.classList.add("scrolled");
-    else header.classList.remove("scrolled");
+    const y = window.scrollY;
+    header.classList.toggle("scrolled", y > 12);
+    if (y > HIDE_AFTER && y > lastY + 4) {
+      header.classList.add("nav-hidden");      // scrolling down
+    } else if (y < lastY - 4 || y <= HIDE_AFTER) {
+      header.classList.remove("nav-hidden");   // scrolling up (or near top)
+    }
+    lastY = y;
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();

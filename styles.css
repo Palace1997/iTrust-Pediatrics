@@ -109,9 +109,13 @@ a { color: var(--green-700); text-decoration: none; }
   background: rgba(228, 215, 187, .92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(122,155,84,.28);
-  transition: box-shadow .3s, background .3s;
+  transition: transform .35s ease, box-shadow .3s, background .3s;
+  will-change: transform;
 }
 .site-header.scrolled { box-shadow: var(--shadow-sm); background: rgba(222, 208, 178, .97); }
+/* Hide on scroll down, reveal on scroll up */
+.site-header.nav-hidden { transform: translateY(-100%); }
+@media (prefers-reduced-motion: reduce) { .site-header { transition: box-shadow .3s, background .3s; } }
 .header-inner { display: flex; align-items: center; gap: 1rem; height: 92px; max-width: 1340px; }
 .brand-logo {
   height: 50px; width: auto; display: block;
