@@ -762,7 +762,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 .hiw-content { min-width: 0; }
 .hiw-steps { list-style: none; margin: 0; padding: 0; position: relative; }
 .hiw-steps::before { content: ""; position: absolute; left: 27px; top: 30px; bottom: 30px; width: 2px; background: rgba(31,77,46,.14); transform: translateX(-1px); }
-.hiw-step { position: relative; display: grid; grid-template-columns: 54px 1fr; gap: 1.05rem; padding-bottom: 1.5rem; }
+.hiw-step { position: relative; display: grid; grid-template-columns: 54px 1fr; gap: 1.05rem; padding-bottom: 2rem; }
 .hiw-step:last-child { padding-bottom: 0; }
 .hiw-ic { position: relative; z-index: 1; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: var(--ac-soft, #eef3e2); color: var(--ac, var(--green-700)); transition: transform .45s var(--ease); }
 .hiw-ic svg { width: 26px; height: 26px; }
