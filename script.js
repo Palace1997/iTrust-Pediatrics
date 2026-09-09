@@ -80,7 +80,11 @@
     };
     window.addEventListener("scroll", onScrollSweep, { passive: true });
     window.addEventListener("resize", onScrollSweep, { passive: true });
-    sweep(); // reveal anything already on screen at load
+    // Reveal what's already on screen at load, but wait two frames first so the
+    // hidden (opacity:0) state is painted before we add .in. Revealing in the
+    // same frame the page first renders makes elements snap in with no
+    // transition, which is what caused the intermittent "no animation" on load.
+    requestAnimationFrame(function () { requestAnimationFrame(sweep); });
   } else {
     reveals.forEach((el) => el.classList.add("in"));
   }
