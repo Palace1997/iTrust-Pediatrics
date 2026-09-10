@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260911b" />
+  <link rel="stylesheet" href="styles.css?v=20260911c" />
     <link rel="icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="apple-touch-icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="canonical" href="https://palace1997.github.io/iTrust-Pediatrics/" />
@@ -173,12 +173,15 @@
     </div>
 
     <!-- Hero flip booklet (desktop overlay) -->
-    <div class="hero-book hero-book--desk" aria-hidden="true"><div class="booklet"><div class="book-wrap"><div class="hb-book" id="hbBook"><div class="stack" id="hbStack"></div></div></div></div></div>
+    <div class="hero-book hero-book--desk" aria-hidden="true"><div class="hb-card" id="hbCardD"><div class="hb-box"><div class="layer" id="hbDA"></div><div class="layer" id="hbDB"></div></div></div></div>
 
   </section>
 
   <!-- Hero flip booklet (mobile swipe card) -->
-  <section class="hero-book hero-book--mob" aria-label="A quick guide to iTrust Pediatrics"><div class="mbook"><div class="mhd"><span class="t">A little guide to iTrust Pediatrics</span></div><div class="mcard" id="hbCard"></div><div class="mnav"><div class="mdots" id="hbDots"></div></div></div></section>
+  <section class="hero-book hero-book--mob" aria-label="A quick guide to iTrust Pediatrics"><div class="hb-card" id="hbCardM"><div class="hb-box"><div class="layer" id="hbMA"></div><div class="layer" id="hbMB"></div></div></div></section>
+
+  <!-- TEMPORARY size tuner for the hero card (remove after picking a size) -->
+  <div class="hb-tuner"><span class="lbl">Card size</span><input id="hbSize" type="range" min="26" max="60" step="0.5" value="41"><b id="hbSizeV">41vw</b></div>
 
   <!-- ============ TAGLINE BAND ============ -->
   <section class="tagline-band reveal">
@@ -779,6 +782,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260911b"></script>
+  <script src="script.js?v=20260911c"></script>
   </body>
 </html>

@@ -994,82 +994,41 @@
   });
 })();
 
-
-/* ===== Hero flip booklet (index only; guarded) ===== */
+/* ===== Hero guide card (design 10; index only; guarded) ===== */
 (function(){
-if(!document.getElementById('hbStack')) return;
-  var JAC='assets/team-jacquelyn.jpg';
-  var LOGO='assets/logo/VerticalDARKBGpeds.png';
-
-  // ---- pages, mirroring the live homepage sections/order ----
+  var dA=document.getElementById('hbDA'); if(!dA) return;
+  var JAC='assets/team-jacquelyn.jpg', LOGO='assets/logo/VerticalDARKBGpeds.png';
   var PAGES=[
     '<div class="pg cover"><img class="coverlogo" src="'+LOGO+'" alt="iTrust Pediatrics"><p class="coversub">Compassionate psychiatric care for children &amp; teens</p></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>Welcome</div><h3>You shouldn\'t feel lost navigating your child\'s mental health.</h3><div class="rule"></div><p>We provide psychiatric care for children and adolescents, working closely with their families every step of the way.</p><span class="num">2</span></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>When to reach out</div><h3>Signs it may be time.</h3><div class="chips"><span>Anxiety &amp; worry</span><span>Low mood</span><span>Focus &amp; school</span><span>Mood &amp; behavior</span></div><p style="margin-top:8px">Not sure it\'s &ldquo;enough&rdquo; to reach out? Reach out anyway. We\'ll help you make sense of it.</p><span class="num">3</span></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>About us</div><h3>Care with families at the center.</h3><div class="rule"></div><p>A psychiatric practice built just for children and adolescents, ages 5 to 17. When your child turns 18, we help transition their care to iTrust Wellness.</p><span class="num">4</span></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>Our clinical services</div><h3>What we help with.</h3><div class="chips"><span>ADHD/ADD</span><span>Anxiety</span><span>Depression</span><span>Behavioral concerns</span><span>Mood disorders</span><span>Medication management</span><span>Family-centered care</span></div><span class="num">5</span></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>Our care model</div><h3>We provide psychiatric care, and collaborate for the rest.</h3><ul class="pts"><li><b>One team</b> who knows your child</li><li><b>Family-centered</b>, you\'re a partner in every decision</li><li><b>Part of iTrust</b>, trusted care for every age</li></ul><span class="num">6</span></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>How it works</div><h3>From hello to ongoing support.</h3><ol class="steps"><li>Reach out<small>Book online or call</small></li><li>Intake &amp; paperwork<small>Simple forms ahead of time</small></li><li>First visit<small>Meet, share, build a plan</small></li><li>Ongoing support<small>Steady follow-up as they grow</small></li></ol><span class="num">7</span></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>Our care team</div><h3>Experienced providers.</h3><div class="prov"><span class="ph" style="background-image:url('+JAC+')"></span><div><b>Jacquelyn Carney</b><small>Physician Assistant, Pediatric Psychiatry</small></div></div><p style="margin-top:9px">Licensed psychiatric providers who specialize in children\'s and adolescents\' mental health.</p><span class="num">8</span></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>Why it matters</div><h3>Mental health is part of growing up.</h3><p class="hb-quote">&ldquo;Anxiety, low mood, and attention struggles are as real as any fever, and the right support early can shape the years ahead.&rdquo;</p><span class="num">9</span></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>What to expect</div><h3>Getting started is simple.</h3><p>The first visit is an unhurried psychiatric evaluation. Bring your insurance card, any past records, and the questions on your mind. You\'ll leave with clear next steps.</p><span class="num">10</span></div>',
-    '<div class="pg"><div class="kicker"><span class="d"></span>Visit us</div><h3>Come say hello.</h3><div class="info"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-9a7 7 0 0 1 14 0c0 4.5-7 9-7 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="2"/></svg><span>121 Commons Way, Greenville, SC 29611</span></div><div class="info"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Mon to Thu 8 to 4, Fri 8 to 12</span></div><div class="info"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>864-520-2020</span></div><span class="num">11</span></div>',
-    '<div class="pg backcover"><div class="kicker"><span class="d"></span>Ready when you are</div><h3>Let\'s help your child feel like themselves again.</h3><p>The next small step is yours, and we make it easy.</p><a class="bookbtn" href="#">Book an appointment</a><span class="num" style="color:#8fae95">12</span></div>'
+    '<div class="pg"><div class="kicker">Welcome</div><h3>You shouldn\'t feel lost navigating your child\'s mental health.</h3><div class="rule"></div><p>We provide psychiatric care for children and adolescents, working closely with their families every step of the way.</p></div>',
+    '<div class="pg"><div class="kicker">When to reach out</div><h3>Signs it may be time.</h3><div class="chips"><span>Anxiety &amp; worry</span><span>Low mood</span><span>Focus &amp; school</span><span>Mood &amp; behavior</span></div><p style="margin-top:9px">Not sure it\'s &ldquo;enough&rdquo; to reach out? Reach out anyway.</p></div>',
+    '<div class="pg"><div class="kicker">About us</div><h3>Care with families at the center.</h3><div class="rule"></div><p>A psychiatric practice built just for children and adolescents, ages 5 to 17. When your child turns 18, we help transition their care to iTrust Wellness.</p></div>',
+    '<div class="pg"><div class="kicker">Our clinical services</div><h3>What we help with.</h3><div class="chips"><span>ADHD/ADD</span><span>Anxiety</span><span>Depression</span><span>Behavioral concerns</span><span>Mood disorders</span><span>Medication management</span><span>Family-centered care</span></div></div>',
+    '<div class="pg"><div class="kicker">Our care model</div><h3>We provide psychiatric care, and collaborate for the rest.</h3><ul class="pts"><li><b>One team</b> who knows your child</li><li><b>Family-centered</b>, you\'re a partner in every decision</li><li><b>Part of iTrust</b>, trusted care for every age</li></ul></div>',
+    '<div class="pg"><div class="kicker">How it works</div><h3>From hello to ongoing support.</h3><ol class="steps"><li><span>Reach out<small>Book online or call</small></span></li><li><span>Intake<small>Simple forms ahead</small></span></li><li><span>First visit<small>Meet &amp; plan</small></span></li><li><span>Ongoing<small>Steady follow-up</small></span></li></ol></div>',
+    '<div class="pg"><div class="kicker">Our care team</div><h3>Experienced providers.</h3><div class="prov"><span class="ph" style="background-image:url('+JAC+')"></span><div><b>Jacquelyn Carney</b><small>Physician Assistant, Pediatric Psychiatry</small></div></div><p style="margin-top:9px">Licensed psychiatric providers who specialize in children\'s and adolescents\' mental health.</p></div>',
+    '<div class="pg"><div class="kicker">Why it matters</div><h3>Mental health is part of growing up.</h3><p class="hb-quote">&ldquo;Anxiety, low mood, and attention struggles are as real as any fever, and the right support early can shape the years ahead.&rdquo;</p></div>',
+    '<div class="pg"><div class="kicker">What to expect</div><h3>Getting started is simple.</h3><p>The first visit is an unhurried psychiatric evaluation. Bring your insurance card, any past records, and the questions on your mind.</p></div>',
+    '<div class="pg"><div class="kicker">Visit us</div><h3>Come say hello.</h3><div class="info"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-9a7 7 0 0 1 14 0c0 4.5-7 9-7 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="2"/></svg><span>121 Commons Way, Greenville, SC 29611</span></div><div class="info"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Mon to Thu 8 to 4, Fri 8 to 12</span></div><div class="info"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>864-520-2020</span></div></div>',
+    '<div class="pg backcover"><div class="kicker">Ready when you are</div><h3>Let\'s help your child feel like themselves again.</h3><a class="bookbtn" href="#">Book an appointment</a></div>'
   ];
-
-  var REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ===== desktop 3D book ===== */
-  var stack=document.getElementById('hbStack');
-  var N=PAGES.length, numLeaves=Math.ceil(N/2), leaves=[];
-  for(var k=0;k<numLeaves;k++){
-    var leaf=document.createElement('div'); leaf.className='leaf';
-    var f=document.createElement('div'); f.className='face front'; f.innerHTML=(PAGES[2*k]||'')+'<div class="sheen"></div>';
-    var b=document.createElement('div'); b.className='face back'; b.innerHTML=(PAGES[2*k+1]||'')+'<div class="sheen"></div>';
-    leaf.appendChild(f); leaf.appendChild(b); stack.appendChild(leaf); leaves.push(leaf);
+  function makeCard(a,b){
+    var layers=[a,b], cur=0, pi=1, animating=false;
+    a.innerHTML=PAGES[0]; a.className='layer cur';
+    return function(){
+      if(animating) return; animating=true;
+      var nx=1-cur, inc=layers[nx], out=layers[cur];
+      inc.innerHTML=PAGES[pi]; inc.style.zIndex=2; out.style.zIndex=1;
+      inc.className='layer p-enter'; out.className='layer cur p-leave';
+      setTimeout(function(){ inc.className='layer cur'; out.className='layer'; cur=nx; pi=(pi+1)%PAGES.length; animating=false; }, 950);
+    };
   }
-  var g=0, animating=false, autoT=null;
-  function z(){ leaves.forEach(function(lf,i){ if(i<g){lf.classList.add('flip');lf.style.zIndex=i;} else {lf.classList.remove('flip');lf.style.zIndex=(numLeaves-i);} }); }
-  function turn(d){ if(animating) return; var ng=g+d; if(ng<0||ng>numLeaves) return; animating=true;
-    var idx=d>0?g:g-1, lf=leaves[idx]; lf.style.zIndex=999; lf.classList.add('turning'); g=ng;
-    if(d>0) lf.classList.add('flip'); else lf.classList.remove('flip');
-    var done=function(){ lf.classList.remove('turning'); animating=false; z(); lf.removeEventListener('transitionend',done); };
-    lf.addEventListener('transitionend',done); setTimeout(done,2626); }
-  document.getElementById('hbBook').addEventListener('click',function(e){ if(e.target.closest('.bookbtn')) return;
-    var bk=document.getElementById('hbBook').getBoundingClientRect();
-    if(e.clientX<bk.left||e.clientX>bk.right||e.clientY<bk.top||e.clientY>bk.bottom) return;
-    if(e.clientX>bk.left+bk.width/2) turn(1); else turn(-1); });
-  z();
-  // auto: read forward to the end, then the book cascades shut (pages settle one by one, cover lands last), reopen
-  function closeBook(){ animating=true;
-    var dur=1862, stagger=204;
-    for(var k=numLeaves-1;k>=0;k--){ (function(i,delay){
-      setTimeout(function(){
-        var lf=leaves[i];
-        lf.style.transition='transform '+dur+'ms cubic-bezier(.36,.05,.24,1)';
-        lf.style.zIndex=(numLeaves-i);              // cover (leaf 0) ends highest, on top
-        lf.classList.add('turning');
-        lf.classList.remove('flip');                // swing this page shut
-        setTimeout(function(){ lf.classList.remove('turning'); lf.style.transition=''; }, dur+40);
-      }, delay);
-    })(k, (numLeaves-1-k)*stagger); }               // back page first, front cover last
-    var total=(numLeaves-1)*stagger + dur + 120;
-    setTimeout(function(){ g=0; z(); animating=false; schedule(3218); }, total); }
-  function schedule(ms){ autoT=setTimeout(step, ms); }
-  function step(){ if(document.hidden||animating){ schedule(300); return; } if(g<numLeaves){ turn(1); schedule(3682); } else { closeBook(); } }
-  if(!REDUCE){ schedule(3818); }
-
-  /* ===== mobile swipe card ===== */
-  var mcard=document.getElementById('hbCard');
-  PAGES.forEach(function(html,i){ var p=document.createElement('div'); p.className='mpage'+(i===0?' on':''); p.innerHTML=html; mcard.appendChild(p); });
-  var mpages=[].slice.call(mcard.children);
-  var mdotsEl=document.getElementById('hbDots'); PAGES.forEach(function(){ mdotsEl.appendChild(document.createElement('i')); });
-  var mdots=[].slice.call(mdotsEl.children);
-  var mi=0, mAutoT=null;
-  function mpaint(){ mpages.forEach(function(p,i){ p.classList.remove('left'); if(i===mi){p.classList.add('on');} else { p.classList.remove('on'); if(i<mi) p.classList.add('left'); } });
-    mdots.forEach(function(dt,i){dt.classList.toggle('on',i===mi);}); }
-  function mgo(d){ var n=mi+d; if(n<0||n>=PAGES.length) return; mi=n; mpaint(); }
-  mcard.addEventListener('click',function(){ if(mi>=PAGES.length-1){mi=0;mpaint();} else mgo(1); });
-  mpaint();
-  if(!REDUCE){ mAutoT=setInterval(function(){ if(document.hidden) return; if(mi>=PAGES.length-1){ mi=0; mpaint(); } else mgo(1); },7636); }
+  var advD=makeCard(dA, document.getElementById('hbDB'));
+  var mA=document.getElementById('hbMA'), advM=null;
+  if(mA) advM=makeCard(mA, document.getElementById('hbMB'));
+  var REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!REDUCE){ setInterval(function(){ if(document.hidden) return; advD(); if(advM) advM(); }, 3400); }
+  /* size tuner (temporary) */
+  var sz=document.getElementById('hbSize'), szv=document.getElementById('hbSizeV'), desk=document.querySelector('.hero-book--desk');
+  if(sz && desk){ var apply=function(){ desk.style.setProperty('--hb-size', sz.value); if(szv) szv.textContent=sz.value+'vw'; }; sz.addEventListener('input',apply); apply(); }
 })();
