@@ -486,23 +486,7 @@
     window.addEventListener("resize", onSignsScroll, { passive: true });
   }
 
-  /* ---- 2h. FAQ background, fixed photo + gentle cursor parallax ---- */
-  const faqSection = document.getElementById("faq");
-  const faqPhoto = document.getElementById("faq-rotator");
-  const noMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (faqPhoto && faqSection) {
-    const base = noMotion ? "" : "scale(1.06)";
-    if (base) faqPhoto.style.transform = base;
-    if (!noMotion) {
-      faqSection.addEventListener("mousemove", (e) => {
-        const r = faqSection.getBoundingClientRect();
-        const dx = ((e.clientX - r.left) / r.width - 0.5) * 18;
-        const dy = ((e.clientY - r.top) / r.height - 0.5) * 18;
-        faqPhoto.style.transform = "scale(1.06) translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px)";
-      });
-      faqSection.addEventListener("mouseleave", () => { faqPhoto.style.transform = base; });
-    }
-  }
+  /* ---- 2h. FAQ background: steady photo (cursor parallax removed) ---- */
 
   /* ---- 2i. Care team: filter chips + horizontal slider ---- */
   const teamSection = document.getElementById("team");
