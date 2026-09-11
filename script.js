@@ -874,31 +874,6 @@
     clinicStatus.classList.add(open ? "is-open" : "is-closed");
   }
 
-  /* ---- 7. Video spotlight: click-to-play facade (loads embed only on demand) ---- */
-  const videoPlayer = document.getElementById("spotlightVideo");
-  if (videoPlayer) {
-    const playBtn = videoPlayer.querySelector(".video-play");
-    const play = () => {
-      const embed = (videoPlayer.getAttribute("data-embed") || "").trim();
-      if (!embed) {
-        const note = videoPlayer.querySelector(".video-note");
-        if (note) note.hidden = false;
-        if (playBtn) playBtn.style.display = "none";
-        return;
-      }
-      const iframe = document.createElement("iframe");
-      iframe.src = embed + (embed.indexOf("?") > -1 ? "&" : "?") + "autoplay=1";
-      iframe.title = "Video message";
-      iframe.className = "video-embed";
-      iframe.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; fullscreen");
-      iframe.setAttribute("allowfullscreen", "");
-      videoPlayer.innerHTML = "";
-      videoPlayer.appendChild(iframe);
-    };
-    if (playBtn) playBtn.addEventListener("click", play);
-    document.querySelectorAll(".spotlight-watch").forEach((b) => b.addEventListener("click", play));
-  }
-
   /* ---- 4. Contact form → Formspree (AJAX submit, graceful fallback) ---- */
   const showFormError = (form, msg, btn, original) => {
     let el = form.querySelector(".form-error");
