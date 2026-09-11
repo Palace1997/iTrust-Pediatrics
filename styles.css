@@ -1588,7 +1588,7 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .hero-book .steps li small{ display:block; font-weight:500; color:#c7d6c4; font-size:.66rem; }
 .hero-book .pts{ list-style:none; margin:4px 0 0; padding:0; }
 .hero-book .pts li{ margin:7px 0; font-size:.8rem; color:#eaf1e7; line-height:1.35; }
-.hero-book .pts li::before{ content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--coral); margin-right:7px; vertical-align:middle; position:relative; top:-1px; }
+.hero-book .pts li::before{ display:none; }
 .hero-book .pts li b{ color:var(--gold); }
 .hero-book .info{ display:flex; gap:8px; align-items:center; justify-content:center; margin:6px 0; font-size:.78rem; color:#eaf1e7; }
 .hero-book .info svg{ width:15px; height:15px; flex:none; color:var(--coral); }
