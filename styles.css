@@ -1600,7 +1600,7 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .hero-book .bookbtn{ display:inline-block; margin-top:12px; background:var(--coral); color:#fff; font-weight:800; font-size:.74rem; padding:10px 18px; border-radius:999px; text-decoration:none; box-shadow:0 8px 16px -8px rgba(238,108,77,.8); }
 .hero-book .cover{ display:flex; align-items:center; justify-content:center; gap:18px; }
 .hero-book .cover .coverlogo{ width:42%; max-width:160px; filter:drop-shadow(0 6px 16px rgba(0,0,0,.4)); }
-.hero-book .cover .coversub{ color:#cfe0c9; font-size:.84rem; line-height:1.4; max-width:16ch; text-align:left; margin:0; }
+.hero-book .cover .coversub{ color:#cfe0c9; font-size:.8rem; line-height:1.4; white-space:nowrap; text-align:center; margin:2px 0 0; }
 @media (max-width:900px){ .hero-book--desk{ display:none !important; } .hero-book--mob{ display:block; } }
 .hero-book--mob{ padding:0 1.1rem; margin:1.4rem 0 0; }
 .hero-book--mob .hb-card{ max-width:470px; margin:0 auto; }
