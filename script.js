@@ -1028,4 +1028,16 @@
   if(mA) advM=makeCard(mA, document.getElementById('hbMB'));
   var REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!REDUCE){ setInterval(function(){ if(document.hidden) return; advD(); if(advM) advM(); }, 3400); }
+  /* size/position tuner (temporary) */
+  var sz=document.getElementById('hbSize'), szv=document.getElementById('hbSizeV'),
+      tx=document.getElementById('hbX'), txv=document.getElementById('hbXV'),
+      ty=document.getElementById('hbY'), tyv=document.getElementById('hbYV'),
+      desk=document.querySelector('.hero-book--desk');
+  if(sz && desk){ var apply=function(){
+      desk.style.setProperty('--hb-size', sz.value); if(szv) szv.textContent=sz.value+'vw';
+      if(tx){ desk.style.setProperty('--hb-x', tx.value); if(txv) txv.textContent=tx.value+'%'; }
+      if(ty){ desk.style.setProperty('--hb-y', ty.value); if(tyv) tyv.textContent=ty.value+'%'; }
+    };
+    [sz,tx,ty].forEach(function(el){ if(el) el.addEventListener('input',apply); }); apply();
+  }
 })();
