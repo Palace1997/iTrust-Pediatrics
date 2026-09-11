@@ -1029,11 +1029,3 @@
   var REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!REDUCE){ setInterval(function(){ if(document.hidden) return; advD(); if(advM) advM(); }, 3400); }
 })();
-
-/* ===== insurance-logo size tuner (index only; temporary; guarded) ===== */
-(function(){
-  var s=document.getElementById('insSize'); if(!s) return;
-  var v=document.getElementById('insSizeV');
-  var apply=function(){ document.documentElement.style.setProperty('--pay-logo-h', s.value+'px'); if(v) v.textContent=s.value+'px'; };
-  s.addEventListener('input',apply); apply();
-})();
