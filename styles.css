@@ -733,7 +733,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 
 /* ---------- Approach path ---------- */
 /* "Our Approach" - soft father-and-son backdrop behind the timeline */
-#approach { position: relative; padding-top: 36px; }
+#approach { position: relative; padding-top: 86px; }
 
 /* connected-path design: numbered stops joined by a dotted trail */
 .path { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
