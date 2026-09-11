@@ -1574,7 +1574,7 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .hero-book .pg .kicker{ font:800 .6rem var(--sans); letter-spacing:.15em; text-transform:uppercase; color:#bfe0c4; margin:0 0 6px; }
 .hero-book .pg h3{ font-family:var(--serif); font-weight:600; color:#fff; font-size:1.2rem; line-height:1.16; margin:0 0 6px; max-width:22ch; }
 .hero-book .pg p{ margin:0; color:#e7efe4; font-size:.82rem; line-height:1.44; max-width:40ch; }
-.hero-book .pg .rule{ height:1px; width:46px; background:rgba(255,255,255,.3); margin:7px 0; }
+.hero-book .pg .rule{ display:none; }
 .hero-book .chips{ display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin-top:2px; max-width:36ch; }
 .hero-book .chips span{ font-weight:700; font-size:.7rem; padding:5px 10px; border-radius:999px; background:#eef3e9; color:#3d6b2b; }
 .hero-book .chips span:nth-child(6n+2){background:#fde4dc;color:var(--coral-ink)}
