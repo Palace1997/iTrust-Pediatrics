@@ -376,11 +376,21 @@
         q.setAttribute("aria-expanded", String(open));
       });
     });
-    /* Auto-close any open question once the section scrolls out of view */
+    /* Auto-close any open question once IT scrolls out of view, so returning to
+       it shows it closed. Also close everything if the whole section leaves. */
     const maybeCloseFaq = () => {
-      const r = faqSectionEl.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
-      if (r.bottom <= 0 || r.top >= vh) closeAllFaq();
+      const sr = faqSectionEl.getBoundingClientRect();
+      if (sr.bottom <= 0 || sr.top >= vh) { closeAllFaq(); return; }
+      faqBars.forEach((bar) => {
+        if (!bar.classList.contains("open")) return;
+        const r = bar.getBoundingClientRect();
+        if (r.bottom <= 0 || r.top >= vh) {
+          bar.classList.remove("open");
+          const b = bar.querySelector(".faq-q");
+          if (b) b.setAttribute("aria-expanded", "false");
+        }
+      });
     };
     if ("IntersectionObserver" in window) {
       const faqIO = new IntersectionObserver((entries) => {
