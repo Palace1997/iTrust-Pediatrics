@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260911ad" />
+  <link rel="stylesheet" href="styles.css?v=20260911ae" />
     <link rel="icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="apple-touch-icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="canonical" href="https://palace1997.github.io/iTrust-Pediatrics/" />
@@ -468,24 +468,21 @@
   <!-- ============ FAQ ============ -->
   <section class="section" id="faq">
     <div class="container">
-      <div class="faq-layout">
+      <div class="section-head faq-head reveal">
+        <span class="eyebrow">What to expect</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
 
-        <!-- Left: brand card with heading + framed photo -->
-        <aside class="faq-aside reveal">
-          <span class="eyebrow">What to expect</span>
-          <h2>Frequently Asked Questions</h2>
-          <p class="faq-aside-sub">Answers to what parents ask us most, in plain language.</p>
-          <figure class="faq-figure">
-            <img src="assets/faq-3.jpg" alt="A parent and child talking warmly with an iTrust Pediatrics provider" loading="lazy" />
-          </figure>
-          <div class="faq-aside-cta">
-            <span class="faq-cta-label">Still have a question?</span>
-            <a class="btn btn-primary" href="contact.html">Contact us</a>
-          </div>
-        </aside>
+      <div class="faq-toolbar reveal">
+        <span class="faq-count">8 questions</span>
+        <span class="faq-tools">
+          <button type="button" class="faq-tool" data-faq-expand="all">Expand all</button>
+          <button type="button" class="faq-tool" data-faq-expand="none">Collapse all</button>
+        </span>
+      </div>
 
-        <!-- Right: accordion list (JS hooks unchanged: .faq-bar / .faq-q / .open) -->
-        <div class="faq-list">
+      <!-- Accordion list (JS hooks unchanged: .faq-bar / .faq-q / .open) -->
+      <div class="faq-list reveal">
           <div class="faq-bar reveal">
             <button class="faq-q" aria-expanded="false"><span class="faq-qt">How do we get started?</span><span class="faq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             <div class="faq-a-wrap"><div class="faq-a">Reach out by phone or request an appointment online and tell us a little about your child. We'll match them with the right provider and find a time that works. Coming from another provider? We'll help transfer records.</div></div>
@@ -520,7 +517,6 @@
           </div>
         </div>
 
-      </div>
     </div>
   </section>
 
@@ -790,6 +786,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260911ad"></script>
+  <script src="script.js?v=20260911ae"></script>
   </body>
 </html>

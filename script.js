@@ -376,6 +376,17 @@
         q.setAttribute("aria-expanded", String(open));
       });
     });
+    /* Expand all / Collapse all toolbar */
+    const setAllFaq = (open) => {
+      faqBars.forEach((bar) => {
+        bar.classList.toggle("open", open);
+        const b = bar.querySelector(".faq-q");
+        if (b) b.setAttribute("aria-expanded", String(open));
+      });
+    };
+    faqSectionEl.querySelectorAll("[data-faq-expand]").forEach((btn) => {
+      btn.addEventListener("click", () => setAllFaq(btn.getAttribute("data-faq-expand") === "all"));
+    });
     /* Auto-close any open question once the section scrolls out of view */
     const maybeCloseFaq = () => {
       const r = faqSectionEl.getBoundingClientRect();
