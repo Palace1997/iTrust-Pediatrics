@@ -870,7 +870,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 .faq-aside h2 { color: #fff; margin: .5rem 0 0; }
 .faq-aside-sub { color: #d8e6d5; font-size: .96rem; line-height: 1.55; margin: .7rem 0 0; }
 .faq-figure { margin: 1.3rem 0 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(244,196,48,.28); box-shadow: 0 16px 34px -18px rgba(0,0,0,.55); }
-.faq-figure img { display: block; width: 100%; height: 230px; object-fit: cover; object-position: center 26%; }
+.faq-figure img { display: block; width: 100%; height: 190px; object-fit: cover; object-position: center 26%; }
 .faq-aside-cta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 1.3rem 0 0; padding: 1rem 0 0; border-top: 1px solid rgba(255,255,255,.14); }
 .faq-cta-label { color: #eaf2e6; font-weight: 700; font-size: .95rem; }
 
@@ -887,15 +887,11 @@ a.fam-stamp:hover::before { inset: 9px; }
 .faq-bar:hover .faq-qt { transform: translateX(3px); }
 .faq-q:focus-visible { outline: none; box-shadow: inset 0 0 0 2px rgba(42,157,143,.5); }
 
-/* Plus icon that morphs to a minus */
-.faq-plus { flex: none; position: relative; width: 32px; height: 32px; border-radius: 50%; background: rgba(63,125,82,.12); transition: background .28s var(--ease), transform .35s var(--ease); }
-.faq-plus::before, .faq-plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 13px; height: 2.4px; border-radius: 3px; background: var(--green-600); transform: translate(-50%, -50%); transition: transform .35s var(--ease), background .28s; }
-.faq-plus::after { transform: translate(-50%, -50%) rotate(90deg); }
-.faq-q:hover .faq-plus { background: rgba(238,108,77,.16); transform: rotate(90deg); }
-.faq-q:hover .faq-plus::before, .faq-q:hover .faq-plus::after { background: var(--coral); }
-.faq-bar.open .faq-plus { background: var(--coral); transform: rotate(0); }
-.faq-bar.open .faq-plus::before, .faq-bar.open .faq-plus::after { background: #fff; }
-.faq-bar.open .faq-plus::after { transform: translate(-50%, -50%) rotate(0deg); }
+/* Chevron toggle inside a soft badge (rotates 180deg when open) */
+.faq-chev { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(63,125,82,.12); color: var(--green-600); transition: background .28s var(--ease), color .25s, transform .35s var(--ease); }
+.faq-chev svg { width: 20px; height: 20px; }
+.faq-q:hover .faq-chev { background: rgba(238,108,77,.16); color: var(--coral); }
+.faq-bar.open .faq-chev { background: var(--coral); color: #fff; transform: rotate(180deg); }
 
 .faq-a-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s var(--ease); }
 .faq-bar.open .faq-a-wrap { grid-template-rows: 1fr; }
