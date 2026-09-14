@@ -860,7 +860,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 .quote footer { font-weight: 800; color: var(--green-700); }
 
 /* ---------- FAQ (title band on top, framed photo left, questions right) ---------- */
-#faq { position: relative; }
+#faq { position: relative; margin-top: 90px; }
 
 /* Two columns below the full-width title band */
 .faq-body { display: grid; grid-template-columns: minmax(300px, 400px) 1fr; gap: clamp(1.6rem, 3.4vw, 3rem); align-items: stretch; }
