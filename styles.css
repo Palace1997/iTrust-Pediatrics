@@ -877,8 +877,8 @@ a.fam-stamp:hover::before { inset: 9px; }
 .faq-list { display: flex; flex-direction: column; gap: .85rem; }
 .faq-bar { position: relative; background: var(--white, #fff); border: 1px solid rgba(31,77,46,.1); border-radius: 16px; overflow: hidden; transition: box-shadow .3s var(--ease), transform .3s var(--ease), border-color .3s, background .3s; }
 .faq-bar::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--coral); border-radius: 4px; transform: scaleY(0); transform-origin: center; transition: transform .35s var(--ease); }
-.faq-bar:hover { transform: scale(1.025); z-index: 2; box-shadow: var(--shadow-md); border-color: rgba(238,108,77,.35); }
-.faq-bar:hover::before, .faq-bar.open::before { transform: scaleY(1); }
+.faq-bar:hover { transform: scale(1.05); z-index: 2; box-shadow: var(--shadow-md); border-color: rgba(31,77,46,.2); }
+.faq-bar.open::before { transform: scaleY(1); }
 .faq-bar.open { background: #fbf5ea; border-color: rgba(238,108,77,.4); box-shadow: var(--shadow-md); }
 
 .faq-q { width: 100%; min-height: 68px; box-sizing: border-box; display: flex; align-items: center; gap: 1rem; text-align: left; cursor: pointer; background: transparent; border: 0; font-family: var(--sans); font-weight: 700; font-size: 1rem; color: var(--green-900); padding: 1rem 1.15rem 1rem 1.35rem; transition: color .25s; }
