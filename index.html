@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260911ax" />
+  <link rel="stylesheet" href="styles.css?v=20260911ay" />
     <link rel="icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="apple-touch-icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="canonical" href="https://palace1997.github.io/iTrust-Pediatrics/" />
@@ -719,7 +719,7 @@
 
   <!-- FOOTER LOGO TUNER (temporary) -->
   <style>
-    .site-footer .tz-brand img{ height: var(--flogo-size, 44px); transform: translate(var(--flogo-x, 0px), var(--flogo-y, 0px)); }
+    .site-footer .tz-brand img{ transform: translate(var(--flogo-x, 0px), var(--flogo-y, 0px)) scale(var(--flogo-scale, 1)); transform-origin: left center; }
     .flogo-tuner{ position:fixed; left:16px; bottom:16px; z-index:9999; background:#12241a; color:#fff; border:1px solid rgba(244,196,48,.5); border-radius:12px; padding:12px 14px; font:600 12px/1.3 system-ui,sans-serif; box-shadow:0 10px 30px -10px rgba(0,0,0,.6); width:250px; }
     .flogo-tuner label{ display:block; margin:10px 0 4px; letter-spacing:.02em; color:#f4c430; text-transform:uppercase; font-size:10.5px; }
     .flogo-tuner label:first-child{ margin-top:0; }
@@ -728,7 +728,7 @@
   </style>
   <div class="flogo-tuner" aria-hidden="true">
     <label>Logo size <span class="val" id="flS">44</span>px</label>
-    <input id="flSize" type="range" min="24" max="110" step="1" value="44">
+    <input id="flSize" type="range" min="50" max="260" step="1" value="100">
     <label>Horizontal <span class="val" id="flXv">0</span>px</label>
     <input id="flX" type="range" min="-80" max="160" step="1" value="0">
     <label>Vertical <span class="val" id="flYv">0</span>px</label>
@@ -737,9 +737,13 @@
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       var img=document.querySelector('.site-footer .tz-brand img'); if(!img) return;
-      function bind(id,varName,out){ var s=document.getElementById(id), o=document.getElementById(out);
+      var BASE=44;
+      function bindPx(id,varName,out){ var s=document.getElementById(id), o=document.getElementById(out);
         function a(){ img.style.setProperty(varName, s.value+'px'); o.textContent=s.value; } s.addEventListener('input',a); a(); }
-      bind('flSize','--flogo-size','flS'); bind('flX','--flogo-x','flXv'); bind('flY','--flogo-y','flYv');
+      var sz=document.getElementById('flSize'), szo=document.getElementById('flS');
+      function applySize(){ var sc=sz.value/100; img.style.setProperty('--flogo-scale', sc); szo.textContent=Math.round(BASE*sc); }
+      sz.addEventListener('input',applySize); applySize();
+      bindPx('flX','--flogo-x','flXv'); bindPx('flY','--flogo-y','flYv');
     });
   </script>
   <footer class="site-footer">
@@ -844,6 +848,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260911ax"></script>
+  <script src="script.js?v=20260911ay"></script>
   </body>
 </html>
