@@ -1705,3 +1705,15 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
   .hero-actions { justify-content: center; }
   .hero-reassure { justify-content: center; }
 }
+
+/* Center the footer content on phones */
+@media (max-width: 640px) {
+  .tz-top { justify-items: center; }
+  .tz-brand img { margin-left: auto; margin-right: auto; }
+  .tz-cols { grid-template-columns: 1fr; text-align: center; gap: 1.7rem; }
+  .tz-news { text-align: center; }
+  .tz-news .tz-form { max-width: 20rem; margin-left: auto; margin-right: auto; }
+  .tz-bottom { flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
+  .tz-legal { justify-content: center; }
+  .tz-socials { justify-content: center; }
+}
