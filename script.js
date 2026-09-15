@@ -24,6 +24,17 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  /* ---- 1b. Show the scrollbar only while scrolling ---- */
+  const rootEl = document.documentElement;
+  let scrollHideTimer;
+  const flagScrolling = () => {
+    rootEl.classList.add("is-scrolling");
+    clearTimeout(scrollHideTimer);
+    scrollHideTimer = setTimeout(() => rootEl.classList.remove("is-scrolling"), 700);
+  };
+  /* capture:true catches scrolling inside any element, not just the window */
+  document.addEventListener("scroll", flagScrolling, { passive: true, capture: true });
+
   /* ---- 2. Reveal on scroll ---- */
   const reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
   const reduceMotion =
