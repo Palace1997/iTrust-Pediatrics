@@ -1697,3 +1697,11 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .hero-book--mob{ padding:0 1.1rem; margin:1.4rem 0 0; }
 .hero-book--mob .hb-card{ max-width:470px; margin:0 auto; }
 /* temporary size tuner (remove after picking) */
+
+/* Center the hero content on phones */
+@media (max-width: 640px) {
+  .hero { text-align: center; }
+  .hero-copy .lead { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-reassure { justify-content: center; }
+}
