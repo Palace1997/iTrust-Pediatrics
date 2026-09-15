@@ -966,6 +966,33 @@
     });
   });
 
+  /* Footer newsletter -> Formspree (AJAX, inline confirmation) */
+  document.querySelectorAll(".tz-form").forEach((form) => {
+    if (!/formspree/.test(form.getAttribute("action") || "")) return;
+    const btn = form.querySelector('button[type="submit"]');
+    let sending = false;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (sending) return;
+      if (!form.reportValidity()) return;
+      const original = btn ? btn.textContent : "";
+      sending = true;
+      if (btn) { btn.disabled = true; btn.textContent = "…"; }
+      fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+        .then((res) => {
+          if (res.ok) { form.innerHTML = '<p class="tz-thanks" role="status">Thanks, you’re on the list.</p>'; return; }
+          throw new Error();
+        })
+        .catch(() => {
+          sending = false;
+          if (btn) { btn.disabled = false; btn.textContent = original; }
+          let err = form.querySelector(".tz-err");
+          if (!err) { err = document.createElement("span"); err.className = "tz-err"; form.appendChild(err); }
+          err.textContent = "Couldn't sign up just now. Please try again, or email hello@itrustpediatrics.com.";
+        });
+    });
+  });
+
 })();
 
 /* ---- Clinical Services: numbered tiles -> full-screen pop-up ---- */

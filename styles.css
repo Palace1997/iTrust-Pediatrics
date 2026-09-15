@@ -1290,6 +1290,8 @@ a.fam-stamp:hover::before { inset: 9px; }
 .tz-form input:focus-visible { outline: none; border-color: #fff; }
 .tz-form button { background: #fff; color: var(--green-900); border: 0; border-radius: 8px; padding: .8rem 1.3rem; font: 800 .82rem var(--sans); letter-spacing: .04em; cursor: pointer; transition: background .2s, color .2s; }
 .tz-form button:hover { background: var(--coral); color: #fff; }
+.tz-thanks { margin: 0; color: #e6efdf; font-weight: 600; font-size: .95rem; }
+.tz-err { flex-basis: 100%; color: #ffc4b4; font-size: .8rem; margin-top: 6px; }
 .tz-rule { border: 0; border-top: 1px solid rgba(255,255,255,.2); margin: 2.2rem 0 1.4rem; }
 .tz-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap; }
 .tz-legal { display: flex; align-items: center; gap: .5rem 1rem; flex-wrap: wrap; font-size: .85rem; color: rgba(255,255,255,.62); }
