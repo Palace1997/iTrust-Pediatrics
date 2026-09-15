@@ -1007,21 +1007,77 @@
 /* ===== Hero guide card (design 10; index only; guarded) ===== */
 (function(){
   var dA=document.getElementById('hbDA'); if(!dA) return;
-  var JAC='assets/team-jacquelyn.jpg', LOGO='assets/logo/VerticalDARKBGpeds.png';
-  var PAGES=[
-    '<div class="pg cover"><img class="coverlogo" src="'+LOGO+'" alt="iTrust Pediatrics"><p class="coversub">Compassionate psychiatric care for children &amp; teens</p></div>',
-    '<div class="pg"><div class="kicker">Welcome</div><h3>You shouldn\'t feel lost navigating your child\'s mental health.</h3><div class="rule"></div><p>We provide psychiatric care for children and adolescents, working closely with their families every step of the way.</p></div>',
-    '<div class="pg"><div class="kicker">When to reach out</div><h3>Signs it may be time.</h3><div class="chips"><span>Anxiety &amp; worry</span><span>Low mood</span><span>Focus &amp; school</span><span>Mood &amp; behavior</span></div><p style="margin-top:9px">Not sure it\'s &ldquo;enough&rdquo; to reach out? Reach out anyway.</p></div>',
-    '<div class="pg"><div class="kicker">About us</div><h3>Care with families at the center.</h3><div class="rule"></div><p>A psychiatric practice built just for children and adolescents, ages 5 to 17. When your child turns 18, we help transition their care to iTrust Wellness.</p></div>',
-    '<div class="pg"><div class="kicker">Our clinical services</div><h3>What we help with.</h3><div class="chips"><span>ADHD/ADD</span><span>Anxiety</span><span>Depression</span><span>Behavioral concerns</span><span>Mood disorders</span><span>Medication management</span><span>Family-centered care</span></div></div>',
-    '<div class="pg"><div class="kicker">Our care model</div><h3>We provide psychiatric care, and collaborate for the rest.</h3><ul class="pts"><li><b>One team</b> who knows your child</li><li><b>Family-centered</b>, you\'re a partner in every decision</li><li><b>Part of iTrust</b>, trusted care for every age</li></ul></div>',
-    '<div class="pg"><div class="kicker">How it works</div><h3>From hello to ongoing support.</h3><ol class="steps"><li><span>Reach out<small>Book online or call</small></span></li><li><span>Intake<small>Simple forms ahead</small></span></li><li><span>First visit<small>Meet &amp; plan</small></span></li><li><span>Ongoing<small>Steady follow-up</small></span></li></ol></div>',
-    '<div class="pg"><div class="kicker">Our care team</div><h3>Experienced providers.</h3><div class="prov"><span class="ph" style="background-image:url('+JAC+')"></span><div><b>Jacquelyn Carney</b><small>Physician Assistant, Pediatric Psychiatry</small></div></div><p style="margin-top:9px">Licensed psychiatric providers who specialize in children\'s and adolescents\' mental health.</p></div>',
-    '<div class="pg"><div class="kicker">Why it matters</div><h3>Mental health is part of growing up.</h3><p class="hb-quote">&ldquo;Anxiety, low mood, and attention struggles are as real as any fever, and the right support early can shape the years ahead.&rdquo;</p></div>',
-    '<div class="pg"><div class="kicker">What to expect</div><h3>Getting started is simple.</h3><p>The first visit is an unhurried psychiatric evaluation. Bring your insurance card, any past records, and the questions on your mind.</p></div>',
-    '<div class="pg"><div class="kicker">Visit us</div><h3>Come say hello.</h3><div class="info"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-9a7 7 0 0 1 14 0c0 4.5-7 9-7 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="2"/></svg><span>121 Commons Way, Greenville, SC 29611</span></div><div class="info"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Mon to Thu 8 to 4, Fri 8 to 12</span></div><div class="info"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>864-520-2020</span></div></div>',
-    '<div class="pg backcover"><div class="kicker">Ready when you are</div><h3>Let\'s help your child feel like themselves again.</h3><a class="bookbtn" href="#">Book an appointment</a></div>'
-  ];
+  var LOGO='assets/logo/VerticalDARKBGpeds.png';
+
+  /* Build the card slides from the live homepage sections, so editing a section
+     (adding a provider, a service, changing hours) updates the card on reload.
+     Every slide falls back to fixed copy if its section isn't found. */
+  function buildPages(){
+    var D=document;
+    function q(s,c){ return (c||D).querySelector(s); }
+    function qa(s,c){ return Array.prototype.slice.call((c||D).querySelectorAll(s)); }
+    function sec(id){ return D.getElementById(id); }
+    function T(el){ return el ? el.textContent.replace(/\s+/g,' ').trim() : ''; }
+    function esc(s){ var d=D.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+    function eb(s){ return T(q('.eyebrow', s)); }
+    function H(s){ return T(q('h2', s)); }
+    function para(s){ var ps=qa('p', s); for(var i=0;i<ps.length;i++){ var t=T(ps[i]); if(t.length>24) return t; } return ''; }
+    function fb(v,f){ return (v && v.length) ? v : f; }
+    function clip(t,n){ if(!t) return t; t=t.replace(/^[“"']+/,'').replace(/[”"']+$/,''); return t.length>n ? t.slice(0,n).replace(/\s+\S*$/,'')+'…' : t; }
+    function pg(k,inner){ return '<div class="pg"><div class="kicker">'+esc(k)+'</div>'+inner+'</div>'; }
+    var PIN='<svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-9a7 7 0 0 1 14 0c0 4.5-7 9-7 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="2"/></svg>';
+    var CAL='<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+    var TEL='<svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+    function info(svg,text){ return '<div class="info">'+svg+'<span>'+esc(text)+'</span></div>'; }
+    function chips(list){ return '<div class="chips">'+list.map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+'</div>'; }
+
+    var P=[];
+    /* 0 - cover (brand) */
+    P.push('<div class="pg cover"><img class="coverlogo" src="'+LOGO+'" alt="iTrust Pediatrics"><p class="coversub">Compassionate psychiatric care for children &amp; teens</p></div>');
+    /* 1 - welcome (hero) */
+    P.push(pg('Welcome','<h3>'+esc(fb(T(q('.hero h1')),"You shouldn't feel lost navigating your child's mental health."))+'</h3><div class="rule"></div><p>'+esc(fb(T(q('.hero .lead')),'We provide psychiatric care for children and adolescents, working closely with their families.'))+'</p>'));
+    /* 2 - signs */
+    var S=sec('signs'), signList=S?qa('.signs-title',S).map(T):[];
+    P.push(pg(fb(eb(S),'When to reach out'),'<h3>'+esc(fb(H(S),'Signs it may be time.'))+'</h3>'+chips(signList.length?signList:['Anxiety & worry','Low mood','Focus & school','Mood & behavior'])));
+    /* 3 - about */
+    var A=sec('about');
+    P.push(pg(fb(eb(A),'About us'),'<h3>'+esc(fb(H(A),'Care with families at the center.'))+'</h3><div class="rule"></div><p>'+esc(clip(fb(para(A),'A psychiatric practice built just for children and adolescents, ages 5 to 17.'),175))+'</p>'));
+    /* 4 - clinical services */
+    var C=sec('concerns'), svc=C?qa('.cs-name',C).map(T):[];
+    P.push(pg(fb(eb(C),'Our clinical services'),'<h3>'+esc(fb(H(C),'What we help with.'))+'</h3>'+chips(svc.length?svc:['ADHD/ADD','Anxiety','Depression','Behavioral concerns','Mood disorders','Medication management'])));
+    /* 5 - iTrust family */
+    var F=q('.itrust-family');
+    P.push(pg(fb(T(q('.fam-eyebrow',F)),'One iTrust family'),'<h3>'+esc(fb(T(q('.fam-h',F)),'Mental health care for every stage of life.'))+'</h3><div class="rule"></div><p>'+esc(clip(fb(T(q('.fam-lead',F)),'iTrust Pediatrics is part of one connected family of practices for every age.'),185))+'</p>'));
+    /* 6 - how it works */
+    var AP=sec('approach'), steps=AP?qa('.hiw-step h3',AP).map(T):[];
+    P.push(pg(fb(eb(AP),'How it works'),'<h3>'+esc(fb(H(AP),'From hello to ongoing support.'))+'</h3><ol class="steps">'+(steps.length?steps:['Reach out','Intake','First visit','Ongoing support']).map(function(t){return '<li><span>'+esc(t)+'</span></li>';}).join('')+'</ol>'));
+    /* 7 - care team (providers, from the live section) */
+    var TM=sec('team'), tiles=TM?qa('.team-tile',TM):[];
+    var rows=tiles.slice(0,3).map(function(t){
+      var av=q('.tile-avatar',t), bg=av?(av.style.backgroundImage||''):'';
+      var m=bg.match(/url\(["']?(.*?)["']?\)/), url=m?m[1]:'';
+      return '<div class="prov"><span class="ph" style="background-image:url(\''+url+'\')"></span><div><b>'+esc(T(q('h3',t)))+'</b><small>'+esc(T(q('.tile-cred',t)))+'</small></div></div>';
+    }).join('');
+    var extra = tiles.length>3 ? '<p style="margin-top:9px">and '+(tiles.length-3)+' more on our care team.</p>'
+              : '<p style="margin-top:9px">Licensed psychiatric providers who specialize in children\'s and adolescents\' mental health.</p>';
+    P.push(pg(fb(eb(TM),'Our care team'),'<h3>'+esc(fb(H(TM),'Experienced providers.'))+'</h3>'+(rows||'')+extra));
+    /* 8 - why it matters (quote) */
+    var SP=sec('spotlight');
+    P.push(pg(fb(eb(SP),'Why it matters'),'<h3>'+esc(fb(H(SP),'Mental health is part of growing up.'))+'</h3><p class="hb-quote">&ldquo;'+esc(clip(fb(T(q('.spotlight-quote',SP)),'Anxiety, low mood, and attention struggles are as real as any fever.'),205))+'&rdquo;</p>'));
+    /* 9 - what to expect (first FAQ) */
+    var FQ=sec('faq');
+    P.push(pg(fb(eb(FQ),'What to expect'),'<h3>'+esc(fb(T(q('.faq-qt',FQ)),'Getting started is simple.'))+'</h3><p>'+esc(clip(fb(T(q('.faq-a',FQ)),'The first visit is an unhurried psychiatric evaluation.'),185))+'</p>'));
+    /* 10 - visit us (address, hours, phone) */
+    var V=sec('visit'), addrEl=V?q('.vu-details li span',V):null;
+    var addr=addrEl?addrEl.innerHTML.replace(/<br\s*\/?>(\s*)/gi,', ').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim():'';
+    var tel=V?T(q('.vu-details a[href^="tel"]',V)):'';
+    var hrs=V?qa('#clinicHours tr',V).filter(function(r){return T(q('td',r))!=='Closed';}).map(function(r){return T(q('th',r))+' '+T(q('td',r));}).join(', '):'';
+    P.push(pg(fb(eb(V),'Visit us'),'<h3>'+esc(fb(H(V),'Come say hello.'))+'</h3>'+info(PIN,fb(addr,'121 Commons Way, Greenville, SC 29611'))+info(CAL,fb(hrs,'Mon to Thu 8 to 4, Fri 8 to 12'))+info(TEL,fb(tel,'864-520-2020'))));
+    /* 11 - back cover */
+    P.push('<div class="pg backcover"><div class="kicker">Ready when you are</div><h3>Let\'s help your child feel like themselves again.</h3><a class="bookbtn" href="contact.html">Book an appointment</a></div>');
+    return P;
+  }
+  var PAGES = buildPages();
   function makeCard(a,b){
     var layers=[a,b], cur=0, pi=1, animating=false;
     a.innerHTML=PAGES[0]; a.className='layer cur';
