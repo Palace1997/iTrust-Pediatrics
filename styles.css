@@ -1710,7 +1710,7 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 @media (max-width: 640px) {
   .tz-top { justify-items: center; }
   .tz-brand img { margin-left: auto; margin-right: auto; }
-  .tz-cols { grid-template-columns: 1fr 1fr; width: 100%; max-width: 360px; margin: 0 auto; column-gap: 1.4rem; text-align: left; align-items: start; }
+  .tz-cols { grid-template-columns: minmax(0, max-content) minmax(0, max-content); justify-content: center; column-gap: clamp(1.6rem, 9vw, 3rem); text-align: left; align-items: start; }
   .tz-cols .tz-col:nth-child(1) { grid-column: 1; grid-row: 1; }
   .tz-cols .tz-col:nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
   .tz-cols .tz-col:nth-child(3) { grid-column: 1; grid-row: 2; margin-top: 1.9rem; }
