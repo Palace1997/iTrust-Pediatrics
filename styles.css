@@ -1245,6 +1245,42 @@ a.fam-stamp:hover::before { inset: 9px; }
 .form-success span { color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
 .form-note { font-size: .82rem; color: var(--ink-soft); text-align: center; margin: .9rem 0 0; }
 
+/* ---------- Crisis / emergency resources page ---------- */
+.crisis-alert { background: linear-gradient(150deg, #b5431f, #8f3216); color: #fff; padding: clamp(2.4rem, 5vw, 3.6rem) 0; }
+.crisis-alert-k { display: inline-flex; align-items: center; gap: .5rem; font: 800 .78rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #ffd9cc; margin: 0 0 .7rem; }
+.crisis-alert-k svg { width: 18px; height: 18px; }
+.crisis-alert h1 { color: #fff; font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.12; margin: 0 0 .8rem; max-width: 22ch; }
+.crisis-alert p { color: #ffe6de; font-size: 1.05rem; line-height: 1.55; max-width: 56ch; margin: 0 0 1.5rem; }
+.crisis-cta-row { display: flex; gap: .8rem; flex-wrap: wrap; }
+.crisis-btn { display: inline-flex; align-items: center; gap: .5rem; font-weight: 800; font-size: 1.02rem; padding: .85rem 1.5rem; border-radius: 999px; text-decoration: none; border: 2px solid #fff; color: #fff; transition: background .2s, color .2s; }
+.crisis-btn svg { width: 20px; height: 20px; }
+.crisis-btn-danger { background: #fff; color: #a3341a; }
+.crisis-btn-danger:hover { background: #ffe6de; }
+.crisis-btn:not(.crisis-btn-danger):hover { background: rgba(255,255,255,.16); }
+
+.crisis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+.crisis-card { background: var(--white, #fff); border: 1px solid rgba(31,77,46,.12); border-radius: 16px; padding: 1.5rem; box-shadow: var(--shadow-sm); }
+.crisis-card h3 { color: var(--green-900); font: 600 1.22rem var(--serif); margin: 0 0 .5rem; }
+.crisis-card p { color: var(--ink-soft); font-size: .94rem; line-height: 1.5; margin: 0 0 1rem; }
+.crisis-ways { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.crisis-ways a { display: inline-flex; align-items: center; gap: .4rem; color: var(--coral-ink); font-weight: 700; text-decoration: none; font-size: 1rem; }
+.crisis-ways a:hover { text-decoration: underline; }
+
+.crisis-signs { list-style: none; margin: 0 auto; padding: 0; max-width: 760px; display: grid; grid-template-columns: 1fr 1fr; gap: .8rem 1.6rem; }
+.crisis-signs li { position: relative; padding-left: 1.7rem; color: var(--ink); font-size: 1rem; line-height: 1.45; }
+.crisis-signs li::before { content: ""; position: absolute; left: 0; top: .42em; width: 11px; height: 11px; border-radius: 50%; background: var(--coral); }
+@media (max-width: 640px) { .crisis-signs { grid-template-columns: 1fr; } }
+
+.crisis-steps { max-width: 720px; margin: 0 auto; padding: 0; list-style: none; counter-reset: cs; display: grid; gap: 1rem; }
+.crisis-steps li { position: relative; padding-left: 3rem; color: var(--ink); font-size: 1.02rem; line-height: 1.5; counter-increment: cs; }
+.crisis-steps li::before { content: counter(cs); position: absolute; left: 0; top: -.1rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--green-900); color: #fff; font: 800 .95rem var(--sans); display: flex; align-items: center; justify-content: center; }
+.crisis-steps b { color: var(--green-900); }
+
+.crisis-after { text-align: center; max-width: 640px; }
+.crisis-after h2 { color: var(--green-900); }
+.crisis-after p { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.6; margin: .8rem 0 1.5rem; }
+.crisis-disclaimer { font-size: .85rem; color: var(--ink-soft); max-width: 54ch; margin: 1.6rem auto 0; }
+
 /* ---------- "Visit us" section (map pulled out of the footer) ---------- */
 .vu { background: var(--cream-2, #f3eede); padding: clamp(3rem, 5vw, 4.6rem) 0; }
 .vu-head { text-align: center; max-width: 40rem; margin: 0 auto 2.2rem; }
