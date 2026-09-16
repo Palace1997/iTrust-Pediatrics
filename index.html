@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260911bp" />
+  <link rel="stylesheet" href="styles.css?v=20260911bq" />
     <link rel="icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="apple-touch-icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="canonical" href="https://palace1997.github.io/iTrust-Pediatrics/" />
@@ -718,25 +718,25 @@
     </div>
   </section>
 
-  <!-- TEAM GAP TUNER (temporary, mobile only) -->
+  <!-- WHY-IT-MATTERS SECTION GAP TUNER (temporary, mobile only) -->
   <style>
-    @media (max-width: 640px) { #team { margin-bottom: var(--team-gap, 0px); } }
-    .tgap-tuner{ position:fixed; left:12px; bottom:12px; z-index:9999; background:#12241a; color:#fff; border:1px solid rgba(244,196,48,.5); border-radius:12px; padding:11px 13px; font:600 12px/1.3 system-ui,sans-serif; box-shadow:0 10px 30px -10px rgba(0,0,0,.6); width:224px; }
+    @media (max-width: 640px) { #spotlight { margin-top: var(--spot-gap, 0px); } }
+    .tgap-tuner{ position:fixed; left:12px; bottom:12px; z-index:9999; background:#12241a; color:#fff; border:1px solid rgba(244,196,48,.5); border-radius:12px; padding:11px 13px; font:600 12px/1.3 system-ui,sans-serif; box-shadow:0 10px 30px -10px rgba(0,0,0,.6); width:230px; }
     .tgap-tuner label{ display:block; margin:0 0 7px; letter-spacing:.02em; color:#f4c430; text-transform:uppercase; font-size:10.5px; }
     .tgap-tuner input[type=range]{ width:100%; accent-color:#f4c430; }
     .tgap-tuner .val{ margin-top:5px; color:#cfe0c9; }
   </style>
   <div class="tgap-tuner" aria-hidden="true">
-    <label>Team gap (mobile)</label>
-    <input id="tgapSlider" type="range" min="-160" max="160" step="2" value="0">
+    <label>&ldquo;Why it matters&rdquo; gap (mobile)</label>
+    <input id="tgapSlider" type="range" min="-180" max="180" step="2" value="0">
     <div class="val"><span id="tgapVal">0</span>px</div>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       var s=document.getElementById('tgapSlider'); if(!s) return;
-      var team=document.getElementById('team'), out=document.getElementById('tgapVal');
-      if(!team) return;
-      function apply(){ team.style.setProperty('--team-gap', s.value+'px'); out.textContent=s.value; }
+      var spot=document.getElementById('spotlight'), out=document.getElementById('tgapVal');
+      if(!spot) return;
+      function apply(){ spot.style.setProperty('--spot-gap', s.value+'px'); out.textContent=s.value; }
       s.addEventListener('input', apply); apply();
     });
   </script>
@@ -842,6 +842,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260911bp"></script>
+  <script src="script.js?v=20260911bq"></script>
   </body>
 </html>
