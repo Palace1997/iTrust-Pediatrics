@@ -1394,7 +1394,7 @@ a.fam-stamp:hover::before { inset: 9px; }
 .spotlight-a .video-frame { max-width: 980px; margin: 0 auto; }
 .spotlight-a .spotlight-watch { margin-top: 1.7rem; }
 #spotlight { padding-top: 120px; }
-@media (max-width: 640px) { #spotlight { padding-top: 110px; } }
+@media (max-width: 640px) { #spotlight { padding-top: 56px; } }
 @media (max-width: 820px) { .spotlight-split { grid-template-columns: 1fr; gap: 26px; } }
 .video-player { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); cursor: pointer; background: var(--green-900); }
 .video-poster { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -1708,9 +1708,6 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .hero-book--mob{ padding:0 1.1rem; margin:1.4rem 0 0; }
 .hero-book--mob .hb-card{ max-width:470px; margin:0 auto; }
 /* temporary size tuner (remove after picking) */
-
-/* Baked: extra top gap above the Why-it-matters section on phones */
-@media (max-width: 640px) { #spotlight { margin-top: 86px; } }
 
 /* Center the hero content on phones */
 @media (max-width: 640px) {
