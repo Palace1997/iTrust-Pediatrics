@@ -1709,6 +1709,9 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .hero-book--mob .hb-card{ max-width:470px; margin:0 auto; }
 /* temporary size tuner (remove after picking) */
 
+/* Baked: extra top gap above the Why-it-matters section on phones */
+@media (max-width: 640px) { #spotlight { margin-top: 86px; } }
+
 /* Center the hero content on phones */
 @media (max-width: 640px) {
   .hero { text-align: center; }
