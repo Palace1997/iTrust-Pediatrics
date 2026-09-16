@@ -1707,6 +1707,7 @@ html.a11y-hide-images img, html.a11y-hide-images .rc-photo, html.a11y-hide-image
 .hero-book .cover .coversub{ color:#cfe0c9; font-size:clamp(7.5px, 3.15cqw, 14px); line-height:1.4; white-space:nowrap; text-align:center; margin:2px 0 0; }
 @media (max-width:900px){ .hero-book--desk{ display:none !important; } .hero-book--mob{ display:block; } }
 .hero-book--mob{ padding:0 1.1rem; margin:1.4rem 0 0; }
+@media (max-width: 640px) { .hero-book--mob { margin-top: 14px; } }
 .hero-book--mob .hb-card{ max-width:470px; margin:0 auto; }
 /* temporary size tuner (remove after picking) */
 
