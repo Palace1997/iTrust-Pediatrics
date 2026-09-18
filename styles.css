@@ -1348,6 +1348,16 @@ a.fam-stamp:hover::before { inset: 9px; }
 .tz-form input:focus-visible { outline: none; border-color: #fff; }
 .tz-form button { background: #fff; color: var(--green-900); border: 0; border-radius: 8px; padding: .8rem 1.3rem; font: 800 .82rem var(--sans); letter-spacing: .04em; cursor: pointer; transition: background .2s, color .2s; }
 .tz-form button:hover { background: var(--coral); color: #fff; }
+.tz-cta { display: inline-block; background: #fff; color: var(--green-900); border-radius: 8px; padding: .72rem 1.4rem; font: 800 .82rem var(--sans); letter-spacing: .04em; text-decoration: none; transition: background .2s, color .2s; }
+.tz-cta:hover { background: var(--coral); color: #fff; }
+
+/* Interim contact block (temporary, while the HIPAA-compliant form is set up) */
+.contact-interim { background: var(--white, #fff); border: 1px solid rgba(31,77,46,.12); border-radius: 18px; padding: clamp(1.5rem, 3vw, 2.2rem); box-shadow: var(--shadow-sm); }
+.contact-interim h3 { font: 600 1.4rem var(--serif); color: var(--green-900); margin: 0 0 .6rem; }
+.contact-interim p { color: var(--ink-soft); font-size: 1rem; line-height: 1.55; margin: 0 0 1.1rem; }
+.contact-interim .ci-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin: 0 0 1rem; }
+.contact-interim .ci-note { font-size: .85rem; color: var(--ink-soft); margin: 0; }
+.contact-interim .ci-note a { color: var(--coral-ink); font-weight: 700; }
 .tz-thanks { margin: 0; color: #e6efdf; font-weight: 600; font-size: .95rem; }
 .tz-err { flex-basis: 100%; color: #ffc4b4; font-size: .8rem; margin-top: 6px; }
 .tz-rule { border: 0; border-top: 1px solid rgba(255,255,255,.2); margin: 2.2rem 0 1.4rem; }

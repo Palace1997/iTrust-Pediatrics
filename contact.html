@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260911bx" />
+  <link rel="stylesheet" href="styles.css?v=20260911by" />
   <link rel="icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="apple-touch-icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="canonical" href="https://palace1997.github.io/iTrust-Pediatrics/contact.html" />
@@ -137,7 +137,7 @@
           <span class="ref-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM17 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.7"/><path d="M3 20c0-2.6 2.7-4.5 6-4.5M21 20c0-2.6-2.7-4.5-6-4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
           <h3>Parents &amp; families</h3>
           <p>No referral needed. Reach out directly, and our team will guide you through every step, including transferring records from a previous provider.</p>
-          <a href="#book" class="btn btn-primary">Fill out the form below</a>
+          <a href="#book" class="btn btn-primary">See how to reach us</a>
         </div>
         <div class="ref-card">
           <span class="ref-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="4" width="14" height="17" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M9 4.2h6V7H9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 12.5l2 2 4-4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -189,51 +189,15 @@
         </ul>
       </div>
 
-      <form id="book" class="contact-form reveal" action="https://formspree.io/f/mdenqepb" method="POST">
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" />
-        <input type="hidden" name="_subject" value="New appointment request (iTrust Pediatrics)" />
-        <div class="field">
-          <label for="name">Parent / guardian name</label>
-          <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+      <div id="book" class="contact-interim reveal">
+        <h3>Reach out to get started</h3>
+        <p>Our secure online appointment request is being set up. For now, the fastest way to reach us is by phone or email, and we'll guide you from there.</p>
+        <div class="ci-actions">
+          <a class="btn btn-primary" href="tel:8645202020">Call 864-520-2020</a>
+          <a class="btn btn-ghost" href="mailto:hello@itrustpediatrics.com?subject=Appointment%20request">Email us</a>
         </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required />
-          </div>
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000" />
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="childname">Child's first name</label>
-            <input id="childname" name="child_first_name" type="text" placeholder="Child's first name" />
-          </div>
-          <div class="field">
-            <label for="childage">Child's age</label>
-            <input id="childage" name="child_age" type="text" placeholder="e.g. 11" />
-          </div>
-        </div>
-        <div class="field">
-          <label for="status">Is your child a new or returning patient?</label>
-          <select id="status" name="patient_status" required>
-            <option value="" disabled selected>Select one</option>
-            <option>New patient</option>
-            <option>Returning patient</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="msg">How can we help?</label>
-          <textarea id="msg" name="message" rows="4" placeholder="Tell us a little about your child and what you need…"></textarea>
-        </div>
-        <div class="field-consent">
-          <input type="checkbox" id="consent" name="emergency_acknowledged" value="yes" required />
-          <label for="consent">I understand this form isn't for emergencies. In a crisis, I'll call or text 988, or call 911.</label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Request an Appointment</button>
-      </form>
+        <p class="ci-note">Please avoid sharing sensitive medical details by email. If your child is in crisis, call or text 988, or call 911 &mdash; see our <a href="crisis.html">crisis resources</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -284,11 +248,9 @@
         </div>
       </nav>
       <div class="tz-news">
-        <h4>Better Every Day</h4>
-        <p>Join the iTrust community. No spam, just steady support &mdash; helpful guidance for your family's mental health and updates from our practice.</p>
-        <form class="tz-form" action="https://formspree.io/f/mdenqepb" method="POST"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" /><input type="hidden" name="_subject" value="Newsletter signup (iTrust Pediatrics)" /><input type="email" name="email" placeholder="Email" aria-label="Email" required />
-          <button type="submit">SIGN UP</button>
-        </form>
+        <h4>Get in touch</h4>
+        <p>Questions, or ready to begin? We're here to help your family find the right next step.</p>
+        <a class="tz-cta" href="contact.html">Contact us</a>
       </div>
     </div>
     <div class="container"><hr class="tz-rule" /></div>
@@ -356,6 +318,6 @@
     <button class="a11y-reset" id="a11yReset">↺ Reset all</button>
   </div>
 
-  <script src="script.js?v=20260911bx"></script>
+  <script src="script.js?v=20260911by"></script>
 </body>
 </html>
