@@ -287,6 +287,16 @@ a { color: var(--green-700); text-decoration: none; }
 .more-tool svg { width: 20px; height: 20px; flex: none; color: var(--sage-500); }
 .more-tool:hover { color: var(--green-900); }
 .more-tool-accent { color: var(--coral); }
+
+/* Centered mobile menu contents */
+.more-head { position: relative; justify-content: center; }
+.more-head h3 { text-align: center; }
+.more-close-x { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+.more-close-x:hover { transform: translateY(-50%) rotate(90deg); }
+.more-subtitle { text-align: center; }
+.more-link { justify-content: center; text-align: center; }
+.more-tools { align-items: center; }
+.more-tool { justify-content: center; }
 .more-tool-accent svg { color: var(--coral); }
 .more-tool-accent:hover { color: #d6512f; }
 
