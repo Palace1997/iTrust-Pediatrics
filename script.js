@@ -1026,6 +1026,15 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
   tiles.forEach(function(t,i){ t.addEventListener('click', function(){ openM(i); }); });
+  // Open a panel straight from a URL hash like #care-0 (used by the footer Care links).
+  function openFromHash(){
+    var m = (location.hash || '').match(/^#care-(\d+)$/);
+    if (!m) return;
+    var i = parseInt(m[1], 10);
+    if (i >= 0 && i < panels.length) openM(i);
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
   // Warm the cache so each pop-up's image shows instantly.
   var preload = function(){ panels.forEach(function(p){ var im = p.querySelector('.cs-mimg img'); if (im && im.getAttribute('src')) { var pre = new Image(); pre.src = im.getAttribute('src'); } }); };
   if (window.requestIdleCallback) requestIdleCallback(preload); else setTimeout(preload, 1500);
