@@ -9,26 +9,62 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260911cg" />
+  <link rel="stylesheet" href="styles.css?v=20260911ch" />
   <link rel="stylesheet" href="legal.css" />
   <link rel="icon" href="assets/itrust-pediatrics-logo.jpg" />
   <meta name="theme-color" content="#fbf7ee" />
 </head>
 <body>
 
+  <!-- ============ ANNOUNCEMENT BAR ============ -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Child &amp; adolescent psychiatric care, ages 5&ndash;17</span>
+      <span class="tb-dot tb-mid" aria-hidden="true"></span>
+      <span class="tb-mid">Virtual &amp; in-person in Greenville, SC</span>
+      <span class="tb-dot" aria-hidden="true"></span>
+      <span>In crisis? Call or text <a href="tel:988">988</a></span>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a href="index.html#top" class="brand" aria-label="iTrust Pediatrics home"><img src="assets/itrust-logo.png" alt="iTrust Pediatrics logo" class="brand-logo" /></a>
+      <a href="index.html#top" class="brand" aria-label="iTrust Pediatrics home">
+        <img src="assets/itrust-logo.png" alt="iTrust Pediatrics logo" class="brand-logo" />
+      </a>
+
       <nav class="main-nav" aria-label="Primary">
         <ul>
-          <li><a href="index.html"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11 12 4l8 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9h12v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Home</span></a></li>
-          <li><a href="about.html"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>About Us</span></a></li>
-          <li><a href="services.html"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.3-9C1 8.8 2.7 5 6.3 5 9 5 12 8 12 8s3-3 5.7-3C21.3 5 23 8.8 21.3 12 19 16.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span>Services</span></a></li>
-          <li><a href="team.html"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM17 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-2.6 2.7-4.5 6-4.5M21 20c0-2.6-2.7-4.5-6-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>Our Team</span></a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-dd">
+            <a href="services.html" aria-haspopup="true">Services<svg class="dd-chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd">
+              <div class="nav-dd-grid">
+                <a href="services.html#care-0"><span class="nav-dd-ic" style="--c:#c99321"><svg viewBox="0 0 24 24"><path d="M13 2 4.4 13.4H11l-1 8.6L20 9.6h-6.6z" fill="currentColor"/></svg></span>ADHD/ADD</a>
+                <a href="services.html#care-1"><span class="nav-dd-ic" style="--c:#b25c72"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8h9.4a2.6 2.6 0 1 0-2.6-2.6"/><path d="M3 12.5h13a3 3 0 1 1-3 3"/><path d="M3 17h7a2.3 2.3 0 1 1-2.3 2.3"/></svg></span>Anxiety</a>
+                <a href="services.html#care-2"><span class="nav-dd-ic" style="--c:#2f9e8f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 19a3.7 3.7 0 0 0 .5-7.4A5 5 0 0 0 7.2 11 3.5 3.5 0 0 0 8 19z"/><path d="M17.5 6.6l1-1M20.5 8.7h1.2M18.4 3.3l.3-1.2"/></svg></span>Depression</a>
+                <a href="services.html#care-3"><span class="nav-dd-ic" style="--c:#3f7d52"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 8 13.2 13 8 16l2.8-5z" fill="currentColor"/></svg></span>Behavioral concerns</a>
+                <a href="services.html#care-4"><span class="nav-dd-ic" style="--c:#6f62b8"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span>Mood disorders</a>
+                <a href="services.html#care-5"><span class="nav-dd-ic" style="--c:#3f79b6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><g transform="rotate(-42 12 12)"><rect x="3" y="8.2" width="18" height="7.6" rx="3.8"/><path d="M12 8.4v7.2"/></g></svg></span>Medication management</a>
+                <a href="services.html#care-6"><span class="nav-dd-ic" style="--c:#b85f8f"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3.5 11.2 12 4l8.5 7.2"/><path d="M5.8 10.4V20h12.4v-9.6"/></g><path d="M12 18c-2.1-1.3-3.2-2.4-3.2-3.8a1.7 1.7 0 0 1 3.2-.8 1.7 1.7 0 0 1 3.2.8c0 1.4-1.1 2.5-3.2 3.8z" fill="currentColor"/></svg></span>Family-centered treatment</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
-      <a href="contact.html" class="btn btn-primary header-cta">Request Appointment</a>
-      <button class="more-trigger" aria-label="Open menu" aria-expanded="false" aria-controls="moreDrawer"><span class="more-trigger-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+
+      <div class="header-actions">
+        <a class="header-phone" href="tel:8645202020"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>864-520-2020</a>
+        <a class="header-refer" href="contact.html#referrals">Refer a patient</a>
+        <a href="contact.html" class="btn btn-primary header-cta">Request Appointment</a>
+      </div>
+      <button class="more-trigger" aria-label="Open menu" aria-expanded="false" aria-controls="moreDrawer">
+        <span class="more-trigger-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
     </div>
   </header>
 
@@ -96,12 +132,12 @@
           <ul><li><a href="services.html#care-0">ADHD/ADD</a></li><li><a href="services.html#care-1">Anxiety</a></li><li><a href="services.html#care-2">Depression</a></li><li><a href="services.html#care-3">Behavioral concerns</a></li><li><a href="services.html#care-4">Mood disorders</a></li><li><a href="services.html#care-5">Medication management</a></li></ul>
         </div>
         <div class="tz-col">
-          <h4>Learn</h4>
-          <ul><li><a href="about.html">Our Story</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Our Team</a></li><li><a href="index.html#faq">FAQs</a></li></ul>
-        </div>
-        <div class="tz-col">
           <h4>More</h4>
           <ul><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html">Request Appointment</a></li><li><a href="index.html#insurance">Insurance</a></li><li><a href="crisis.html">Crisis Resources</a></li></ul>
+        </div>
+        <div class="tz-col">
+          <h4>Learn</h4>
+          <ul><li><a href="services.html">Services</a></li><li><a href="team.html">Our Team</a></li><li><a href="index.html#faq">FAQs</a></li></ul>
         </div>
       </nav>
       <div class="tz-news">
@@ -175,6 +211,6 @@
     <button class="a11y-reset" id="a11yReset">↺ Reset all</button>
   </div>
 
-  <script src="script.js?v=20260911cg"></script>
+  <script src="script.js?v=20260911ch"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260911cg" />
+  <link rel="stylesheet" href="styles.css?v=20260911ch" />
     <link rel="icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="apple-touch-icon" href="assets/itrust-pediatrics-logo.jpg" />
   <link rel="canonical" href="https://palace1997.github.io/iTrust-Pediatrics/" />
@@ -59,7 +59,18 @@
   }
   </script>
 </head>
-<body>
+<body class="page-home">
+
+  <!-- ============ ANNOUNCEMENT BAR ============ -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Child &amp; adolescent psychiatric care, ages 5&ndash;17</span>
+      <span class="tb-dot tb-mid" aria-hidden="true"></span>
+      <span class="tb-mid">Virtual &amp; in-person in Greenville, SC</span>
+      <span class="tb-dot" aria-hidden="true"></span>
+      <span>In crisis? Call or text <a href="tel:988">988</a></span>
+    </div>
+  </div>
 
   <!-- ============ HEADER ============ -->
   <header class="site-header" id="top">
@@ -70,41 +81,32 @@
 
       <nav class="main-nav" aria-label="Primary">
         <ul>
-          <li>
-            <a href="index.html">
-              <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11 12 4l8 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9h12v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19v-5h4v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              <span>Home</span>
-            </a>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-dd">
+            <a href="services.html" aria-haspopup="true">Services<svg class="dd-chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd">
+              <div class="nav-dd-grid">
+                <a href="services.html#care-0"><span class="nav-dd-ic" style="--c:#c99321"><svg viewBox="0 0 24 24"><path d="M13 2 4.4 13.4H11l-1 8.6L20 9.6h-6.6z" fill="currentColor"/></svg></span>ADHD/ADD</a>
+                <a href="services.html#care-1"><span class="nav-dd-ic" style="--c:#b25c72"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8h9.4a2.6 2.6 0 1 0-2.6-2.6"/><path d="M3 12.5h13a3 3 0 1 1-3 3"/><path d="M3 17h7a2.3 2.3 0 1 1-2.3 2.3"/></svg></span>Anxiety</a>
+                <a href="services.html#care-2"><span class="nav-dd-ic" style="--c:#2f9e8f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 19a3.7 3.7 0 0 0 .5-7.4A5 5 0 0 0 7.2 11 3.5 3.5 0 0 0 8 19z"/><path d="M17.5 6.6l1-1M20.5 8.7h1.2M18.4 3.3l.3-1.2"/></svg></span>Depression</a>
+                <a href="services.html#care-3"><span class="nav-dd-ic" style="--c:#3f7d52"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 8 13.2 13 8 16l2.8-5z" fill="currentColor"/></svg></span>Behavioral concerns</a>
+                <a href="services.html#care-4"><span class="nav-dd-ic" style="--c:#6f62b8"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span>Mood disorders</a>
+                <a href="services.html#care-5"><span class="nav-dd-ic" style="--c:#3f79b6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><g transform="rotate(-42 12 12)"><rect x="3" y="8.2" width="18" height="7.6" rx="3.8"/><path d="M12 8.4v7.2"/></g></svg></span>Medication management</a>
+                <a href="services.html#care-6"><span class="nav-dd-ic" style="--c:#b85f8f"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3.5 11.2 12 4l8.5 7.2"/><path d="M5.8 10.4V20h12.4v-9.6"/></g><path d="M12 18c-2.1-1.3-3.2-2.4-3.2-3.8a1.7 1.7 0 0 1 3.2-.8 1.7 1.7 0 0 1 3.2.8c0 1.4-1.1 2.5-3.2 3.8z" fill="currentColor"/></svg></span>Family-centered treatment</a>
+              </div>
+            </div>
           </li>
-          <li>
-            <a href="about.html">
-              <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-              <span>About Us</span>
-            </a>
-          </li>
-          <li>
-            <a href="services.html">
-              <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.3-9C1 8.8 2.7 5 6.3 5 9 5 12 8 12 8s3-3 5.7-3C21.3 5 23 8.8 21.3 12 19 16.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
-              <span>Services</span>
-            </a>
-          </li>
-          <li>
-            <a href="team.html">
-              <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM17 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-2.6 2.7-4.5 6-4.5M21 20c0-2.6-2.7-4.5-6-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-              <span>Our Team</span>
-            </a>
-          </li>
-          <li>
-            <a href="contact.html">
-              <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L4 21l1.1-4A8.4 8.4 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
-              <span>Contact Us</span>
-            </a>
-          </li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
 
-
-      <a href="contact.html" class="btn btn-primary header-cta">Request Appointment</a>
+      <div class="header-actions">
+        <a class="header-phone" href="tel:8645202020"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>864-520-2020</a>
+        <a class="header-refer" href="contact.html#referrals">Refer a patient</a>
+        <a href="contact.html" class="btn btn-primary header-cta">Request Appointment</a>
+      </div>
       <button class="more-trigger" aria-label="Open menu" aria-expanded="false" aria-controls="moreDrawer">
         <span class="more-trigger-icon" aria-hidden="true"><i></i><i></i><i></i></span>
       </button>
@@ -147,39 +149,34 @@
   </div>
 
   <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
-    <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
-
-    <div class="hero-photo-bleed" style="background-image:url('assets/hero-light-1.jpg')" role="img" aria-label="A group of kids putting their hands together in a sunny park"></div>
-
-    <div class="container hero-inner">
-      <div class="hero-copy reveal">
+  <section class="hx">
+    <!-- Background: soft gold sunbeams fanning down from the top-right, warm glow at the source -->
+    <div class="hx-sunbeams" aria-hidden="true"><i class="hx-rays"></i><i class="hx-glow"></i></div>
+    <!-- Layered "paper" hills: rise in back-to-front on load, then drift at different speeds on scroll -->
+    <div class="hx-scene" aria-hidden="true">
+      <div class="hx-layer hx-l1" data-parallax="0.30"><svg viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0 92 C 380 46, 1060 132, 1440 74 L1440 220 L0 220 Z" fill="#cfe0c1"/></svg></div>
+      <div class="hx-layer hx-l2" data-parallax="0.18"><svg viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0 132 C 420 98, 1020 168, 1440 116 L1440 220 L0 220 Z" fill="#dce8d2"/></svg></div>
+      <div class="hx-layer hx-l3" data-parallax="0.06"><svg viewBox="0 0 1440 220" preserveAspectRatio="none"><defs><linearGradient id="hxFrontHill" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#eaf1e0"/><stop offset="1" stop-color="#f3eede"/></linearGradient></defs><path d="M0 166 C 460 140, 980 190, 1440 152 L1440 220 L0 220 Z" fill="url(#hxFrontHill)"/></svg></div>
+    </div>
+    <div class="container hx-inner">
+      <div class="hx-copy">
         <span class="eyebrow">Child &amp; adolescent psychiatry</span>
         <h1>Compassionate <span class="hl">Psychiatric Care</span> for Children and Adolescents</h1>
-        <p class="lead">
-          We provide psychiatric care for children and adolescents, working closely with
-          their families.
-        </p>
-        <div class="hero-actions">
+        <p class="lead">We provide psychiatric care for children and adolescents, working closely with their families.</p>
+        <div class="hx-actions">
           <a href="contact.html" class="btn btn-primary">Book an Appointment</a>
           <a href="services.html" class="btn btn-ghost">Explore Our Care</a>
         </div>
-        <div class="hero-reassure">
-          <span class="rm-item"><span class="dot"></span><span>Child &amp; adolescent psychiatric care</span></span>
-          <span class="rm-item"><span class="dot"></span><span>Virtual &amp; in-person visits</span></span>
+        <div class="hx-chips">
+          <span class="hx-chip"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Ages 5 to 17</span>
+          <span class="hx-chip"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 17v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Virtual &amp; in-person visits</span>
         </div>
       </div>
-
+      <div class="hx-media" data-parallax="0.08">
+        <div class="hx-photo"><img src="assets/hero-walk.jpg" alt="Three smiling kids with backpacks walking through a sunny park, with a parent close behind"/></div>
+      </div>
     </div>
-
-    <!-- Hero flip booklet (desktop overlay) -->
-    <div class="hero-book hero-book--desk" aria-hidden="true"><div class="hb-card" id="hbCardD"><div class="hb-box"><div class="layer" id="hbDA"></div><div class="layer" id="hbDB"></div></div></div></div>
-
   </section>
-
-  <!-- Hero flip booklet (mobile swipe card) -->
-  <section class="hero-book hero-book--mob" aria-label="A quick guide to iTrust Pediatrics"><div class="hb-card" id="hbCardM"><div class="hb-box"><div class="layer" id="hbMA"></div><div class="layer" id="hbMB"></div></div></div></section>
 
   <!-- ============ TAGLINE BAND ============ -->
   <section class="tagline-band reveal">
@@ -264,11 +261,11 @@
         <h2>Child &amp; Adolescent Psychiatric Care, With Families At The Center</h2>
       </div>
 
-      <figure class="about-banner reveal">
-        <img src="assets/about-family.jpg" alt="A family of four resting close together, smiling" loading="lazy" />
+      <figure class="about-banner about-banner--sofa reveal">
+        <img src="assets/about-family-sofa.jpg" alt="A smiling family of four relaxing together on a sofa at home" loading="lazy" />
       </figure>
 
-      <div class="about-cards reveal">
+      <div class="about-cards reveal stagger">
         <div class="about-card" tabindex="0">
           <span class="ac-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
           <h3>Who we are</h3>
@@ -288,6 +285,7 @@
           <span class="ac-hint" aria-hidden="true">Hover to read <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
+
 
       <div class="about-care reveal">
         <h3 class="mh-title">Our Collaborative Care Model</h3>
@@ -324,43 +322,6 @@
       </ul>
   </section>
 
-  <!-- ============ CLINICAL SERVICES ============ -->
-  <section class="section" id="concerns">
-    <div class="concern-bg" aria-hidden="true" style="background-image:url('assets/hero-kids.jpg')"></div>
-    <div class="concern-bg-scrim" aria-hidden="true"></div>
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">What we offer</span>
-        <h2>Our Clinical Services</h2>
-        <p class="section-sub">Psychiatric care for children and adolescents, built around what each family needs. Tap any service to see how we help.</p>
-      </div>
-
-      <!-- credibility band -->
-
-      <div class="cs-tiles cs-rows reveal">
-        <button class="cs-tile" data-i="0" style="--ac:#c99321;--soft:#fbeecb" aria-haspopup="dialog"><span class="cs-disc"><svg viewBox="0 0 24 24"><path d="M13 2 4.4 13.4H11l-1 8.6L20 9.6h-6.6z" fill="currentColor"/></svg></span><span class="cs-meta"><span class="cs-name">ADHD/ADD</span><span class="cs-tag">Attention</span></span><span class="cs-go"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-        <button class="cs-tile" data-i="1" style="--ac:#b25c72;--soft:#f4e1e6" aria-haspopup="dialog"><span class="cs-disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8h9.4a2.6 2.6 0 1 0-2.6-2.6"/><path d="M3 12.5h13a3 3 0 1 1-3 3"/><path d="M3 17h7a2.3 2.3 0 1 1-2.3 2.3"/></svg></span><span class="cs-meta"><span class="cs-name">Anxiety</span><span class="cs-tag">Anxiety</span></span><span class="cs-go"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-        <button class="cs-tile" data-i="2" style="--ac:#2f9e8f;--soft:#d7efea" aria-haspopup="dialog"><span class="cs-disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 19a3.7 3.7 0 0 0 .5-7.4A5 5 0 0 0 7.2 11 3.5 3.5 0 0 0 8 19z"/><path d="M17.5 6.6l1-1M20.5 8.7h1.2M18.4 3.3l.3-1.2"/></svg></span><span class="cs-meta"><span class="cs-name">Depression</span><span class="cs-tag">Mood</span></span><span class="cs-go"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-        <button class="cs-tile" data-i="3" style="--ac:#3f7d52;--soft:#e2efe0" aria-haspopup="dialog"><span class="cs-disc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 8 13.2 13 8 16l2.8-5z" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><span class="cs-meta"><span class="cs-name">Behavioral concerns</span><span class="cs-tag">Behavior</span></span><span class="cs-go"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-        <button class="cs-tile" data-i="4" style="--ac:#6f62b8;--soft:#e7e2f7" aria-haspopup="dialog"><span class="cs-disc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span><span class="cs-meta"><span class="cs-name">Mood Disorders</span><span class="cs-tag">Mood</span></span><span class="cs-go"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-        <button class="cs-tile" data-i="5" style="--ac:#3f79b6;--soft:#dbeaf8" aria-haspopup="dialog"><span class="cs-disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><g transform="rotate(-42 12 12)"><rect x="3" y="8.2" width="18" height="7.6" rx="3.8"/><path d="M12 8.4v7.2"/></g></svg></span><span class="cs-meta"><span class="cs-name">Medication Management</span><span class="cs-tag">Care</span></span><span class="cs-go"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-        <button class="cs-tile" data-i="6" style="--ac:#b85f8f;--soft:#f6e0ec" aria-haspopup="dialog"><span class="cs-disc"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3.5 11.2 12 4l8.5 7.2"/><path d="M5.8 10.4V20h12.4v-9.6"/></g><path d="M12 18c-2.1-1.3-3.2-2.4-3.2-3.8a1.7 1.7 0 0 1 3.2-.8 1.7 1.7 0 0 1 3.2.8c0 1.4-1.1 2.5-3.2 3.8z" fill="currentColor"/></svg></span><span class="cs-meta"><span class="cs-name">Family-Centered Treatment</span><span class="cs-tag">Family</span></span><span class="cs-go"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-      </div>
-      <div class="cs-modal" id="csModal" hidden>
-        <div class="cs-backdrop" data-close></div>
-        <div class="cs-fs">
-        <div class="cs-panel" data-i="0" role="dialog" aria-modal="true" aria-label="ADHD/ADD" hidden style="--ac:#c99321;--soft:#fbeecb"><div class="cs-mhead" ><span class="cs-ic lg"><svg viewBox="0 0 24 24"><path d="M13 2 4.4 13.4H11l-1 8.6L20 9.6h-6.6z" fill="currentColor"/></svg></span><h3>ADHD/ADD</h3><span class="cs-mtag">Attention</span><button class="cs-x" data-close aria-label="Close">&times;</button></div><div class="cs-mbody"><div class="cs-mcontent"><p class="cs-intro">Some kids have brilliant, busy minds that just work differently. We look past the "behavior problem" label to understand how your child focuses and learns, then build supports around their strengths.</p><div class="cs-cols"><div class="cs-col"><h4>Signs we watch for</h4><ul><li>Hard time focusing, finishing tasks, or sitting still</li><li>Big emotions and impulsive moments</li><li>Struggles with homework, routines, or organization</li><li>Notes home from teachers about attention</li></ul></div><div class="cs-col cs-treat"><h4>How we help</h4><ul><li>A thorough assessment with input from home and school</li><li>Behavioral strategies, focus supports, and medication management when appropriate</li><li>Parent coaching and skill-building support</li><li>School-support guidance so your child is set up to succeed</li></ul></div></div><div class="cs-faq"><h4>Common questions</h4><dl><dt>Is ADHD just a discipline or willpower problem?</dt><dd>No. ADHD is a difference in how the brain manages attention, activity, and impulses, not a matter of trying harder or better parenting. We assess it carefully instead of labeling it a “behavior problem.”</dd><dt>How do you diagnose ADHD?</dt><dd>With a thorough evaluation that gathers your child’s history and input from both home and school, plus standardized rating scales, never a single quick visit.</dd><dt>Does my child have to take medication?</dt><dd>Not necessarily. Medication is one option, used only when it’s the right fit. We start conservatively, involve you in every decision, and pair it with behavioral and school supports.</dd></dl></div></div><div class="cs-mimg"><img src="assets/conditions/adhd.jpg" alt="Children playing together outdoors" loading="lazy"></div></div><div class="cs-mfoot"><p>Not sure it’s &ldquo;enough&rdquo; to reach out? Reach out anyway.</p><a class="btn btn-primary" href="contact.html">Schedule An Initial Appointment</a></div></div>
-        <div class="cs-panel" data-i="1" role="dialog" aria-modal="true" aria-label="Anxiety" hidden style="--ac:#b25c72;--soft:#f4e1e6"><div class="cs-mhead" ><span class="cs-ic lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8h9.4a2.6 2.6 0 1 0-2.6-2.6"/><path d="M3 12.5h13a3 3 0 1 1-3 3"/><path d="M3 17h7a2.3 2.3 0 1 1-2.3 2.3"/></svg></span><h3>Anxiety</h3><span class="cs-mtag">Anxiety</span><button class="cs-x" data-close aria-label="Close">&times;</button></div><div class="cs-mbody"><div class="cs-mcontent"><p class="cs-intro">It's normal for kids to worry about a test or a thunderstorm. Anxiety is different: it's worry that gets so loud it crowds out school, sleep, friendships, and play. We take those worries seriously, with no judgment and no rush.</p><div class="cs-cols"><div class="cs-col"><h4>Signs we watch for</h4><ul><li>Stomachaches or headaches with no clear cause</li><li>Trouble sleeping, or clinging at drop-off</li><li>Avoiding school, friends, or once-loved activities</li><li>Constant "what if" worries that won't switch off</li></ul></div><div class="cs-col cs-treat"><h4>How we help</h4><ul><li>A calm, unhurried assessment of what's really going on</li><li>Medication management when appropriate, plus proven coping strategies</li><li>Practical coping tools, mindfulness, breathing, and grounding</li><li>A family plan, so parents know how to support, not pressure</li></ul></div></div><div class="cs-faq"><h4>Common questions</h4><dl><dt>How is anxiety different from normal worry?</dt><dd>All kids worry sometimes. It becomes anxiety when the worry is intense, hard to switch off, and starts crowding out school, sleep, friendships, or play.</dd><dt>Can anxiety show up as physical symptoms?</dt><dd>Yes. Frequent stomachaches, headaches, trouble sleeping, or meltdowns at drop-off are common ways anxiety shows up in kids, even when there’s no medical cause.</dd><dt>Do you treat anxiety with medication or therapy?</dt><dd>We’re a psychiatric practice focused on evaluation and medication management. When therapy would also help, we’ll help you connect with a trusted therapist so both work together.</dd></dl></div></div><div class="cs-mimg"><img src="assets/conditions/anxiety.jpg" alt="A child in a calm, quiet moment" loading="lazy"></div></div><div class="cs-mfoot"><p>Not sure it’s &ldquo;enough&rdquo; to reach out? Reach out anyway.</p><a class="btn btn-primary" href="contact.html">Schedule An Initial Appointment</a></div></div>
-        <div class="cs-panel" data-i="2" role="dialog" aria-modal="true" aria-label="Depression" hidden style="--ac:#2f9e8f;--soft:#d7efea"><div class="cs-mhead" ><span class="cs-ic lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 19a3.7 3.7 0 0 0 .5-7.4A5 5 0 0 0 7.2 11 3.5 3.5 0 0 0 8 19z"/><path d="M17.5 6.6l1-1M20.5 8.7h1.2M18.4 3.3l.3-1.2"/></svg></span><h3>Depression</h3><span class="cs-mtag">Mood</span><button class="cs-x" data-close aria-label="Close">&times;</button></div><div class="cs-mbody"><div class="cs-mcontent"><p class="cs-intro">When sadness lingers for weeks and a child stops being themselves, it deserves real attention, not a "they'll grow out of it." We help families spot it early and build a path back to feeling like themselves again.</p><div class="cs-cols"><div class="cs-col"><h4>Signs we watch for</h4><ul><li>Lasting sadness, irritability, or numbness</li><li>Pulling away from friends and family</li><li>Changes in sleep, appetite, or energy</li><li>Losing interest in things they used to love</li></ul></div><div class="cs-col cs-treat"><h4>How we help</h4><ul><li>A compassionate evaluation and, where needed, safety planning</li><li>A psychiatric treatment plan built around your child, including medication when it helps</li><li>Practical routines for mood, rest, and daily structure</li><li>Steady follow-up, so we stay with you and refer if more is needed</li></ul></div></div><div class="cs-faq"><h4>Common questions</h4><dl><dt>Isn’t it normal for kids and teens to be moody?</dt><dd>Some ups and downs are normal. But sadness, irritability, or numbness that lasts two weeks or more and changes who your child is deserves real attention, not “they’ll grow out of it.”</dd><dt>What are the warning signs of depression?</dt><dd>Lasting sadness or irritability, pulling away from friends and family, losing interest in things they used to love, and changes in sleep, appetite, or energy.</dd><dt>What should I do if my child mentions self-harm?</dt><dd>Take it seriously and don’t wait. Call or text 988, or 911 in an emergency. Then reach out to us so we can help with next steps and ongoing care.</dd></dl></div></div><div class="cs-mimg"><img src="assets/conditions/depression.jpg" alt="A young person resting quietly" loading="lazy"></div></div><div class="cs-mfoot"><p>Not sure it’s &ldquo;enough&rdquo; to reach out? Reach out anyway.</p><a class="btn btn-primary" href="contact.html">Schedule An Initial Appointment</a></div></div>
-        <div class="cs-panel" data-i="3" role="dialog" aria-modal="true" aria-label="Behavioral concerns" hidden style="--ac:#3f7d52;--soft:#e2efe0"><div class="cs-mhead" ><span class="cs-ic lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 8 13.2 13 8 16l2.8-5z" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><h3>Behavioral concerns</h3><span class="cs-mtag">Behavior</span><button class="cs-x" data-close aria-label="Close">&times;</button></div><div class="cs-mbody"><div class="cs-mcontent"><p class="cs-intro">Big behaviors, meltdowns, defiance, anger that comes out of nowhere, are usually a child telling us something they can't yet put into words. We help families understand what's underneath and respond in a way that actually calms things down.</p><div class="cs-cols"><div class="cs-col"><h4>Signs we watch for</h4><ul><li>Frequent meltdowns or outbursts beyond their age</li><li>Defiance, arguing, or trouble with limits</li><li>Anger or aggression that worries you</li><li>Conflict that's straining the whole household</li></ul></div><div class="cs-col cs-treat"><h4>How we help</h4><ul><li>Get to the "why" behind the behavior, not just the surface</li><li>Emotional-regulation strategies and behavioral supports</li><li>Parent coaching with calm, consistent strategies</li><li>Family guidance to ease conflict and rebuild connection</li></ul></div></div><div class="cs-faq"><h4>Common questions</h4><dl><dt>Are big behaviors just a sign of bad parenting?</dt><dd>No. Meltdowns, defiance, and anger are usually a child communicating something they can’t yet put into words. We help you understand what’s underneath, with no blame.</dd><dt>When are behaviors a reason to seek help?</dt><dd>When outbursts are beyond what’s typical for their age, keep escalating, or are straining the whole household, it’s worth a professional look.</dd><dt>Do you only prescribe medication for behavior?</dt><dd>No. We start by understanding the “why,” then use emotional-regulation strategies, behavioral supports, and parent coaching, with medication only when it clearly helps.</dd></dl></div></div><div class="cs-mimg"><img src="assets/conditions/behavior.jpg" alt="A parent holding their child" loading="lazy"></div></div><div class="cs-mfoot"><p>Not sure it’s &ldquo;enough&rdquo; to reach out? Reach out anyway.</p><a class="btn btn-primary" href="contact.html">Schedule An Initial Appointment</a></div></div>
-        <div class="cs-panel" data-i="4" role="dialog" aria-modal="true" aria-label="Mood Disorders" hidden style="--ac:#6f62b8;--soft:#e7e2f7"><div class="cs-mhead" ><span class="cs-ic lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span><h3>Mood Disorders</h3><span class="cs-mtag">Mood</span><button class="cs-x" data-close aria-label="Close">&times;</button></div><div class="cs-mbody"><div class="cs-mcontent"><p class="cs-intro">Mood that swings, lingering irritability, or ups and downs beyond the usual can point to a mood disorder. We assess carefully, then help your child find steadier ground.</p><div class="cs-cols"><div class="cs-col"><h4>Signs we watch for</h4><ul><li>Big mood swings or ups and downs</li><li>Irritability or anger that lingers</li><li>Periods of unusually high or very low energy</li><li>Trouble that comes and goes in cycles</li></ul></div><div class="cs-col cs-treat"><h4>How we help</h4><ul><li>A thorough psychiatric evaluation and diagnosis</li><li>Medication management when it's the right fit</li><li>A clear plan with close monitoring over time</li><li>Coordination with your family and school</li></ul></div></div><div class="cs-faq"><h4>Common questions</h4><dl><dt>What is a mood disorder in children?</dt><dd>It’s when mood swings, lingering irritability, or ups and downs go beyond the usual and start affecting daily life. A thorough evaluation is key to getting it right.</dd><dt>How is it different from ordinary moodiness?</dt><dd>Ordinary moods pass. A mood disorder tends to be more intense, last longer, or come and go in cycles, and it gets in the way of school, friendships, or home.</dd><dt>How do you diagnose a mood disorder?</dt><dd>With a thorough psychiatric evaluation of your child’s history and patterns over time, not a snap judgment from a single visit.</dd></dl></div></div><div class="cs-mimg"><img src="assets/conditions/mood.jpg" alt="A thoughtful young person by a window" loading="lazy"></div></div><div class="cs-mfoot"><p>Not sure it’s &ldquo;enough&rdquo; to reach out? Reach out anyway.</p><a class="btn btn-primary" href="contact.html">Schedule An Initial Appointment</a></div></div>
-        <div class="cs-panel" data-i="5" role="dialog" aria-modal="true" aria-label="Medication Management" hidden style="--ac:#3f79b6;--soft:#dbeaf8"><div class="cs-mhead" ><span class="cs-ic lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><g transform="rotate(-42 12 12)"><rect x="3" y="8.2" width="18" height="7.6" rx="3.8"/><path d="M12 8.4v7.2"/></g></svg></span><h3>Medication Management</h3><span class="cs-mtag">Care</span><button class="cs-x" data-close aria-label="Close">&times;</button></div><div class="cs-mbody"><div class="cs-mcontent"><p class="cs-intro">Medication management is a core part of what we do. When it's the right fit, our prescribers offer conservative medication support that's closely monitored over time.</p><div class="cs-cols"><div class="cs-col"><h4>Signs we watch for</h4><ul><li>A thorough evaluation before anything is prescribed</li><li>Conservative, evidence-based prescribing</li><li>Close monitoring and regular check-ins</li><li>Coordination with your child's care team and school</li></ul></div><div class="cs-col cs-treat"><h4>How we help</h4><ul><li>Conservative by default, medication only when it clearly helps</li><li>Clear talk about benefits and trade-offs</li><li>You and your child are part of every decision</li><li>Adjusted carefully over time, never rushed</li></ul></div></div><div class="cs-faq"><h4>Common questions</h4><dl><dt>Is it safe to give psychiatric medication to children?</dt><dd>When it’s the right fit and carefully managed, medication can be safe and helpful. We prescribe conservatively, start low, and monitor closely.</dd><dt>How do you decide whether medication is needed?</dt><dd>Only after a thorough evaluation. We weigh the benefits and trade-offs with you, and recommend medication only when it clearly helps.</dd><dt>Will my child be on medication forever?</dt><dd>Not necessarily. We adjust carefully over time and regularly revisit whether medication is still the right call.</dd></dl></div></div><div class="cs-mimg"><img src="assets/conditions/medication.jpg" alt="A gentle pediatric check-up" loading="lazy"></div></div><div class="cs-mfoot"><p>Not sure it’s &ldquo;enough&rdquo; to reach out? Reach out anyway.</p><a class="btn btn-primary" href="contact.html">Schedule An Initial Appointment</a></div></div>
-        <div class="cs-panel" data-i="6" role="dialog" aria-modal="true" aria-label="Family-Centered Treatment" hidden style="--ac:#b85f8f;--soft:#f6e0ec"><div class="cs-mhead" ><span class="cs-ic lg"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M3.5 11.2 12 4l8.5 7.2"/><path d="M5.8 10.4V20h12.4v-9.6"/></g><path d="M12 18c-2.1-1.3-3.2-2.4-3.2-3.8a1.7 1.7 0 0 1 3.2-.8 1.7 1.7 0 0 1 3.2.8c0 1.4-1.1 2.5-3.2 3.8z" fill="currentColor"/></svg></span><h3>Family-Centered Treatment</h3><span class="cs-mtag">Family</span><button class="cs-x" data-close aria-label="Close">&times;</button></div><div class="cs-mbody"><div class="cs-mcontent"><p class="cs-intro">Caring for a child means caring for the whole family. Through psychoeducation, care planning, and guidance from our practitioners, we help parents feel confident supporting their child at home.</p><div class="cs-cols"><div class="cs-col"><h4>Signs we watch for</h4><ul><li>Psychoeducation about your child's diagnosis and needs</li><li>A clear care plan you help shape</li><li>Practical guidance from our practitioners for home</li><li>Support for siblings and the whole family</li></ul></div><div class="cs-col cs-treat"><h4>How we help</h4><ul><li>Less guesswork and overwhelm at home</li><li>Calmer, more consistent routines</li><li>Everyone pulling in the same direction</li><li>Confidence you're not navigating it alone</li></ul></div></div><div class="cs-faq"><h4>Common questions</h4><dl><dt>What does “family-centered” actually mean?</dt><dd>It means we care for the whole family, not just the appointment. Through psychoeducation and guidance, we help you feel confident supporting your child at home.</dd><dt>Do parents attend visits?</dt><dd>Yes. Parents and guardians are partners in the plan. How involved you are depends on your child’s age and needs, and we’ll talk through what fits.</dd><dt>Can you help our other kids and our routine?</dt><dd>We offer support for siblings and the whole family, plus practical routines that make home calmer and more consistent.</dd></dl></div></div><div class="cs-mimg"><img src="assets/conditions/family.jpg" alt="A family spending time together at home" loading="lazy"></div></div><div class="cs-mfoot"><p>Not sure it’s &ldquo;enough&rdquo; to reach out? Reach out anyway.</p><a class="btn btn-primary" href="contact.html">Schedule An Initial Appointment</a></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ OUR APPROACH ============ -->
   <section class="section section-tint" id="approach">
     <div class="container">
@@ -371,7 +332,7 @@
       </div>
       <div class="hiw-wrap">
         <figure class="hiw-media reveal">
-          <img src="assets/how-it-works.jpg" alt="A provider talking warmly with a young person and a parent in a comfortable room" loading="lazy" />
+          <img src="assets/how-it-works-steps.jpg" alt="A young person with a backpack climbing green steps toward a flag and a rising sun" loading="lazy" />
         </figure>
         <div class="hiw-content">
           <ol class="hiw-steps">
@@ -409,38 +370,6 @@
     </div>
   </section>
 
-  <!-- ============ CARE TEAM ============ -->
-  <!-- NOTE: placeholder clinicians, replace names, credentials, specialties & bios with real staff. -->
-  <section class="section section-tint" id="team">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Our care team</span>
-        <h2>Meet Our Experienced Providers</h2>
-        <p class="section-sub">Our licensed psychiatric providers specialize in children's and adolescents' mental health.</p>
-      </div>
-
-      <!-- horizontal slider, swap each .tile-photo for <img src="..."> when real headshots are ready -->
-      <div class="team-slider">
-
-        <div class="team-track" id="teamTrack">
-
-          <article class="team-tile" data-spec="kids teens">
-            <div class="tile-photo" style="--g1:#5dcaa5;--g2:#2f9e8f">
-              <span class="tile-avatar" role="img" aria-label="Portrait of Jacquelyn Carney" style="background-image:url('assets/team-jacquelyn.jpg');--photo-y:50%;--photo-zoom:100%"></span>
-            </div>
-            <div class="tile-body">
-              <h3>Jacquelyn Carney</h3>
-              <span class="tile-cred">Physician Assistant, Pediatric Psychiatry</span>
-              <p class="tile-summary">Physician assistant specializing in pediatric psychiatry, providing psychiatric evaluation and medication management for children and adolescents.</p>
-              <ul class="tile-tags"><li>Pediatric psychiatry</li><li>Medication mgmt</li></ul>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ VIDEO SPOTLIGHT ============ -->
   <section class="section" id="spotlight">
     <div class="container">
@@ -466,6 +395,134 @@
     </div>
   </section>
 
+  <!-- ============ MYTHS BLOG (3 articles; cards open the reading pop-up #mxModal) ============ -->
+  <section class="section mx-sec" id="myths">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">From our blog</span>
+        <h2>Myths That Keep Kids From Psychiatric Care</h2>
+        <p class="section-sub">Three things parents hear all the time, and what the research actually says.</p>
+      </div>
+      <div class="mx-grid reveal stagger">
+        <button class="mx-card" type="button" data-myth="0" aria-haspopup="dialog" style="--mx:#3f7d52;--mx-soft:#e3eedb">
+          <span class="mx-top"><span class="mx-tag">Myth</span><span class="mx-quote">&ldquo;They'll grow out of it.&rdquo;</span></span>
+          <span class="mx-body">
+            <span class="mx-title">Waiting it out can cost years. Here's how to know when to stop waiting.</span>
+            <span class="mx-dek">Half of lifetime mental health conditions begin by age 14. How to tell a phase from something that needs psychiatric care.</span>
+            <span class="mx-foot"><span>4 min read</span><span class="mx-go">Read the facts <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </span>
+        </button>
+        <button class="mx-card" type="button" data-myth="1" aria-haspopup="dialog" style="--mx:#2f9e8f;--mx-soft:#d7efea">
+          <span class="mx-top"><span class="mx-tag">Myth</span><span class="mx-quote">&ldquo;Medication will change who my child is.&rdquo;</span></span>
+          <span class="mx-body">
+            <span class="mx-title">Medication should help your child feel more like themselves</span>
+            <span class="mx-dek">What careful prescribing looks like, and what the research says about the two worries parents raise most.</span>
+            <span class="mx-foot"><span>5 min read</span><span class="mx-go">Read the facts <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </span>
+        </button>
+        <button class="mx-card" type="button" data-myth="2" aria-haspopup="dialog" style="--mx:#b25c72;--mx-soft:#f4e1e6">
+          <span class="mx-top"><span class="mx-tag">Myth</span><span class="mx-quote">&ldquo;It's a parenting problem.&rdquo;</span></span>
+          <span class="mx-body">
+            <span class="mx-title">Your child's struggles aren't a verdict on your parenting</span>
+            <span class="mx-dek">ADHD is one of the most heritable conditions in psychiatry. Why blame slows things down, and where parents really make a difference.</span>
+            <span class="mx-foot"><span>4 min read</span><span class="mx-go">Read the facts <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reading pop-up for the myths articles -->
+  <div class="mx-modal" id="mxModal" hidden>
+    <div class="mx-backdrop" data-mx-close></div>
+    <div class="mx-dialog" role="dialog" aria-modal="true" aria-labelledby="mxT0" tabindex="-1">
+      <button class="mx-close" type="button" data-mx-close aria-label="Close article"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+
+      <article class="mx-article" data-myth="0" hidden style="--mx:#3f7d52;--mx-soft:#e3eedb">
+        <h2 id="mxT0">Waiting it out can cost years. Here's how to know when to stop waiting.</h2>
+        <p class="mx-meta">4 min read &middot; iTrust Pediatrics</p>
+        <p>Plenty of childhood phases really do pass. Kids go through clingy stretches, a picky-eating year, a month of slammed doors. So when something feels off, most parents hear some version of "give it time" from a relative, a teacher, sometimes even a doctor. Often that's reasonable advice.</p>
+        <p>The catch is that many mental health conditions start in exactly these years. A large national study led by Harvard researcher Ronald Kessler found that half of all lifetime cases begin by age 14, and three quarters by 24. For anxiety, the typical starting age was 11.</p>
+        <h3>Waiting is common, and it adds up</h3>
+        <p>In one widely cited national survey, the median gap between when symptoms first showed up and a person's first visit with a psychiatrist was 11 years. A 2019 study in <em>JAMA Pediatrics</em> found that about half of U.S. children with depression, anxiety, or ADHD hadn't received care from a mental health professional.</p>
+        <p class="mx-fact"><strong>50%</strong><span>of all lifetime mental health conditions begin by age 14.<em>Kessler et al., 2005</em></span></p>
+        <h3>A simple rule of thumb</h3>
+        <p>The National Institute of Mental Health suggests getting help when a behavior:</p>
+        <ul>
+          <li>Lasts a few weeks or longer</li>
+          <li>Causes real distress for your child or your family</li>
+          <li>Gets in the way at school, at home, or with friends</li>
+        </ul>
+        <p>If your child talks about wanting to hurt themselves or someone else, don't wait for an appointment. Call or text 988, or call 911.</p>
+        <h3>An evaluation isn't a commitment</h3>
+        <p>A psychiatric evaluation is a careful conversation with you and your child. It's not a promise to start treatment. Sometimes the answer is "this is within the normal range, and here's what to keep an eye on." That's a good outcome too. You stop guessing, and you know what you're looking at.</p>
+        <p class="mx-close-line">If you've told yourself "let's give it another month" more than once, that's usually your answer.</p>
+        <a class="btn btn-primary mx-cta" href="contact.html#book">Book a psychiatric evaluation</a>
+        <div class="mx-sources">
+          <h4>Sources</h4>
+          <ul>
+            <li><a href="https://hcp.hms.harvard.edu/publication/lifetime-prevalence-and-age-onset-distributions-dsm-iv-disorders-national-comorbidity" target="_blank" rel="noopener">Kessler et al. (2005). Lifetime prevalence and age-of-onset distributions of DSM-IV disorders. <em>Archives of General Psychiatry</em>.</a></li>
+            <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1361004" target="_blank" rel="noopener">Wang et al. (2004). Delays in initial treatment contact after first onset of a mental disorder. <em>Health Services Research</em>.</a></li>
+            <li><a href="https://www.aafp.org/news/health-of-the-public/20190318childmentalillness.html" target="_blank" rel="noopener">Whitney &amp; Peterson (2019). U.S. national and state-level prevalence of mental health disorders and disparities of mental health care use in children. <em>JAMA Pediatrics</em> (summary).</a></li>
+            <li><a href="https://infocenter.nimh.nih.gov/publications/children-and-mental-health-just-stage" target="_blank" rel="noopener">National Institute of Mental Health. <em>Children and Mental Health: Is This Just a Stage?</em></a></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="mx-article" data-myth="1" hidden style="--mx:#2f9e8f;--mx-soft:#d7efea">
+        <h2 id="mxT1">Medication should help your child feel more like themselves</h2>
+        <p class="mx-meta">5 min read &middot; iTrust Pediatrics</p>
+        <p>"Will it change who my child is?" is one of the first questions parents ask about psychiatric medication, and it's a fair one. Many picture a dulled, flat version of their kid. With careful psychiatric care, that isn't the goal and it isn't the usual result. If it does happen, it's a signal to adjust the dose or the plan, not something your family should just live with.</p>
+        <h3>What careful prescribing looks like</h3>
+        <ul>
+          <li>A thorough evaluation first, with input from home and school</li>
+          <li>Medication only when it clearly fits, never as an automatic first step</li>
+          <li>Starting with a low dose and adjusting slowly</li>
+          <li>Regular follow-ups to check what's working and watch for side effects</li>
+          <li>You and your child involved in every decision, including whether to keep going</li>
+        </ul>
+        <p>Medication is one tool among several. Many kids do best when it's paired with therapy, school supports, and changes at home, and we coordinate with your child's therapist, pediatrician, and school when that helps.</p>
+        <h3>What the research says about two common worries</h3>
+        <p><strong>"Will ADHD medication make drug use more likely later?"</strong> A 2013 analysis in <em>JAMA Psychiatry</em> pooled 15 long-term studies that followed more than 2,500 kids with ADHD into their teens and twenties. Kids treated with stimulants were no more likely, and no less likely, to develop alcohol or drug problems than kids who weren't.</p>
+        <p class="mx-fact"><strong>15</strong><span>long-term studies, 2,500+ kids: no difference in later substance use with stimulant treatment.<em>Humphreys et al., 2013</em></span></p>
+        <p><strong>"What about the warning on antidepressants?"</strong> In 2004 the FDA added a boxed warning after reviewing short-term trials in young people. About 4% of those taking an antidepressant had suicidal thoughts or behaviors, compared with 2% on a placebo. No suicides happened in those trials. The warning is a big reason close follow-up matters in the first weeks, and why you should know exactly who to call if your child's mood changes. Untreated depression carries serious risks of its own, and a good prescriber will walk you through both sides.</p>
+        <p class="mx-close-line">Write your questions down before the first visit, even the ones that feel small. A good prescriber will be glad you asked every one of them.</p>
+        <a class="btn btn-primary mx-cta" href="contact.html#book">Talk with a prescriber</a>
+        <div class="mx-sources">
+          <h4>Sources</h4>
+          <ul>
+            <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6688478" target="_blank" rel="noopener">Humphreys, Eng &amp; Lee (2013). Stimulant medication and substance use outcomes: a meta-analysis. <em>JAMA Psychiatry</em>.</a></li>
+            <li><a href="https://www.fda.gov/Drugs/DrugSafety/PostmarketDrugSafetyInformationforPatientsandProviders/ucm161679.htm" target="_blank" rel="noopener">U.S. Food and Drug Administration. Antidepressant use in children, adolescents, and adults (boxed warning information).</a></li>
+            <li><a href="https://www.aacap.org/AACAP/Families_and_Youth/Resources/Psychiatric_Medication/Home.aspx" target="_blank" rel="noopener">American Academy of Child &amp; Adolescent Psychiatry. Psychiatric Medication resource center.</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="mx-article" data-myth="2" hidden style="--mx:#b25c72;--mx-soft:#f4e1e6">
+        <h2 id="mxT2">Your child's struggles aren't a verdict on your parenting</h2>
+        <p class="mx-meta">4 min read &middot; iTrust Pediatrics</p>
+        <p>Parents of kids with ADHD, anxiety, or big behaviors hear it constantly. From a stranger in the checkout line, from a relative at Thanksgiving, and from their own heads at 11 p.m.: maybe if I were stricter, calmer, more consistent.</p>
+        <p>The science doesn't back that up. ADHD is one of the most heritable conditions in psychiatry. Across 37 twin studies, genes explained about 74% of the differences in ADHD traits between people. Anxiety and depression tend to run in families too, and they're shaped by temperament, brain development, stress, and life events, much of which no parent controls.</p>
+        <p class="mx-fact"><strong>74%</strong><span>of the variation in ADHD traits is explained by genes, across 37 twin studies.<em>Faraone &amp; Larsson, 2019</em></span></p>
+        <h3>Blame tends to slow everything down</h3>
+        <p>When a family believes the problem is discipline, they usually push harder on strategies that aren't working, wait longer to get help, and feel worse the whole time. Kids pick up on it too. Many of them have already decided they're "the bad kid."</p>
+        <h3>Where parents make a real difference</h3>
+        <p>Parenting doesn't cause these conditions, but it's one of the most powerful parts of treatment. Kids do better when their parents understand what's going on, know which approaches fit how their child's brain works, and get support of their own. That's why every plan we build keeps the family at the center.</p>
+        <p class="mx-close-line">You know your child better than anyone. If something has felt off for a while, trust that instinct and get a clear answer.</p>
+        <a class="btn btn-primary mx-cta" href="contact.html#book">Start with a psychiatric evaluation</a>
+        <div class="mx-sources">
+          <h4>Sources</h4>
+          <ul>
+            <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6477889" target="_blank" rel="noopener">Faraone &amp; Larsson (2019). Genetics of attention deficit hyperactivity disorder. <em>Molecular Psychiatry</em>.</a></li>
+            <li><a href="https://infocenter.nimh.nih.gov/publications/children-and-mental-health-just-stage" target="_blank" rel="noopener">National Institute of Mental Health. <em>Children and Mental Health: Is This Just a Stage?</em></a></li>
+          </ul>
+        </div>
+      </article>
+
+      <p class="mx-disclaimer">General information, not medical advice. If your child is in crisis, call or text 988, or call 911.</p>
+    </div>
+  </div>
+
   <!-- ============ FAQ ============ -->
   <section class="section" id="faq">
     <div class="container">
@@ -481,7 +538,7 @@
         <!-- Left: framed photo -->
         <aside class="faq-aside reveal">
           <figure class="faq-figure">
-            <img src="assets/faq-3.jpg" alt="A parent and child talking warmly with an iTrust Pediatrics provider" loading="lazy" />
+            <img src="assets/faq-questions.jpg" alt="A thoughtful teen at a desk looking up at question marks and thought bubbles" loading="lazy" />
           </figure>
           <p class="faq-contact">Still have a question? <a href="contact.html">Contact us</a></p>
         </aside>
@@ -562,102 +619,6 @@
     </div>
   </section>
 
-  <!-- ============ CONTACT / CTA ============ -->
-  <section class="section home-contact" id="contact">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Contact Us</h2>
-        <p class="section-sub">We're here to help your family take the next step.</p>
-      </div>
-    </div>
-    <div class="container contact-grid">
-      <div class="contact-copy reveal">
-        <span class="eyebrow">Get started</span>
-        <p>Request an appointment or ask a question, our team will respond promptly.</p>
-        <p class="ref-provider">Are you a referring provider? <a href="contact.html#referrals">See how to refer a patient &rarr;</a></p>
-
-        <ul class="contact-list">
-          <li>
-            <span class="ci" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-            </span>
-            <a href="tel:8645202020">864-520-2020</a>
-          </li>
-          <li>
-            <span class="ci" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="5" rx="1" stroke="currentColor" stroke-width="1.8"/><path d="M6 8H5a2 2 0 0 0-2 2v6h3v4h12v-4h3v-6a2 2 0 0 0-2-2h-1" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 16h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </span>
-            <span>Fax: 864-640-4400</span>
-          </li>
-          <li>
-            <span class="ci" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="m5 7 7 5 7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <a href="mailto:hello@itrustpediatrics.com">hello@itrustpediatrics.com</a>
-          </li>
-          <li>
-            <span class="ci" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
-            </span>
-            121 Commons Way, Greenville, SC 29611
-          </li>
-          <li>
-            <span class="ci" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 17v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </span>
-            Virtual &amp; in-person visits
-          </li>
-        </ul>
-      </div>
-
-      <form id="book" class="contact-form reveal" novalidate>
-        <div class="field">
-          <label for="name">Parent / guardian name</label>
-          <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" />
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" />
-          </div>
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000" />
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="childname">Child's first name</label>
-            <input id="childname" name="child_first_name" type="text" placeholder="Child's first name" />
-          </div>
-          <div class="field">
-            <label for="childage">Child's age</label>
-            <input id="childage" name="child_age" type="text" placeholder="e.g. 11" />
-          </div>
-        </div>
-        <div class="field">
-          <label for="status">Is your child a new or returning patient?</label>
-          <select id="status" name="patient_status">
-            <option value="" disabled selected>Select one</option>
-            <option>New patient</option>
-            <option>Returning patient</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="msg">How can we help?</label>
-          <textarea id="msg" name="message" rows="4" placeholder="Tell us a little about your child and what you need…"></textarea>
-        </div>
-        <div class="field-consent">
-          <input type="checkbox" id="consent" name="emergency_acknowledged" value="yes" />
-          <label for="consent">I understand this form isn't for emergencies. In a crisis, I'll call or text 988, or call 911.</label>
-        </div>
-        <button type="button" class="btn btn-primary btn-block" onclick="var n=document.getElementById('formNote'); if(n){ n.hidden=false; n.scrollIntoView({behavior:'smooth',block:'center'}); }">Request an Appointment</button>
-        <p id="formNote" class="form-note" role="status" hidden>Our secure online submission is being finalized. To book right now, please call <a href="tel:8645202020">864-520-2020</a> or email <a href="mailto:hello@itrustpediatrics.com?subject=Appointment%20request">hello@itrustpediatrics.com</a>. Please don't include sensitive medical details in email.</p>
-      </form>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
   <!-- ============ iTRUST FAMILY (across the lifespan) ============ -->
   <section class="section vu" id="visit">
     <div class="container">
@@ -726,12 +687,12 @@
           <ul><li><a href="services.html#care-0">ADHD/ADD</a></li><li><a href="services.html#care-1">Anxiety</a></li><li><a href="services.html#care-2">Depression</a></li><li><a href="services.html#care-3">Behavioral concerns</a></li><li><a href="services.html#care-4">Mood disorders</a></li><li><a href="services.html#care-5">Medication management</a></li></ul>
         </div>
         <div class="tz-col">
-          <h4>Learn</h4>
-          <ul><li><a href="about.html">Our Story</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Our Team</a></li><li><a href="index.html#faq">FAQs</a></li></ul>
-        </div>
-        <div class="tz-col">
           <h4>More</h4>
           <ul><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html">Request Appointment</a></li><li><a href="index.html#insurance">Insurance</a></li><li><a href="crisis.html">Crisis Resources</a></li></ul>
+        </div>
+        <div class="tz-col">
+          <h4>Learn</h4>
+          <ul><li><a href="services.html">Services</a></li><li><a href="team.html">Our Team</a></li><li><a href="index.html#faq">FAQs</a></li></ul>
         </div>
       </nav>
       <div class="tz-news">
@@ -816,6 +777,9 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260911cg"></script>
-  </body>
+  <script src="script.js?v=20260911ch"></script>
+  
+
+
+</body>
 </html>

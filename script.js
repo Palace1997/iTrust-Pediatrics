@@ -842,7 +842,7 @@
         '<div class="blog-article">' + p.body.map(blockHTML).join("") + "</div>" +
         '<div class="blog-foot"><p>General information for itrust families, not a substitute for medical advice. ' +
         'For anything urgent, call us, or 911 in an emergency.</p>' +
-        '<a class="btn btn-primary" href="#contact" data-bookclose>Book a visit</a></div>';
+        '<a class="btn btn-primary" href="contact.html#book" data-bookclose>Book a visit</a></div>';
       if (blogCard) blogCard.scrollTop = 0;
     };
 
@@ -1141,4 +1141,208 @@
   if(mA) advM=makeCard(mA, document.getElementById('hbMB'));
   var REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!REDUCE){ setInterval(function(){ if(document.hidden) return; advD(); if(advM) advM(); }, 3400); }
+})();
+
+/* ===== Homepage hero parallax: layers drift at different speeds on scroll (guarded) ===== */
+(function(){
+  var hero = document.querySelector('.hx');
+  if (!hero || !document.querySelector('.hx-scene')) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var items = Array.prototype.slice.call(hero.querySelectorAll('[data-parallax]'));
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    if (y > hero.offsetHeight * 1.3) return;   // hero is off screen; skip work
+    items.forEach(function(el){
+      var s = parseFloat(el.getAttribute('data-parallax')) || 0;
+      el.style.transform = 'translate3d(0,' + (y * s).toFixed(1) + 'px,0)';
+    });
+  }
+  window.addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
+})();
+
+/* ===== Overlay page scrollbar: the native one is hidden (no gutter); this slim thumb mirrors it ===== */
+(function(){
+  if (window.matchMedia && window.matchMedia('(hover: none)').matches) return;   // touch devices: native overlay
+  var root = document.documentElement, thumb = document.createElement('div');
+  thumb.className = 'page-thumb'; thumb.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(thumb);
+  var dragging = false, startY = 0, startScroll = 0, nearT;
+  function metrics(){ var vh = window.innerHeight, sh = root.scrollHeight, h = Math.max(36, vh * vh / sh); return { vh: vh, sh: sh, h: h, track: vh - h - 8 }; }
+  function place(){
+    var m = metrics();
+    if (m.sh <= m.vh + 1) { thumb.style.display = 'none'; return; }
+    thumb.style.display = '';
+    var p = window.pageYOffset / (m.sh - m.vh);
+    thumb.style.height = m.h + 'px';
+    thumb.style.transform = 'translateY(' + (4 + p * m.track).toFixed(1) + 'px)';
+  }
+  window.addEventListener('scroll', place, { passive: true });
+  window.addEventListener('resize', place);
+  if (window.ResizeObserver) new ResizeObserver(place).observe(document.body);
+  place();
+  // Reveal near the right edge so mouse users can still grab it
+  document.addEventListener('mousemove', function(e){
+    if (window.innerWidth - e.clientX < 24) { root.classList.add('thumb-near'); clearTimeout(nearT); }
+    else if (root.classList.contains('thumb-near') && !dragging) { clearTimeout(nearT); nearT = setTimeout(function(){ root.classList.remove('thumb-near'); }, 400); }
+  }, { passive: true });
+  thumb.addEventListener('pointerdown', function(e){
+    dragging = true; startY = e.clientY; startScroll = window.pageYOffset;
+    thumb.classList.add('dragging'); try { thumb.setPointerCapture(e.pointerId); } catch (_) {} e.preventDefault();
+  });
+  thumb.addEventListener('pointermove', function(e){
+    if (!dragging) return;
+    var m = metrics();
+    window.scrollTo({ top: startScroll + (e.clientY - startY) * (m.sh - m.vh) / m.track, behavior: 'instant' });
+  });
+  function end(e){ if (!dragging) return; dragging = false; thumb.classList.remove('dragging'); try { thumb.releasePointerCapture(e.pointerId); } catch (_) {} }
+  thumb.addEventListener('pointerup', end);
+  thumb.addEventListener('pointercancel', end);
+})();
+
+/* ===== Motion pack (2026-10-07): How It Works autoplay, gliding nav line, staggered cards ===== */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- Staggered cards: number each child in visual order (top-to-bottom, left-to-right) --- */
+  function orderStagger(){
+    document.querySelectorAll('.stagger').forEach(function(box){
+      var kids = Array.prototype.slice.call(box.children);
+      kids.map(function(el){ var r = el.getBoundingClientRect(); return { el: el, t: Math.round(r.top), l: r.left }; })
+        .sort(function(a, b){ return (a.t - b.t) || (a.l - b.l); })
+        .forEach(function(k, i){ k.el.style.setProperty('--i', i); });
+    });
+  }
+  orderStagger();
+
+  /* --- Gliding underline under the header menu --- */
+  var nav = document.querySelector('.main-nav');
+  var list = nav && nav.querySelector(':scope > ul');
+  if (list) {
+    var links = Array.prototype.slice.call(list.querySelectorAll(':scope > li > a'));
+    var here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    var current = links.filter(function(a){ return (a.getAttribute('href') || '').split('#')[0].toLowerCase() === here; })[0];
+    if (current) current.setAttribute('aria-current', 'page');
+    var line = document.createElement('span');
+    line.className = 'nav-glide'; line.setAttribute('aria-hidden', 'true');
+    list.appendChild(line);
+    nav.classList.add('has-glide');
+    var moveTo = function(a, instant){
+      if (!a) { line.classList.remove('on'); return; }
+      var cs = getComputedStyle(a), pl = parseFloat(cs.paddingLeft) || 0, pr = parseFloat(cs.paddingRight) || 0;
+      var ar = a.getBoundingClientRect(), x = ar.left - list.getBoundingClientRect().left + pl, w = ar.width - pl - pr;
+      if (instant) line.style.transition = 'none';
+      line.style.width = w + 'px';
+      line.style.transform = 'translateX(' + x + 'px)';
+      line.classList.add('on');
+      if (instant) { line.offsetWidth; line.style.transition = ''; }
+    };
+    links.forEach(function(a){
+      a.addEventListener('mouseenter', function(){ moveTo(a); });
+      a.addEventListener('focus', function(){ moveTo(a); });
+    });
+    list.addEventListener('mouseleave', function(){ moveTo(current); });
+    list.addEventListener('focusout', function(e){ if (!list.contains(e.relatedTarget)) moveTo(current); });
+    var settle = function(){ moveTo(current, true); };
+    // wait for the header drop-in intro and web fonts before placing the resting line
+    setTimeout(settle, 900);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ setTimeout(settle, 950); });
+    window.addEventListener('resize', settle);
+  }
+
+  /* --- How It Works: steps take turns, a progress bar fills, the photo caption follows --- */
+  document.querySelectorAll('.hiw-wrap').forEach(function(wrap){
+    var steps = Array.prototype.slice.call(wrap.querySelectorAll('.hiw-step'));
+    var ol = wrap.querySelector('.hiw-steps'), media = wrap.querySelector('.hiw-media');
+    if (reduce || steps.length < 2 || !ol || !media) return;
+    var cap = document.createElement('div');
+    cap.className = 'hiw-cap'; cap.setAttribute('aria-hidden', 'true');
+    cap.innerHTML = '<span class="hiw-cap-num"></span><span class="hiw-cap-txt"><span class="hiw-cap-k"></span><span class="hiw-cap-t"></span></span>';
+    media.appendChild(cap);
+    steps.forEach(function(s){
+      var body = s.querySelector(':scope > div');
+      if (body) { var bar = document.createElement('span'); bar.className = 'hiw-bar'; bar.innerHTML = '<i></i>'; body.appendChild(bar); }
+    });
+    var idx = -1;
+    var show = function(i){
+      if (i === idx) return;
+      idx = i;
+      steps.forEach(function(s, j){ s.classList.toggle('is-active', j === i); if (j === i) s.setAttribute('aria-current', 'step'); else s.removeAttribute('aria-current'); });
+      var s = steps[i], h = s.querySelector('h3');
+      cap.style.setProperty('--cap-ac', getComputedStyle(s).getPropertyValue('--ac') || '#3f7d52');
+      cap.querySelector('.hiw-cap-num').textContent = i + 1;
+      cap.querySelector('.hiw-cap-k').textContent = 'Step ' + (i + 1) + ' of ' + steps.length;
+      cap.querySelector('.hiw-cap-t').textContent = h ? h.textContent : '';
+      cap.classList.remove('swap'); cap.offsetWidth; cap.classList.add('swap');
+    };
+    // the active bar finishing its fill is the timer, so pausing the animation pauses the cycle
+    ol.addEventListener('animationend', function(e){
+      if (e.animationName === 'hiwFill') show((idx + 1) % steps.length);
+    });
+    steps.forEach(function(s, i){
+      s.addEventListener('mouseenter', function(){ show(i); });
+      s.addEventListener('click', function(){ show(i); });
+    });
+    ol.addEventListener('mouseenter', function(){ ol.classList.add('paused'); });
+    ol.addEventListener('mouseleave', function(){ ol.classList.remove('paused'); });
+    var start = function(){ if (ol.classList.contains('hiw-auto')) return; ol.classList.add('hiw-auto'); show(0); };
+    // start once the steps have finished their scroll reveal; pause while off-screen
+    var visible = false;
+    var tryStart = function(){
+      if (!visible || ol.classList.contains('hiw-auto')) return;
+      if (steps[0].classList.contains('reveal') && !steps[0].classList.contains('in')) { setTimeout(tryStart, 200); return; }
+      // bring in any steps still waiting below the fold, then begin once they've settled
+      steps.forEach(function(s){ s.classList.add('in'); });
+      setTimeout(start, 1100);
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          visible = en.isIntersecting;
+          if (visible) { tryStart(); if (!ol.matches(':hover')) ol.classList.remove('paused'); }
+          else if (ol.classList.contains('hiw-auto')) ol.classList.add('paused');
+        });
+      }, { threshold: 0.25 }).observe(wrap);
+    } else { visible = true; tryStart(); }
+  });
+})();
+
+/* ===== Homepage myths blog: cards open the matching article in a reading pop-up ===== */
+(function(){
+  var modal = document.getElementById('mxModal');
+  if (!modal) return;
+  if (modal.parentNode !== document.body) document.body.appendChild(modal);
+  var dialog = modal.querySelector('.mx-dialog');
+  var articles = Array.prototype.slice.call(modal.querySelectorAll('.mx-article'));
+  var lastFocus = null;
+  function open(i){
+    lastFocus = document.activeElement;
+    articles.forEach(function(a, j){ a.hidden = j !== i; });
+    dialog.setAttribute('aria-labelledby', 'mxT' + i);
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    dialog.scrollTop = 0;
+    dialog.focus();
+  }
+  function close(){
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll('.mx-card[data-myth]').forEach(function(c){
+    c.addEventListener('click', function(){ open(parseInt(c.getAttribute('data-myth'), 10) || 0); });
+  });
+  modal.addEventListener('click', function(e){ if (e.target.closest('[data-mx-close]')) close(); });
+  document.addEventListener('keydown', function(e){
+    if (modal.hidden) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key === 'Tab') {   // keep keyboard focus inside the pop-up
+      var f = Array.prototype.slice.call(dialog.querySelectorAll('a[href], button')).filter(function(el){ return el.offsetParent !== null; });
+      if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+    }
+  });
 })();
